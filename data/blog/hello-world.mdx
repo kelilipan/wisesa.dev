@@ -29,7 +29,7 @@ You can play around with Markdown on our [live demo page](http://www.markdown-he
 <a name="headers" />
 ## Headers
 
-```
+```markup
 # H1
 ## H2
 ### H3
@@ -67,7 +67,7 @@ Alternatively, for H1 and H2, an underline-ish style:
 <a name="emphasis" />
 ## Emphasis
 
-```
+```markup
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
 Strong emphasis, aka bold, with **asterisks** or __underscores__.
@@ -88,7 +88,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 <a name="lists" />
 ## Lists
 
-```
+```markup
 1. First ordered list item
 2. Another item
   * Unordered sub-list.
@@ -125,7 +125,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 There are two ways to create links.
 
-```
+```markup
 [I'm an inline-style link](https://www.google.com)
 
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
@@ -158,7 +158,7 @@ Some text to show that the reference links can follow later.
 <a name="images" />
 ## Images
 
-```
+```markup
 Here's our logo (hover to see the title text):
 
 Inline-style:
@@ -185,7 +185,7 @@ Reference-style:
 
 Code blocks are part of the Markdown spec, but syntax highlighting isn't. However, many renderers -- like Github's and _Markdown Here_ -- support syntax highlighting. _Markdown Here_ supports highlighting for dozens of languages (and not-really-languages, like diffs and HTTP headers); to see the complete list, and how to write the language names, see the [highlight.js demo page](http://softwaremaniacs.org/media/soft/highlight/test.html).
 
-```
+```markup
 Inline `code` has `back-ticks around` it.
 ```
 
@@ -193,10 +193,11 @@ Inline `code` has `back-ticks around` it.
 
 Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
 
-````
+````markup
  ```javascript
  var s = "JavaScript syntax highlighting";
  alert(s);
+ ```
 ````
 
 ```python
@@ -204,7 +205,7 @@ s = "Python syntax highlighting"
 print s
 ```
 
-```
+```markup
 No language indicated, so no syntax highlighting.
 But let's throw in a <b>tag</b>.
 ```
@@ -221,7 +222,7 @@ s = "Python syntax highlighting"
 print s
 ```
 
-```
+```markup
 No language indicated, so no syntax highlighting in Markdown Here (varies on Github).
 But let's throw in a <b>tag</b>.
 ```
@@ -235,7 +236,7 @@ Again, to see what languages are available for highlighting, and how to write th
 
 Tables aren't part of the core Markdown spec, but they are part of GFM and _Markdown Here_ supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
 
-```
+```markup
 Colons can be used to align columns.
 
 | Tables        | Are           | Cool  |
@@ -270,7 +271,7 @@ The outer pipes (|) are optional, and you don't need to make the raw Markdown li
 <a name="blockquotes" />
 ## Blockquotes
 
-```
+```markup
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
 
@@ -291,7 +292,7 @@ Quote break.
 
 You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
 
-```
+```html
 <dl>
   <dt>Definition list</dt>
   <dd>Is something people use sometimes.</dd>
@@ -312,7 +313,7 @@ You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
 <a name="hr" />
 ## Horizontal Rule
 
-```
+```markup
 Three or more...
 
 ---
@@ -349,7 +350,7 @@ My basic recommendation for learning how line breaks work is to experiment and d
 
 Here are some things to try out:
 
-```
+```markup
 Here's a line for us to start with.
 
 This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
@@ -372,7 +373,7 @@ This line is only separated by a single newline, so it's a separate line in the 
 
 They can't be added directly but you can add an image with a link to the video like this:
 
-```
+```markup
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
 " target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
