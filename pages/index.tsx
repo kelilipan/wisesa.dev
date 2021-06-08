@@ -46,7 +46,8 @@ export default function Index() {
       </Head>
       <Canvas
         ref={canvasRef}
-        {/* // @ts-ignore */}
+        /*
+      // @ts-ignore */
         width="100vw"
         height="100vh"
         background="transparent"
