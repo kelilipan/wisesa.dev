@@ -42,6 +42,7 @@ const Navbar = () => {
   return (
     <Box
       bgColor="whiteAlpha.50"
+      zIndex="modal"
       w="full"
       sx={{
         "@supports (backdrop-filter: blur(12px))": {

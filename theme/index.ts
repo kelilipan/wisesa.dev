@@ -20,6 +20,11 @@ export default extendTheme({
         color: mode("black", "whiteAlpha.900")(props),
         bg: mode("white", "black")(props),
       },
+      ".noselect": {
+        userSelect: "none",
+        webkitUserSelect: "none",
+        webkitTouchCallout: "none",
+      },
     }),
   },
 });
