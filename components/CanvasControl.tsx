@@ -21,9 +21,9 @@ interface ControlProps extends FlexProps {
   setWidth: (width: number) => void;
 }
 const colorList = [
-  "rgba(255, 0, 0, 0.6)",
-  "rgba(0, 255, 0, 0.6)",
-  "rgba(0, 0, 255, 0.6)",
+  "rgba(255, 0, 0, 0.5)",
+  "rgba(0, 255, 0, 0.5)",
+  "rgba(0, 0, 255, 0.5)",
 ];
 const CanvasControl = ({
   clearCanvas,

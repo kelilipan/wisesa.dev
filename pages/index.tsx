@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { ReactSketchCanvasProps } from "react-sketch-canvas";
-import { useRef, useState, RefObject, forwardRef } from "react";
+import { useRef, useState, forwardRef } from "react";
 import CanvasControl from "@/components/CanvasControl";
 //todo: fix type definition
 const ReactSketchCanvas = dynamic<ReactSketchCanvasProps>(
@@ -15,15 +15,17 @@ const ReactSketchCanvas = dynamic<ReactSketchCanvasProps>(
   }
 );
 const Canvas = forwardRef((props, ref) => (
+  // @ts-ignore
   <ReactSketchCanvas {...props} ref={ref} />
 ));
 
 export default function Index() {
   const invertColor = useColorModeValue("none", "invert(10%) brightness(120%)");
-  const [color, setColor] = useState("rgba(255, 0, 0, 0.6)");
+  const [color, setColor] = useState("rgba(255, 0, 0, 0.5)");
   const [strokeWidth, setWidth] = useState(4);
   const canvasRef = useRef(null);
   const clearHandler = () => {
+    // @ts-ignore
     canvasRef.current?.retry();
     const clearCanvas = canvasRef.current?.clearCanvas;
 
