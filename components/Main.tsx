@@ -2,7 +2,14 @@ import { Stack, StackProps } from "@chakra-ui/layout";
 
 const Main = ({ children, ...props }: StackProps) => {
   return (
-    <Stack flex="1" w="full" {...props}>
+    <Stack
+      pt={["54px", "72px"]}
+      flex="1"
+      w="full"
+      maxW="5xl"
+      mx="auto"
+      {...props}
+    >
       {children}
     </Stack>
   );
