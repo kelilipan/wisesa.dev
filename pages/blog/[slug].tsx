@@ -16,7 +16,6 @@ const Post = ({ source, meta }: MDXPost) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getFiles("blog");
-  console.log(posts);
   return {
     paths: posts.map((p) => ({
       params: {

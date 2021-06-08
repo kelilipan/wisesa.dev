@@ -4,6 +4,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import theme from "@/theme";
 import PrismTheme from "@/components/PrismTheme";
+import "nprogress/nprogress.css";
+import NProgress from "nprogress";
+import Router from "next/router";
+
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

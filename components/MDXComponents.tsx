@@ -1,4 +1,13 @@
-import { Box, Divider, Heading, Link, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Heading,
+  Link,
+  ListItem,
+  OrderedList,
+  Text,
+  UnorderedList,
+} from "@chakra-ui/react";
 //TODO: type definition for each record
 
 const CustomHeading = ({
@@ -26,7 +35,6 @@ const MDXComponents = {
     );
   },
   h1: ({ id, ...props }: any) => {
-    console.log(props);
     return <CustomHeading size="2xl" id={id} {...props} />;
   },
   h2: ({ id, ...props }: any) => {
@@ -45,6 +53,15 @@ const MDXComponents = {
     return <CustomHeading size="xs" id={id} {...props} />;
   },
   p: Text,
+  ul: (props: any) => {
+    return <UnorderedList pl={4} {...props} />;
+  },
+  ol: (props: any) => {
+    return <OrderedList pl={4} {...props} />;
+  },
+  li: (props: any) => {
+    return <ListItem {...props} />;
+  },
   hr: (props: any) => {
     return (
       <Box py={2}>
