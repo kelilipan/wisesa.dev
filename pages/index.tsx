@@ -27,6 +27,7 @@ export default function Index() {
   const clearHandler = () => {
     // @ts-ignore
     canvasRef.current?.retry();
+    // @ts-ignore
     const clearCanvas = canvasRef.current?.clearCanvas;
 
     if (clearCanvas) {
@@ -45,6 +46,7 @@ export default function Index() {
       </Head>
       <Canvas
         ref={canvasRef}
+        {/* // @ts-ignore */}
         width="100vw"
         height="100vh"
         background="transparent"
