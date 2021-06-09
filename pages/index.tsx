@@ -1,6 +1,6 @@
 import Main from "@/components/Main";
 import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/layout";
+import { Box, Heading, Link, Stack, Text, VStack } from "@chakra-ui/layout";
 import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -55,7 +55,7 @@ export default function Index() {
           position: "absolute",
           top: 0,
           left: 0,
-          zIndex: 2,
+          zIndex: 5,
         }}
         strokeWidth={strokeWidth}
         strokeColor={color}
@@ -70,18 +70,39 @@ export default function Index() {
       <Stack
         className="noselect"
         direction={["column-reverse", "row"]}
-        justifyContent="space-between"
+        justifyContent={["center", "space-between"]}
+        alignItems={"center"}
       >
-        <VStack alignItems={["center", "start"]} justifyContent="center">
-          <Box>
+        <VStack
+          alignItems={["center", "start"]}
+          spacing="4"
+          justifyContent="center"
+        >
+          <Box pos="relative">
             <Heading mb="0">Hi, I'm Wisesa. 🐱</Heading>
+            <Box
+              position="absolute"
+              display={["none", "none", "block"]}
+              zIndex={2}
+              top="-10px"
+              right="20px"
+            >
+              <Image src="/doodle4.svg" width="200px" height="100px" />
+            </Box>
             <Text
               textAlign={["center", "left"]}
-              mt="-5px"
+              mt={["-10px", "-5px"]}
               fontSize="sm"
               fontStyle="italic"
+              zIndex={6}
+              pos="absolute"
+              left={[0, "unset"]}
+              right={[0, "unset"]}
             >
-              aka. svspicious
+              aka.{" "}
+              <Link href="https://github.com/svspicious" isExternal>
+                svspicious
+              </Link>
             </Text>
           </Box>
           <Text textAlign={["center", "left"]} maxW="550px">
@@ -89,8 +110,21 @@ export default function Index() {
             technology and now fall in love with react.js and javascript.
           </Text>
         </VStack>
-        <Box filter={invertColor}>
+        <Box
+          filter={invertColor}
+          pos="relative"
+          width={["300px", "400px"]}
+          minWidth={["300px", "400px"]}
+        >
           <Image src="/me.svg" width="400px" height="400px" />
+          <Box
+            position="absolute"
+            zIndex={2}
+            bottom={["-80px", "-70px"]}
+            left={["10px", "55px"]}
+          >
+            <Image src="/doodle7.svg" width="300px" height="200px" />
+          </Box>
         </Box>
       </Stack>
     </Main>
