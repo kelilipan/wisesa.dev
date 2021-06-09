@@ -6,6 +6,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 const Navbar = () => {
   const color = useColorModeValue("black", "white");
   const bgColor = useColorModeValue("whiteAlpha.50", "blackAlpha.50");
+  const bgColorFallback = useColorModeValue("whiteAlpha.900", "blackAlpha.900");
   const borderBottomColor = useColorModeValue(
     "blackAlpha.50",
     "whiteAlpha.200"
@@ -52,6 +53,12 @@ const Navbar = () => {
         "@supports (-webkit-backdrop-filter: blur(12px))": {
           WebkitBackdropFilter: "blur(12px)",
           bgColor,
+        },
+        "@supports not (backdrop-filter: blur(12px))": {
+          bgColor: bgColorFallback,
+        },
+        "@supports not (-webkit-backdrop-filter: blur(12px))": {
+          bgColor: bgColorFallback,
         },
       }}
       borderBottomColor={borderBottomColor}

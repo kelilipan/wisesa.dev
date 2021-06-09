@@ -25,6 +25,9 @@ export default extendTheme({
         webkitUserSelect: "none",
         webkitTouchCallout: "none",
       },
+      "#nprogress .bar": {
+        zIndex: 1500,
+      },
     }),
   },
 });
