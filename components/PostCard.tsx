@@ -11,7 +11,6 @@ const PostCard = ({
   image,
   publishedAt,
 }: PostType) => {
-  console.log(image);
   const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
   const date = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",

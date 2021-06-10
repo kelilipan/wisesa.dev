@@ -39,7 +39,6 @@ const ProjectCard = ({
     month: "long",
     year: "numeric",
   });
-  console.log(createdAt);
   return (
     <Stack direction={["column", "row"]} w="full">
       <AspectRatio ratio={16 / 9} w={[null, "512px"]}>
