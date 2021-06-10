@@ -15,7 +15,7 @@ const Post = ({ source, meta }: MDXPost) => {
     year: "numeric",
   });
   return (
-    <Main maxW="3xl">
+    <Main maxW="3xl" mb="6">
       <Head
         title={meta.title}
         description={meta.description}
