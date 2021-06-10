@@ -57,9 +57,6 @@ const Navbar = () => {
         "@supports not (backdrop-filter: blur(12px))": {
           bgColor: bgColorFallback,
         },
-        "@supports not (-webkit-backdrop-filter: blur(12px))": {
-          bgColor: bgColorFallback,
-        },
       }}
       borderBottomColor={borderBottomColor}
       borderBottomWidth="2px"

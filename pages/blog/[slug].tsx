@@ -1,16 +1,38 @@
+import Main from "@/components/Main";
 import MDXComponents from "@/components/MDXComponents";
+import { RouteLink } from "@/components/RouteLink";
 import { getFileBySlug, getFiles } from "@/lib/mdx";
 import { MDXPost } from "@/types/post";
+import { Avatar, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 
 const Post = ({ source, meta }: MDXPost) => {
   console.log(meta);
+  const date = new Date(meta.publishedAt).toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
   return (
-    <div>
-      <p>This is could be post</p>
+    <Main maxW="3xl">
+      <Flex direction="column">
+        <RouteLink href={`/blog/${meta.slug}`}>
+          <Heading fontSize={["4xl", "6xl"]} mt={[4, 6]}>
+            {meta.title}
+          </Heading>
+        </RouteLink>
+        <Text>{meta.description}</Text>
+        <Flex mt="5">
+          <Avatar src="/android-icon-48x48.png" name="Wisesa" size="xs" />
+          <Text ml="2">
+            <RouteLink href="/about">Wisesa</RouteLink> / {date}
+          </Text>
+        </Flex>
+        <Divider mt="4" />
+      </Flex>
       <MDXRemote {...source} components={MDXComponents} />
-    </div>
+    </Main>
   );
 };
 

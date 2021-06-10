@@ -18,14 +18,22 @@ const PostCard = ({
     month: "long",
     year: "numeric",
   });
+  const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
   return (
     <RouteLink href={`/blog/${slug}`}>
-      <Box borderRadius="5px" borderColor={borderColor} borderWidth="1px">
+      <Box
+        borderRadius="5px"
+        borderColor={borderColor}
+        borderWidth="1px"
+        role="group"
+        _hover={{ bgColor: bgHoverColor, transition: "0.2s ease all" }}
+      >
         <AspectRatio ratio={1.92 / 1}>
           <Box
             borderTopRadius="5px"
             borderBottomColor={borderColor}
             borderBottomWidth="1px"
+            _groupHover={{ opacity: 0.9 }}
           >
             <Image
               width="512"

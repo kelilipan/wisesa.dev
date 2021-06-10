@@ -40,12 +40,12 @@ const prismBaseTheme = css`
   pre[class*="language-"] {
     background: ${theme.colors.gray[50]};
     border: 1px solid ${theme.colors.gray[200]};
-    border-radius: ${theme.radii.lg};
+    border-radius: 5px;
   }
   /* Inline code */
   :not(pre) > code[class*="language-"] {
     padding: 0.1em;
-    border-radius: 0.3em;
+    /*border-radius: 0.3em;*/
     white-space: normal;
   }
   .token.comment,
@@ -124,8 +124,8 @@ const prismBaseTheme = css`
     background: ${theme.colors.gray[200]};
     color: ${theme.colors.gray[800]};
     border: 1px solid ${theme.colors.gray[200]};
-    border-top-left-radius: ${theme.radii.lg};
-    border-top-right-radius: ${theme.radii.lg};
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 0;
