@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           site_name: "Wisesa.dev",
           images: [
             {
-              url: `${config.baseUrl}/og-default.jpg`,
+              url: `${config.baseUrl}og-default.jpg`,
               width: 1200,
               height: 627,
               alt: "Wisesa.dev",
