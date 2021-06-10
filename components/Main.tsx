@@ -4,7 +4,7 @@ const Main = ({ children, ...props }: StackProps) => {
   return (
     <Stack
       pt={["54px", "72px"]}
-      px={[2, 4]}
+      px={[2, 0]}
       flex="1"
       w="full"
       maxW="5xl"

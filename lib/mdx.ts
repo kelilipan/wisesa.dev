@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import mdxPrism from "mdx-prism";
-import { MDXPost } from "@/types/post";
+import { MDXPost, PostType } from "@/types/post";
 
 const root = process.cwd();
 
@@ -38,3 +38,25 @@ export async function getFileBySlug(
     },
   };
 }
+//todo:types
+export const getAllFilesFrontMatter = async (
+  type: string
+): Promise<PostType[]> => {
+  const files: any[] = fs.readdirSync(path.join(root, "data", type));
+
+  return files.reduce((allPosts, postSlug) => {
+    const source = fs.readFileSync(
+      path.join(root, "data", type, postSlug),
+      "utf8"
+    );
+    const { data } = matter(source);
+
+    return [
+      {
+        ...data,
+        slug: postSlug.replace(".mdx", ""),
+      },
+      ...allPosts,
+    ];
+  }, []);
+};

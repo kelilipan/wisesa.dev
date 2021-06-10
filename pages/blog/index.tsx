@@ -1,0 +1,28 @@
+import Main from "@/components/Main";
+import PostCard from "@/components/PostCard";
+import { getAllFilesFrontMatter } from "@/lib/mdx";
+import { PostType } from "@/types/post";
+import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
+interface BlogProps {
+  posts: PostType[] | [];
+}
+const Blog = ({ posts }: BlogProps) => {
+  console.log(posts);
+  return (
+    <Main>
+      <Heading mt={[4, 6]}>Blog</Heading>
+      <Text>Some tech stuff and my random thoughts.</Text>
+      <SimpleGrid columns={[1, 2]} gap="4">
+        {posts.map((post: PostType, idx: number) => (
+          <PostCard {...post} key={idx} />
+        ))}
+      </SimpleGrid>
+    </Main>
+  );
+};
+export const getStaticProps = async () => {
+  const posts = await getAllFilesFrontMatter("blog");
+  return { props: { posts } };
+};
+
+export default Blog;
