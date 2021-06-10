@@ -89,7 +89,7 @@ const MDXComponents = {
     <Box
       borderLeftColor="gray.400"
       borderLeftWidth={2}
-      pl={8}
+      pl={6}
       py={4}
       {...props}
     />
