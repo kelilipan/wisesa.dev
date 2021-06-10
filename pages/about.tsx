@@ -58,7 +58,7 @@ const about = () => {
           height="280"
           alt="me"
           quality={90}
-          className="me-image"
+          className="me-image noselect"
         />
         <Box
           width="300px"
@@ -70,7 +70,13 @@ const about = () => {
           right={0}
           mx="auto"
         >
-          <Image alt="doodle" src="/doodle7.svg" width="300px" height="200px" />
+          <Image
+            className="noselect"
+            alt="doodle"
+            src="/doodle7.svg"
+            width="300px"
+            height="200px"
+          />
         </Box>
       </Flex>
       <Text pt="4">
