@@ -140,6 +140,11 @@ const prismBaseTheme = css`
 
 export const prismLightTheme = css`
   ${prismBaseTheme};
+  code {
+    background-color: ${theme.colors.blackAlpha[200]};
+    padding: 0 2px;
+    border-radius: 3px;
+  }
   code[class*="language-"],
   pre[class*="language-"] {
     color: ${theme.colors.gray[800]};
@@ -150,12 +155,17 @@ export const prismLightTheme = css`
     border: 1px solid ${theme.colors.gray[200]};
   }
   .mdx-marker {
-    background-color: hsla(204, 45%, 96%, 1);
+    background-color: ${theme.colors.gray[200]};
   }
 `;
 
 export const prismDarkTheme = css`
   ${prismBaseTheme};
+  code {
+    background-color: ${theme.colors.whiteAlpha[300]};
+    padding: 0 2px;
+    border-radius: 3px;
+  }
   :not(pre) > code[class*="language-"] {
     background: #011627;
   }

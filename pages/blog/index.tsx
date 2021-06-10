@@ -8,6 +8,7 @@ interface BlogProps {
   posts: PostType[] | [];
 }
 const Blog = ({ posts }: BlogProps) => {
+  console.log(posts);
   const filteredBlogPosts = posts.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   );
@@ -19,7 +20,7 @@ const Blog = ({ posts }: BlogProps) => {
       />
       <Heading mt={[4, 6]}>Blog</Heading>
       <Text>Some tech stuff and my random thoughts.</Text>
-      {filteredBlogPosts.length < 0 ? (
+      {filteredBlogPosts.length > 0 ? (
         <SimpleGrid columns={[1, 2]} gap="4">
           {filteredBlogPosts.map((post: PostType, idx: number) => (
             <PostCard {...post} key={idx} />

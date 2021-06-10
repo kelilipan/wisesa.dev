@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import { ReactSketchCanvasProps } from "react-sketch-canvas";
 import { RouteLink } from "@/components/RouteLink";
 import CanvasControl from "@/components/CanvasControl";
+import NextHead from "next/head";
 //todo: fix type definition
 const ReactSketchCanvas = dynamic<ReactSketchCanvasProps>(
   () => import("react-sketch-canvas").then((c) => c.ReactSketchCanvas),
@@ -41,6 +42,12 @@ export default function Index() {
   };
   return (
     <Main justifyContent={["start", "center"]} sx={{ cursor }}>
+      <NextHead>
+        <meta
+          name="keywords"
+          content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa"
+        />
+      </NextHead>
       <Canvas
         ref={canvasRef}
         /*

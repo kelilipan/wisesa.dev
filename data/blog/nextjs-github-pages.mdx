@@ -1,0 +1,240 @@
+---
+title: "Build & Deploy Next.js apps ke github pages menggunakaan github action"
+publishedAt: "10-15-2020"
+image: "/blog/nextjs-github-pages/og.jpeg"
+description: "Build & Deploy Next.js apps ke personal github pages menggunakaan github action"
+---
+
+> This article is also posted at my medium https://svspicious.medium.com/build-deploy-next-js-apps-ke-github-pages-menggunakaan-github-action-d15bf9ca43ad
+
+<br />
+
+**Next.js** merupakan salah satu framework react.js.
+Kelebihan dari Next.js adalah kita dapat memilih bagaimana aplikasi kita akan disajikan, apakah menggunakan SSR(_server side rendering_), SSG(_static site generator_), atau SPA(_single page application_) semua sudah disediakan oleh framework Next.js
+([lebih lanjut](https://nextjs.org/docs/basic-features/data-fetching)).
+
+Nah, kali ini kita akan mencoba SSG di Next.js yang akan membuat static site dan men-deploy-nya ke personal github pages(e.g https://svspicious.github.io) dan kita akan menggunakan github actions untuk automasi proses build dan deploy ke pages kita.
+
+## Prepare github repositories
+
+Yang pertama kita harus membuat repo di github dengan nama **username.github.io**.
+
+Misalnya username saya adalah [svspicious](https://github.com/svspicious) maka saya akan membuat repo dengan nama svspicious.github.io. Semua file yang terdapat dalam repository tersebut akan dirender/dapat diakses melalui https://svspicious.github.io.
+
+<Img
+  src="/blog/nextjs-github-pages/1.png"
+  width={593}
+  height={260}
+  alt="Repository untuk github pages."
+/>
+
+### Setup access token
+
+Access token diperlukan supaya github actions kita dapat melakukan read/write repository kita.
+Caranya menambahkan secret token:
+
+- Buat personal access (baca disini: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
+- Centang semua pada bagian repo
+- Pada repository kita buka Settings->Secret->**New secret**
+- Pada Secret name masukan TOKEN_SECRET pada kolom value masukan token yang telah dibuat sebelumnya
+- Add secret
+
+<Img
+  src="/blog/nextjs-github-pages/new-token.png"
+  width={700 / 1}
+  height={416 / 1}
+  alt="Membuat token baru"
+/>
+
+<Img
+  src="/blog/nextjs-github-pages/insert-token.png"
+  width={700 / 1}
+  height={483 / 1}
+  alt="Memasukan token secret ke dalam repository kita"
+/>
+
+## Prepare Next.js application
+
+Tentu saja kita butuh aplikasi Next.js yang akan digunakan. Bisa menggunakan project yang sudah ada atau kali ini kita akan membuat project yang baru menggunakan `create-next-app`. Untuk lebih lanjutnya bisa dibaca di https://nextjs.org/docs/getting-started.
+
+<br />
+Jalankan perintah dibawah untuk membuat project baru dan ikuti langkah-langkahnya
+
+```bash
+npx create-next-app
+# atau
+yarn create next-app
+#kemudian
+cd nama_project
+```
+
+Contoh, saya menggunakan `yarn` untuk membuat project bernama `raisoturu.github.io` maka akan terbuat folder dengan nama yang sama
+
+<Img
+  src="/blog/nextjs-github-pages/new-project.png"
+  width={620 / 1}
+  height={406 / 1}
+  alt="Membuat project baru menggunakan create-next-app."
+/>
+
+Coba jalankan project dengan menggunakan perintah `yarn dev` atau `npm run dev` dan buka http://localhost:3000
+
+<Img
+  src="/blog/nextjs-github-pages/localhost.png"
+  width={700 / 1}
+  height={430 / 1}
+  alt="Tampilan awal aplikasi Next.js yang dibuat menggunakan create-next-app."
+/>
+
+### Export script
+
+Kita memerlukan _script_ untuk men-generate static site dari project kita. Ubah file `package.json` dan pada bagian `scripts` tambahkan kode berikut:
+
+```json
+"export" : "next build && next export"
+```
+
+Sehingga package.json akan terlihat seperti ini
+
+```json{9}:package.json
+{
+  "name": "raisoturu.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export" : "next build && next export"
+  },
+  "dependencies": {
+    "next": "9.5.5",
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
+  }
+}
+```
+
+### Setup github actions workflow
+
+Buat file `.yml` (misal `pages.yml`) kedalam folder `.github/workflows` yang berisi kode dibawah
+
+```yaml:pages.yml
+name: Build and Deploy
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install 🔧
+        run: yarn install
+
+      - name: Build 🔧
+        run: |
+          yarn export
+          touch out/.nojekyll
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
+          BRANCH: production # Nama branch yang akan digunakan.
+          FOLDER: out # Folder yang akan dideploy
+          CLEAN: true # Hapus file di dalam branch
+```
+
+Sedikit penjelasan tentang kode di atas:
+
+- Actions akan dieksekusi ketika melakukan `push` ke branch `master`
+- `node-version` menggunakan node versi 14.x
+- **Cache node modules**, akan melakukan caching untuk modules sehingga proses `yarn install` akan lebih cepat.
+- `yarn export` Menjalankan script untuk eksport, yang akan membuat folder bernama `out` yang berisi file static site kita.
+- `touch out/.nojekyll` yang membuat file `.nojekyll`, INI PENTING! supaya github pages tidak menggunakan jekyll pada repository kita. Jekyll pada github pages akan merusak route Next.js.
+- Kita akan menggunakan extension dari `JamesIves/github-pages-deploy-action`
+- `secrets.TOKEN_SECRET` mengakses secret token yang sudah dibuat sebelumnya. Berfungsi supaya action kita dapat melakukan deployment.
+- **BRANCH: production**, branch yang akan digunakan untuk github pages.
+
+<br />
+
+Untuk lebih lanjutnya [baca disini](https://docs.github.com/en/free-pro-team@latest/actions/quickstart)
+
+<Img
+  src="/blog/nextjs-github-pages/pages.yml.png"
+  width={700 / 1}
+  height={353 / 1}
+  alt="File pages.yml pada project kita"
+/>
+
+<br />
+
+# Push to github
+
+Sekarang tahap preparation sudah selesai, langkah berikutnya adalah commit dan push project kita ke github
+
+```bash
+git add .
+git commit -m "Pesan commit"
+git push origin master
+```
+
+<Img
+  src="/blog/nextjs-github-pages/commit.png"
+  width={700 / 1}
+  height={464 / 1}
+  alt="Github action akan berjalan ketika kita melakukan push ke branch 'master'"
+/>
+
+Langkah selanjutnya adalah memilih branch mana yang akan digunakan oleh github pages. Masuk ke repository->Settings->**Github pages** dan pilih branch production
+
+<Img
+  src="/blog/nextjs-github-pages/select-branch.png"
+  width={700 / 1}
+  height={443 / 1}
+  alt="Github action akan berjalan ketika kita melakukan push ke branch 'master'"
+/>
+
+**Selesai**, aplikasi Next.js berhasil di-deploy ke github pages dan dapat diakses melalui [https://svspicious.github.io/](https://svspicious.github.io/).
+
+<Img
+  src="/blog/nextjs-github-pages/deployed.png"
+  width={700 / 1}
+  height={566 / 1}
+  alt="Berhasil di-deploy ke github pages."
+/>
+
+**Notes**
+
+- `getServerSideProps()` tidak bisa digunakan karena membutuhkan server(SSR).
+
+> `getServerSideProps` cannot be used within pages because the method requires a server. Consider using getStaticProps instead. https://nextjs.org/docs/advanced-features/static-html-export
+
+- Github actions ini juga dapat digunakan untuk CRA, gatsby, dan framework lain seperti vue atau svelte dengan sedikit penyesuaian pada proses build.
+
+<br />
+
+Project lain yang saya buat menggunakan Next.js dan dideploy di github pages http://ailabtelkom.github.io/
+
+<Img
+  src="/blog/nextjs-github-pages/ailab.png"
+  width={700 / 1}
+  height={382 / 1}
+  alt="Berhasil di-deploy ke github pages."
+/>
+
+Sekian tutorial Build & Deploy Next.js apps ke personal github pages menggunakaan github action, semoga bermanfaat 😁 .

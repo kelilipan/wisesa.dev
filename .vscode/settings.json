@@ -34,5 +34,7 @@
     "**/.google.json": true,
     "**/public/location": true
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120
 }

@@ -8,8 +8,18 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
+import Image, { ImageProps } from "next/image";
 //TODO: type definition for each record
-
+const CustomImage = (props: ImageProps) => {
+  return (
+    <Box w="full" textAlign="center" mt="2" mb="4">
+      <Image {...props} />
+      <Text fontSize="sm" fontStyle="italic">
+        {props.alt}
+      </Text>
+    </Box>
+  );
+};
 const CustomHeading = ({
   id,
   size,
@@ -21,15 +31,21 @@ const CustomHeading = ({
 }): React.ReactElement | null => {
   return (
     <Link href={`#${id}`}>
-      <Heading as="h1" id={id} size={size} {...props} />
+      <Heading as="h1" id={id} size={size} {...props} mt={[4, 6]} />
     </Link>
   );
 };
 const MDXComponents = {
+  Img: CustomImage,
   a: ({ href, children, ...props }: any) => {
     const isExternal = !(href?.startsWith("/") || href?.startsWith("#"));
     return (
-      <Link href={href as string} isExternal={isExternal} {...props}>
+      <Link
+        href={href as string}
+        isExternal={isExternal}
+        textDecoration="underline"
+        {...props}
+      >
         {children}
       </Link>
     );

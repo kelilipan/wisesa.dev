@@ -4,7 +4,7 @@ import MDXComponents from "@/components/MDXComponents";
 import { RouteLink } from "@/components/RouteLink";
 import { getFileBySlug, getFiles } from "@/lib/mdx";
 import { MDXPost } from "@/types/post";
-import { Avatar, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import { Avatar, Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 
@@ -36,15 +36,15 @@ const Post = ({ source, meta }: MDXPost) => {
         </Flex>
         <Divider mt="4" mb="2" />
       </Flex>
-      <MDXRemote {...source} components={MDXComponents} />
+      <Box w="full">
+        <MDXRemote {...source} components={MDXComponents} />
+      </Box>
     </Main>
   );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getFiles("blog").catch(() => {
-    return [];
-  });
+  const posts = await getFiles("blog");
   return {
     paths: posts.map((p) => ({
       params: {

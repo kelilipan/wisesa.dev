@@ -44,21 +44,19 @@ export const getAllFilesFrontMatter = async (
 ): Promise<PostType[]> => {
   const files: any[] = fs.readdirSync(path.join(root, "data", type));
 
-  return files.length === 0
-    ? []
-    : files.reduce((allPosts, postSlug) => {
-        const source = fs.readFileSync(
-          path.join(root, "data", type, postSlug),
-          "utf8"
-        );
-        const { data } = matter(source);
+  return files.reduce((allPosts, postSlug) => {
+    const source = fs.readFileSync(
+      path.join(root, "data", type, postSlug),
+      "utf8"
+    );
+    const { data } = matter(source);
 
-        return [
-          {
-            ...data,
-            slug: postSlug.replace(".mdx", ""),
-          },
-          ...allPosts,
-        ];
-      }, []);
+    return [
+      {
+        ...data,
+        slug: postSlug.replace(".mdx", ""),
+      },
+      ...allPosts,
+    ];
+  }, []);
 };
