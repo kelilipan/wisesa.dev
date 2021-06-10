@@ -89,6 +89,7 @@ const about = () => {
       <Text>
         I grew up in a small village located in{" "}
         <Link
+          textDecoration="underline"
           isExternal
           href="https://www.google.com/search?q=grobogan+jawa+tengah"
         >
@@ -96,11 +97,19 @@ const about = () => {
         </Link>
         . I'm currently pursuing my Bachelor's degree in Informatics (Computer
         science) at{" "}
-        <Link isExternal href="https://telkomuniversity.ac.id/">
+        <Link
+          textDecoration="underline"
+          isExternal
+          href="https://telkomuniversity.ac.id/"
+        >
           Telkom University
         </Link>{" "}
         also working as a Software engineer at a start-up called{" "}
-        <Link href="https://ketringan.com" isExternal>
+        <Link
+          textDecoration="underline"
+          href="https://ketringan.com"
+          isExternal
+        >
           Ketringan Indonesia
         </Link>
         .
@@ -108,27 +117,45 @@ const about = () => {
       <Text>
         I love exploring tech related stuff. When i was in college i join many
         community and laboratory to expand my knowledge, I'm member of{" "}
-        <Link href="https://www.instagram.com/cciunitel/?hl=en" isExternal>
+        <Link
+          textDecoration="underline"
+          href="https://www.instagram.com/cciunitel/?hl=en"
+          isExternal
+        >
           CCI-Unitel
         </Link>
         , part of{" "}
-        <Link href="https://www.instagram.com/pramukatelu/?hl=en" isExternal>
+        <Link
+          textDecoration="underline"
+          href="https://www.instagram.com/pramukatelu/?hl=en"
+          isExternal
+        >
           Pramuka Tel-U
         </Link>
         , and i'm the (ex)lab. assistant of{" "}
-        <Link href="http://ailabtelkom.github.io/" isExternal>
+        <Link
+          textDecoration="underline"
+          href="http://ailabtelkom.github.io/"
+          isExternal
+        >
           Artificial Intelligence Tel-U
         </Link>
         . Also, I joined many competition such as Competitive programming, UI/UX
         Design, and{" "}
-        <Link href="https://youngster.id/news/ketringan-com-juara-di-brixgoogle-cloud-hackathon/">
+        <Link
+          textDecoration="underline"
+          href="https://youngster.id/news/ketringan-com-juara-di-brixgoogle-cloud-hackathon/"
+        >
           Hackathon
         </Link>
         .
       </Text>
       <Text>
         I’m always excited to connect with everyone so please don’t hesitate to{" "}
-        <Link href="mailto:hi@wisesa.dev">get in touch</Link> with me.
+        <Link textDecoration="underline" href="mailto:hi@wisesa.dev">
+          get in touch
+        </Link>{" "}
+        with me.
       </Text>
       <SimpleGrid columns={[2, 4]} pt="4">
         <Box>
@@ -170,7 +197,7 @@ const about = () => {
           {socials.map((data, idx) => (
             <ListItem key={idx}>
               {data.name} -{" "}
-              <Link href={data.url} isExternal>
+              <Link textDecoration="underline" href={data.url} isExternal>
                 {data.url}
               </Link>
             </ListItem>
@@ -178,7 +205,11 @@ const about = () => {
         </UnorderedList>
         <Text mt="2">
           Also, you can{" "}
-          <Link href="http://gg.gg/wisesa-cv" isExternal>
+          <Link
+            textDecoration="underline"
+            href="http://gg.gg/wisesa-cv"
+            isExternal
+          >
             read my cv here
           </Link>
           . Anyway, thanks for visiting my profile :)
