@@ -19,11 +19,15 @@ const Blog = ({ posts }: BlogProps) => {
       />
       <Heading mt={[4, 6]}>Blog</Heading>
       <Text>Some tech stuff and my random thoughts.</Text>
-      <SimpleGrid columns={[1, 2]} gap="4">
-        {filteredBlogPosts.map((post: PostType, idx: number) => (
-          <PostCard {...post} key={idx} />
-        ))}
-      </SimpleGrid>
+      {filteredBlogPosts.length < 0 ? (
+        <SimpleGrid columns={[1, 2]} gap="4">
+          {filteredBlogPosts.map((post: PostType, idx: number) => (
+            <PostCard {...post} key={idx} />
+          ))}
+        </SimpleGrid>
+      ) : (
+        <Text pt="4">No blog post.</Text>
+      )}
     </Main>
   );
 };
