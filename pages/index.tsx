@@ -107,8 +107,8 @@ export default function Index() {
             </Text>
           </Box>
           <Text textAlign={["center", "left"]} maxW="550px">
-            A student and a software <i>edgy</i>neer. I love exploring new
-            technology and now fall in love with react.js and javascript.
+            A student and a software <i>edgy</i>neer. I love exploring new tech
+            related stuff and now fall in love with react.js and javascript.
           </Text>
         </VStack>
         <Box
