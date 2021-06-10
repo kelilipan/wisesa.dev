@@ -132,13 +132,13 @@ const about = () => {
         >
           Pramuka Tel-U
         </Link>
-        , and i'm the (ex)lab. assistant of{" "}
+        , and i'm the (ex) lab.assistant of{" "}
         <Link
           textDecoration="underline"
           href="http://ailabtelkom.github.io/"
           isExternal
         >
-          Artificial Intelligence Tel-U
+          Artificial Intelligence TelU
         </Link>
         . Also, I joined many competition such as Competitive programming, UI/UX
         Design, and{" "}
