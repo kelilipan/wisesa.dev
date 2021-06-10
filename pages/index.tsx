@@ -114,6 +114,7 @@ export default function Index() {
           <Text textAlign={["center", "left"]} maxW="550px">
             Checkout my{" "}
             <RouteLink
+              textDecoration="underline"
               href="/projects"
               pos="relative"
               zIndex={6}
@@ -123,6 +124,7 @@ export default function Index() {
             </RouteLink>{" "}
             or learn more{" "}
             <RouteLink
+              textDecoration="underline"
               href="/about"
               pos="relative"
               zIndex={6}
