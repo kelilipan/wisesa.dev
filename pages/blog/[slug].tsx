@@ -17,7 +17,11 @@ const Post = ({ source, meta }: MDXPost) => {
   });
   return (
     <Main maxW="3xl">
-      <Head title={meta.title} description={meta.description} />
+      <Head
+        title={meta.title}
+        description={meta.description}
+        image={meta.image}
+      />
       <Flex direction="column">
         <RouteLink href={`/blog/${meta.slug}`}>
           <Heading fontSize={["4xl", "6xl"]} mt={[4, 6]}>

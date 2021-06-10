@@ -21,7 +21,7 @@ const Head = ({ title, description, images, image, ...props }: HeadProps) => {
           ? images
           : image !== undefined
           ? {
-              url: `${config.baseUrl}/${image}`,
+              url: `${config.baseUrl}${image}`,
               width: 1200,
               height: 627,
               alt: "Wisesa.dev",
