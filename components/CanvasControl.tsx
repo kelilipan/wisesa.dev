@@ -42,7 +42,7 @@ const CanvasControl = ({
       zIndex="modal"
       pos="fixed"
       bgColor={bgColor}
-      bottom={["20%", "unset"]}
+      top={["10%", "unset"]}
       right={1}
       borderRadius="full"
       {...props}
