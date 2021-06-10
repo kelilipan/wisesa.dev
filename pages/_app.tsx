@@ -36,6 +36,11 @@ function MyApp({ Component, pageProps }: AppProps) {
             },
           ],
         }}
+        twitter={{
+          handle: "@svspcs",
+          site: "@svspcs",
+          cardType: "summary_large_image",
+        }}
       />
       <PrismTheme>
         <Flex minH="100vh" direction="column">
