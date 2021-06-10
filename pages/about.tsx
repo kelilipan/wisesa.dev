@@ -159,7 +159,7 @@ const about = () => {
       </Text>
       <SimpleGrid columns={[2, 4]} pt="4">
         <Box>
-          <Heading as="h5" fontSize="lg">
+          <Heading as="h5" fontSize="xl">
             Languages
           </Heading>
           {languages.map((lang, idx) => (
@@ -167,7 +167,7 @@ const about = () => {
           ))}
         </Box>
         <Box>
-          <Heading as="h5" fontSize="lg">
+          <Heading as="h5" fontSize="xl">
             Tools
           </Heading>
           {tools.map((tool, idx) => (
@@ -175,7 +175,7 @@ const about = () => {
           ))}
         </Box>
         <Box>
-          <Heading as="h5" fontSize="lg">
+          <Heading as="h5" fontSize="xl">
             Frameworks
           </Heading>
           {frameworks.map((framework, idx) => (
@@ -183,7 +183,7 @@ const about = () => {
           ))}
         </Box>
         <Box>
-          <Heading as="h5" fontSize="lg">
+          <Heading as="h5" fontSize="xl">
             Currently Learning
           </Heading>
           {learnings.map((learning, idx) => (
