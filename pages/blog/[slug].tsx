@@ -42,7 +42,9 @@ const Post = ({ source, meta }: MDXPost) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getFiles("blog");
+  const posts = await getFiles("blog").catch(() => {
+    return [];
+  });
   return {
     paths: posts.map((p) => ({
       params: {
