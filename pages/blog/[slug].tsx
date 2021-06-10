@@ -1,3 +1,4 @@
+import Head from "@/components/Head";
 import Main from "@/components/Main";
 import MDXComponents from "@/components/MDXComponents";
 import { RouteLink } from "@/components/RouteLink";
@@ -16,6 +17,7 @@ const Post = ({ source, meta }: MDXPost) => {
   });
   return (
     <Main maxW="3xl">
+      <Head title={meta.title} description={meta.description} />
       <Flex direction="column">
         <RouteLink href={`/blog/${meta.slug}`}>
           <Heading fontSize={["4xl", "6xl"]} mt={[4, 6]}>

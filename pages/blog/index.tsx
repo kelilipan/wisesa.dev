@@ -1,3 +1,4 @@
+import Head from "@/components/Head";
 import Main from "@/components/Main";
 import PostCard from "@/components/PostCard";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
@@ -13,6 +14,10 @@ const Blog = ({ posts }: BlogProps) => {
   );
   return (
     <Main>
+      <Head
+        title="Blog"
+        description="Some tech stuff and my random thoughts."
+      />
       <Heading mt={[4, 6]}>Blog</Heading>
       <Text>Some tech stuff and my random thoughts.</Text>
       <SimpleGrid columns={[1, 2]} gap="4">

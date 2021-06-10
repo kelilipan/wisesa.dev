@@ -7,6 +7,8 @@ import PrismTheme from "@/components/PrismTheme";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import Router from "next/router";
+import { DefaultSeo } from "next-seo";
+import config from "site.config";
 
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -16,6 +18,25 @@ Router.events.on("routeChangeError", () => NProgress.done());
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
+      <DefaultSeo
+        description="A computer science student and a software engineer."
+        defaultTitle="Hi i'm Wisesa."
+        titleTemplate={`%s · Wisesa.dev`}
+        openGraph={{
+          title: "Hi i'm Wisesa.",
+          description: "A computer science student and a software engineer.",
+          type: "website",
+          site_name: "Wisesa.dev",
+          images: [
+            {
+              url: `${config.baseUrl}/img/og-default.jpg`,
+              width: 1200,
+              height: 627,
+              alt: "Wisesa.dev",
+            },
+          ],
+        }}
+      />
       <PrismTheme>
         <Flex minH="100vh" direction="column">
           <Navbar />
