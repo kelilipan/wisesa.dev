@@ -112,15 +112,14 @@ export default function Index() {
             related stuff and now fall in love with react.js and javascript.
           </Text>
           <Text textAlign={["center", "left"]} maxW="550px">
-            Checkout my past works{" "}
+            Checkout my{" "}
             <RouteLink
               href="/projects"
               pos="relative"
               zIndex={6}
               fontWeight="semibold"
-              aria-label="check out my project"
             >
-              here
+              past works
             </RouteLink>{" "}
             or learn more{" "}
             <RouteLink
