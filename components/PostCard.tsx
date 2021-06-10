@@ -20,7 +20,7 @@ const PostCard = ({
   });
   const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
   return (
-    <RouteLink href={`/blog/${slug}`}>
+    <RouteLink href={`/blog/${slug}`} textDecor="none!important">
       <Box
         borderRadius="5px"
         borderColor={borderColor}
