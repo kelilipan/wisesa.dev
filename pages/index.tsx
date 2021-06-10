@@ -1,3 +1,4 @@
+import { useRef, useState, forwardRef } from "react";
 import Main from "@/components/Main";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Heading, Link, Stack, Text, VStack } from "@chakra-ui/layout";
@@ -5,7 +6,7 @@ import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { ReactSketchCanvasProps } from "react-sketch-canvas";
-import { useRef, useState, forwardRef } from "react";
+import { RouteLink } from "@/components/RouteLink";
 import CanvasControl from "@/components/CanvasControl";
 //todo: fix type definition
 const ReactSketchCanvas = dynamic<ReactSketchCanvasProps>(
@@ -106,9 +107,30 @@ export default function Index() {
               </Link>
             </Text>
           </Box>
-          <Text textAlign={["center", "left"]} maxW="550px">
-            A student and a software <i>edgy</i>neer. I love exploring new tech
+          <Text fontSize="lg" textAlign={["center", "left"]} maxW="550px">
+            A student and a software <i>edgy</i>neer. I love exploring tech
             related stuff and now fall in love with react.js and javascript.
+          </Text>
+          <Text textAlign={["center", "left"]} maxW="550px">
+            Checkout my past works{" "}
+            <RouteLink
+              href="/project"
+              pos="relative"
+              zIndex={6}
+              fontWeight="semibold"
+            >
+              here
+            </RouteLink>{" "}
+            or learn more{" "}
+            <RouteLink
+              href="/about"
+              pos="relative"
+              zIndex={6}
+              fontWeight="semibold"
+            >
+              about me
+            </RouteLink>
+            .
           </Text>
         </VStack>
         <Box

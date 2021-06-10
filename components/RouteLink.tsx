@@ -1,59 +1,37 @@
+import { PropsWithChildren } from "react";
+import NextLink from "next/link";
+import { LinkProps as NextLinkProps } from "next/dist/client/link";
 import {
-  forwardRef,
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
 } from "@chakra-ui/react";
-import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import { ReactElement } from "react";
-type Rename<T, K extends keyof T, N extends string> = Pick<
-  T,
-  Exclude<keyof T, K>
-> &
-  { [P in N]: T[K] };
-type LinkProps = Partial<Rename<NextLinkProps, "as", "asRoute">> &
-  Pick<
-    NextLinkProps,
-    "href" | "passHref" | "prefetch" | "replace" | "scroll" | "shallow"
-  > &
-  Pick<ChakraLinkProps, "children" | "isExternal" | "variant">;
 
-export const Link = forwardRef<LinkProps, "a">(
-  (
-    {
-      asRoute,
-      children,
-      href,
-      isExternal,
-      passHref = true,
-      prefetch,
-      replace,
-      scroll,
-      shallow,
-      variant,
-      ...chakraInternals
-    }: LinkProps,
-    ref
-  ): ReactElement => {
-    return (
-      <NextLink
-        as={asRoute}
-        href={href}
-        passHref={passHref}
-        prefetch={prefetch}
-        replace={replace}
-        scroll={scroll}
-        shallow={shallow}
-      >
-        <ChakraLink
-          isExternal={isExternal}
-          ref={ref}
-          variant={variant}
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...chakraInternals}
-        >
-          {children}
-        </ChakraLink>
-      </NextLink>
-    );
-  }
-);
+export type NextChakraLinkProps = PropsWithChildren<
+  NextLinkProps & Omit<ChakraLinkProps, "as">
+>;
+
+//  Has to be a new component because both chakra and next share the `as` keyword
+export const RouteLink = ({
+  href,
+  as,
+  replace,
+  scroll,
+  shallow,
+  prefetch,
+  children,
+  ...chakraProps
+}: NextChakraLinkProps) => {
+  return (
+    <NextLink
+      passHref={true}
+      href={href}
+      as={as}
+      replace={replace}
+      scroll={scroll}
+      shallow={shallow}
+      prefetch={prefetch}
+    >
+      <ChakraLink {...chakraProps}>{children}</ChakraLink>
+    </NextLink>
+  );
+};
