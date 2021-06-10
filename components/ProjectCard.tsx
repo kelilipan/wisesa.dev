@@ -43,7 +43,7 @@ const ProjectCard = ({
     <Stack direction={["column", "row"]} w="full">
       <AspectRatio ratio={16 / 9} w={[null, "512px"]}>
         <Box>
-          <Image width="512" height="312" src={image} alt={title} />
+          <Image width="512" height="288" src={image} alt={title} />
         </Box>
       </AspectRatio>
       <Flex pl={[0, 4]} direction="column" w={["100%", "50%"]}>
@@ -72,16 +72,20 @@ const ProjectCard = ({
           ))}
         </Stack>
         <Stack direction="row" mt="4">
-          <Link isExternal href={url}>
-            <Button size="sm" leftIcon={<FaArrowRight />}>
-              Visit Project
-            </Button>
-          </Link>
-          <Link isExternal href={source}>
-            <Button size="sm" variant="outline" leftIcon={<FaCode />}>
-              Source Code
-            </Button>
-          </Link>
+          {url && (
+            <Link isExternal href={url}>
+              <Button size="sm" leftIcon={<FaArrowRight />}>
+                Visit Project
+              </Button>
+            </Link>
+          )}
+          {source && (
+            <Link isExternal href={source}>
+              <Button size="sm" variant="outline" leftIcon={<FaCode />}>
+                Source Code
+              </Button>
+            </Link>
+          )}
         </Stack>
       </Flex>
     </Stack>

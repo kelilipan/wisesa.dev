@@ -4,14 +4,17 @@ import data from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Head from "@/components/Head";
 const projects = () => {
+  const filteredProject = data.sort(
+    (a, b) => Number(new Date(b.createdAt)) - Number(new Date(a.createdAt))
+  );
   return (
     <Main>
       <Head title="Projects" description="Some collection of my past works." />
       <Heading mt={[4, 6]}>Projects</Heading>
       <Text>Some collection of my past works.</Text>
-      {data.length > 0 ? (
+      {filteredProject.length > 0 ? (
         <Stack w="full" spacing={[6, 4]}>
-          {data.map((project, idx) => (
+          {filteredProject.map((project, idx) => (
             <ProjectCard {...project} key={idx} />
           ))}
         </Stack>
