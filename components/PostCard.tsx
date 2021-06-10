@@ -13,7 +13,7 @@ const PostCard = ({
 }: PostType) => {
   console.log(image);
   const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
-  const date = new Date(publishedAt).toLocaleDateString("id-ID", {
+  const date = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -36,8 +36,10 @@ const PostCard = ({
             _groupHover={{ opacity: 0.9 }}
           >
             <Image
+              alt={title}
               width="512"
               height="267"
+              quality="100"
               src={image ? image : "/og-post-default.jpg"}
             />
           </Box>

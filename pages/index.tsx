@@ -89,7 +89,12 @@ export default function Index() {
               top="-10px"
               right="20px"
             >
-              <Image src="/doodle4.svg" width="200px" height="100px" />
+              <Image
+                alt="doodle"
+                src="/doodle4.svg"
+                width="200px"
+                height="100px"
+              />
             </Box>
             <Text
               textAlign={["center", "left"]}
@@ -114,7 +119,7 @@ export default function Index() {
           <Text textAlign={["center", "left"]} maxW="550px">
             Checkout my past works{" "}
             <RouteLink
-              href="/project"
+              href="/projects"
               pos="relative"
               zIndex={6}
               fontWeight="semibold"
@@ -139,14 +144,19 @@ export default function Index() {
           width={["300px", "400px"]}
           minWidth={["300px", "400px"]}
         >
-          <Image src="/me.svg" width="400px" height="400px" />
+          <Image alt="doodle" src="/me.svg" width="400px" height="400px" />
           <Box
             position="absolute"
             zIndex={2}
             bottom={["-80px", "-70px"]}
             left={["10px", "55px"]}
           >
-            <Image src="/doodle7.svg" width="300px" height="200px" />
+            <Image
+              alt="doodle"
+              src="/doodle7.svg"
+              width="300px"
+              height="200px"
+            />
           </Box>
         </Box>
       </Stack>

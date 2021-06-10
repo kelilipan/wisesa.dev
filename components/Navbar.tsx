@@ -32,8 +32,8 @@ const Navbar = () => {
       url: "/blog",
     },
     {
-      text: "Project",
-      url: "/project",
+      text: "Projects",
+      url: "/projects",
     },
     {
       text: "About",

@@ -9,7 +9,7 @@ import { MDXRemote } from "next-mdx-remote";
 
 const Post = ({ source, meta }: MDXPost) => {
   console.log(meta);
-  const date = new Date(meta.publishedAt).toLocaleDateString("id-ID", {
+  const date = new Date(meta.publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
