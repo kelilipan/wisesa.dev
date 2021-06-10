@@ -14,6 +14,7 @@ const ThemeSwitcher = (props) => {
         className={style.checkbox}
         id="theme-switcher"
         onClick={toggleColorMode}
+        aria-label="theme switcher"
       />
       <label
         className={style.label}

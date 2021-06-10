@@ -118,6 +118,7 @@ export default function Index() {
               pos="relative"
               zIndex={6}
               fontWeight="semibold"
+              aria-label="check out my project"
             >
               here
             </RouteLink>{" "}
