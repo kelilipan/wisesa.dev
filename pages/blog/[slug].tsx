@@ -29,7 +29,7 @@ const Post = ({ source, meta }: MDXPost) => {
             <RouteLink href="/about">Wisesa</RouteLink> / {date}
           </Text>
         </Flex>
-        <Divider mt="4" />
+        <Divider mt="4" mb="2" />
       </Flex>
       <MDXRemote {...source} components={MDXComponents} />
     </Main>
