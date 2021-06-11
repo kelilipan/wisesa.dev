@@ -53,12 +53,13 @@ const about = () => {
       </style>
       <Flex justifyContent="center" mt={[4, 6]} pos="relative">
         <Image
-          src="/me.jpeg"
+          src="/me-2.jpg"
           width="280"
           height="280"
           alt="me"
           quality={90}
           className="me-image noselect"
+          priority
         />
         <Box
           width="300px"
@@ -76,6 +77,7 @@ const about = () => {
             src="/doodle7.svg"
             width="300px"
             height="200px"
+            priority
           />
         </Box>
       </Flex>

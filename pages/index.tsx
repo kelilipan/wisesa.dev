@@ -48,10 +48,7 @@ export default function Index() {
           content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa"
         />
       </NextHead>
-      <Head
-        title="Hi i'm Wisesa."
-        description="A computer science student and a software engineer."
-      />
+      <Head description="A computer science student and a software engineer." />
       <Canvas
         ref={canvasRef}
         /*
@@ -152,7 +149,13 @@ export default function Index() {
           width={["300px", "400px"]}
           minWidth={["300px", "400px"]}
         >
-          <Image alt="doodle" src="/me.svg" width="400px" height="400px" />
+          <Image
+            alt="doodle"
+            src="/me.svg"
+            priority
+            width="400px"
+            height="400px"
+          />
           <Box
             position="absolute"
             zIndex={2}
@@ -160,6 +163,7 @@ export default function Index() {
             left={["10px", "55px"]}
           >
             <Image
+              priority
               alt="doodle"
               src="/doodle7.svg"
               width="300px"
