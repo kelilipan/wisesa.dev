@@ -30,8 +30,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           images: [
             {
               url: `${config.baseUrl}og-default.jpg`,
-              width: 1200,
-              height: 627,
+              width: 800,
+              height: 418,
               alt: "Wisesa.dev",
             },
           ],
