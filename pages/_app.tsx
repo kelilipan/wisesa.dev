@@ -25,18 +25,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         openGraph={{
           title: "Hi i'm Wisesa.",
           description: "A computer science student and a software engineer.",
-          type: "website",
-          site_name: "Wisesa.dev",
           images: [
             {
               url: `${config.baseUrl}og-default.jpg`,
-              alt: "Wisesa.dev",
             },
           ],
         }}
         twitter={{
           handle: "@svspcs",
-          site: "@svspcs",
           cardType: "summary_large_image",
         }}
       />
