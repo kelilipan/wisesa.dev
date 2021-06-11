@@ -48,7 +48,6 @@ export default function Index() {
           content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa"
         />
       </NextHead>
-      <Head description="A computer science student and a software engineer." />
       <Canvas
         ref={canvasRef}
         /*
