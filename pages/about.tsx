@@ -41,7 +41,7 @@ const about = () => {
     <b>TypeScript</b>,
   ];
   return (
-    <Main maxW="4xl" mb="6">
+    <Main maxW="3xl" mb="6">
       <Head title="About" />
       <style global jsx>
         {`
@@ -152,14 +152,12 @@ const about = () => {
         </Link>
         .
       </Text>
-      <Text>
-        I’m always excited to connect with everyone so please don’t hesitate to{" "}
-        <Link textDecoration="underline" href="mailto:hi@wisesa.dev">
-          get in touch
-        </Link>{" "}
-        with me.
+
+      <Text mt="2">
+        Here are several tools that I used (and currently learning how to use
+        it):
       </Text>
-      <SimpleGrid columns={[2, 4]} pt="4">
+      <SimpleGrid columns={[2, 4]} pt="2">
         <Box>
           <Heading as="h5" fontSize="xl">
             Languages
@@ -194,7 +192,14 @@ const about = () => {
         </Box>
       </SimpleGrid>
       <Box pt="4">
-        <Text>Get in touch with me by following my social media below:</Text>
+        <Text>
+          I’m always excited to connect with everyone so please don’t hesitate
+          to{" "}
+          <Link textDecoration="underline" href="mailto:hi@wisesa.dev">
+            get in touch
+          </Link>{" "}
+          with me by following my social media bellow:
+        </Text>
         <UnorderedList>
           {socials.map((data, idx) => (
             <ListItem key={idx}>

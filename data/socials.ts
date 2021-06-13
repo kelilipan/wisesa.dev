@@ -19,4 +19,8 @@ export default [
     name: "Medium",
     url: "https://svspicious.medium.com/",
   },
+  {
+    name: "Spotify",
+    url: "https://open.spotify.com/user/21xnhzh4qf74t5t4lp2fammai",
+  },
 ];
