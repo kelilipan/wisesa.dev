@@ -36,5 +36,14 @@
   },
   "editor.formatOnSave": true,
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 120
+  "editor.wordWrapColumn": 120,
+  "files.associations": {
+    "*.mdx": "mdx"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "[mdx]": {
+    "editor.formatOnSave": false
+  }
 }
