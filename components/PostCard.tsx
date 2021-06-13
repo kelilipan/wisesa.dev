@@ -1,6 +1,6 @@
 import { PostType } from "@/types/post";
 import { useColorModeValue } from "@chakra-ui/color-mode";
-import { AspectRatio, Box, Heading, Text } from "@chakra-ui/layout";
+import { AspectRatio, Box, Heading, Text, Tooltip } from "@chakra-ui/react";
 import Image from "next/image";
 import { RouteLink } from "./RouteLink";
 
@@ -10,7 +10,9 @@ const PostCard = ({
   description,
   image,
   publishedAt,
+  readTime,
 }: PostType) => {
+  console.log(readTime);
   const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
   const date = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
@@ -48,7 +50,15 @@ const PostCard = ({
             {title}
           </Heading>
           <Text>{description}</Text>
-          <Text mt="2">{date}</Text>
+          <Box fontSize="sm" mt="2" opacity="0.8">
+            {date} •{" "}
+            <Tooltip
+              label={`This post has ${readTime?.words} words. Reading time is calculated using 200WPM Reading speed.`}
+              aria-label="Reading time"
+            >
+              {readTime?.text}
+            </Tooltip>
+          </Box>
         </Box>
       </Box>
     </RouteLink>

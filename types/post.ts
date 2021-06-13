@@ -6,6 +6,12 @@ export type PostType = {
   description: string;
   publishedAt: string;
   image?: string;
+  readTime?: {
+    text: string;
+    time: number;
+    words: number;
+    minutes: number;
+  };
 };
 
 export type MDXPost = {

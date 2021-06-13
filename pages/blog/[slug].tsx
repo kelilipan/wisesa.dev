@@ -4,7 +4,15 @@ import MDXComponents from "@/components/MDXComponents";
 import { RouteLink } from "@/components/RouteLink";
 import { getFileBySlug, getFiles } from "@/lib/mdx";
 import { MDXPost } from "@/types/post";
-import { Avatar, Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Divider,
+  Flex,
+  Heading,
+  Text,
+  Tooltip,
+} from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 
@@ -28,10 +36,18 @@ const Post = ({ source, meta }: MDXPost) => {
           </Heading>
         </RouteLink>
         <Text>{meta.description}</Text>
-        <Flex mt="5">
-          <Avatar src="/android-icon-48x48.png" name="Wisesa" size="xs" />
+        <Flex mt="5" fontSize="sm" alignItems="center">
+          <Avatar src="/android-icon-48x48.png" name="Wisesa" boxSize="24px" />
           <Text ml="2">
             <RouteLink href="/about">Wisesa</RouteLink> / {date}
+          </Text>
+          <Text ml="auto">
+            <Tooltip
+              label={`This post has ${meta.readTime?.words} words. Reading time is calculated using 200WPM Reading speed.`}
+              aria-label="Reading time"
+            >
+              {meta.readTime?.text}
+            </Tooltip>
           </Text>
         </Flex>
         <Divider mt="4" mb="2" />

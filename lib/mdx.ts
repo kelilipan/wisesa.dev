@@ -4,6 +4,7 @@ import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import mdxPrism from "mdx-prism";
 import { MDXPost, PostType } from "@/types/post";
+import readingTime from "reading-time";
 
 const root = process.cwd();
 
@@ -31,6 +32,7 @@ export async function getFileBySlug(
     source,
     meta: {
       slug,
+      readTime: readingTime(content),
       title: data.title,
       description: data.description,
       publishedAt: data.publishedAt,
@@ -38,22 +40,23 @@ export async function getFileBySlug(
     },
   };
 }
+
 //todo:types
 export const getAllFilesFrontMatter = async (
   type: string
 ): Promise<PostType[]> => {
   const files: any[] = fs.readdirSync(path.join(root, "data", type));
 
-  return files.reduce((allPosts, postSlug) => {
+  return files.reduce(async (allPosts, postSlug) => {
     const source = fs.readFileSync(
       path.join(root, "data", type, postSlug),
       "utf8"
     );
-    const { data } = matter(source);
-
+    const { data, content } = matter(source);
     return [
       {
         ...data,
+        readTime: readingTime(content),
         slug: postSlug.replace(".mdx", ""),
       },
       ...allPosts,
