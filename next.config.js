@@ -27,7 +27,15 @@ module.exports = withPWA({
     dest: "public",
     register: true,
     // https://github.com/shadowwalker/next-pwa/issues/147
-    publicExcludes: ["!blog/**/*"],
+    publicExcludes: [
+      "!blog/**/*",
+      "!projects/**/*",
+      "!og-default.jpg",
+      "!og-post-default.jpg",
+      "!preview.png",
+      "!me-2.jpg",
+      "!me.svg",
+    ],
     runtimeCaching: [
       {
         // MUST be the same as "start_url" in manifest.json
