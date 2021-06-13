@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import splitbee from "@splitbee/web";
 import type { AppProps } from "next/app";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
@@ -16,6 +18,14 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    // enable analytics on production
+    process.env.NODE_ENV === "production" &&
+      splitbee.init({
+        scriptUrl: "/bee.js",
+        apiUrl: "/_hive",
+      });
+  }, []);
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo

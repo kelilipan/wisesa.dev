@@ -12,6 +12,7 @@ export default class Document extends NextDocument {
             href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
             rel="stylesheet"
           />
+          <script async data-api="/_hive" src="/bee.js"></script>
           <Favicon />
         </Head>
         <body>
