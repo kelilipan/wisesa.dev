@@ -33,3 +33,7 @@ Tools i'm using to build this project
 - [leerob.io](https://leerob.io/)
 - [afnizarnur.com](https://afnizarnur.com/)
 - [griko.id](https://griko.id/)
+
+## License
+
+Licensed under [MIT License, Copyright (c) 2021 Wisesa](./LICENSE)
