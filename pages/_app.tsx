@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           description: "A computer science student and a software engineer.",
           images: [
             {
-              url: `${config.baseUrl}og-default.jpg`,
+              url: `${config.baseUrl}favicon/og-default.jpg`,
             },
           ],
         }}

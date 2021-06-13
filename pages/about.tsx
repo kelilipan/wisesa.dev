@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   UnorderedList,
   ListItem,
+  Image as ChakraImage,
 } from "@chakra-ui/react";
 import Head from "@/components/Head";
 import Image from "next/image";
@@ -52,14 +53,12 @@ const about = () => {
         `}
       </style>
       <Flex justifyContent="center" mt={[4, 6]} pos="relative">
-        <Image
+        <ChakraImage
           src="/me-2.jpg"
-          width="280"
-          height="280"
+          width="280px"
+          height="280px"
           alt="me"
-          quality={90}
           className="me-image noselect"
-          priority
         />
         <Box
           width="300px"

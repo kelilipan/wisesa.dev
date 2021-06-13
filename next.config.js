@@ -30,10 +30,8 @@ module.exports = withPWA({
     publicExcludes: [
       "!blog/**/*",
       "!projects/**/*",
-      "!og-default.jpg",
-      "!og-post-default.jpg",
+      "!favicon/**/*",
       "!preview.png",
-      "!me-2.jpg",
       "!me.svg",
     ],
     runtimeCaching: [

@@ -13,7 +13,7 @@ const Head = ({ title, description, images, image, ...props }: HeadProps) => {
       title={title}
       description={description}
       openGraph={{
-        site_name: "Ketringan",
+        site_name: "Wisesa.dev",
         title: `${title} · Wisesa.dev`,
         description,
         url: config.baseUrl + (router.asPath || ""),
