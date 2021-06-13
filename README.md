@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://wisesa.dev/preview.png">
+  <img src="https://wisesa.dev/preview.png" alt='preview'>
 </p>
 <p align="center">
   Source code of my <a href='https://wisesa.dev'>personal website™</a>. Made using next.js and chakra-ui.
@@ -26,6 +26,12 @@ Tools i'm using to build this project
 - [next-pwa](https://github.com/shadowwalker/next-pwa)
 - [Splitbee](https://splitbee.io/)
 - [Hosted on Vercel](https://vercel.com)
+
+
+<p align="center">
+  <img src="https://wisesa.dev/blog/well.jpg" alt='yes'>
+</p>
+
 
 ## Credits
 
