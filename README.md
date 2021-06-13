@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/svspicious/wisesa.dev/head.png">
+  <img src="https://wisesa.dev/preview.png">
 </p>
 <p align="center">
   Source code of my <a href='https://wisesa.dev'>personal website™</a>. Made using next.js and chakra-ui.
