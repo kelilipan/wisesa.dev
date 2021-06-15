@@ -37,7 +37,11 @@ const Post = ({ source, meta }: MDXPost) => {
         </RouteLink>
         <Text>{meta.description}</Text>
         <Flex mt="5" fontSize="sm" alignItems="center">
-          <Avatar src="/android-icon-48x48.png" name="Wisesa" boxSize="24px" />
+          <Avatar
+            src="/favicon/android-icon-48x48.png"
+            name="Wisesa"
+            boxSize="24px"
+          />
           <Text ml="2">
             <RouteLink href="/about">Wisesa</RouteLink> / {date}
           </Text>
