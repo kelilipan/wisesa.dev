@@ -1,9 +1,5 @@
 const withPWA = require("next-pwa");
 module.exports = withPWA({
-  future: {
-    webpack5: true,
-  },
-
   // https://nextjs.org/docs/basic-features/image-optimization#domains
   images: {
     domains: ["pbs.twimg.com"],
