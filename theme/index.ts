@@ -15,6 +15,7 @@ export default extendTheme({
     global: (props) => ({
       html: {
         scrollBehavior: "smooth",
+        overflowY: "scroll",
       },
       body: {
         color: mode("black", "whiteAlpha.900")(props),

@@ -52,7 +52,7 @@ export default function Index() {
         ref={canvasRef}
         /*
       // @ts-ignore */
-        width="100vw"
+        width="100%"
         height="100vh"
         background="transparent"
         style={{
