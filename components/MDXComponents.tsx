@@ -31,7 +31,14 @@ const CustomHeading = ({
 }): React.ReactElement | null => {
   return (
     <Link href={`#${id}`}>
-      <Heading as="h1" id={id} size={size} {...props} mt={[4, 6]} />
+      <Heading
+        as="h1"
+        id={id}
+        size={size}
+        {...props}
+        mt={[4, 6]}
+        sx={{ scrollMarginTop: ["54px", "70px"] }}
+      />
     </Link>
   );
 };

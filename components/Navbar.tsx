@@ -42,6 +42,7 @@ const Navbar = () => {
   ];
   return (
     <Box
+      as="nav"
       bgColor="whiteAlpha.50"
       zIndex="modal"
       w="full"
@@ -60,7 +61,7 @@ const Navbar = () => {
       }}
       borderBottomColor={borderBottomColor}
       borderBottomWidth="2px"
-      pos="fixed"
+      pos="sticky"
       top={0}
     >
       <Flex mx="auto" w="full" maxW="5xl">
