@@ -29,12 +29,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo
-        description="A computer science student and a software engineer."
+        description="Personal website of Anvaqta Tangguh Wisesa. A computer science student and a software engineer."
         defaultTitle="Hi i'm Wisesa."
         titleTemplate={`%s · Wisesa.dev`}
         openGraph={{
           title: "Hi i'm Wisesa.",
-          description: "A computer science student and a software engineer.",
+          description:
+            "Personal website of Anvaqta Tangguh Wisesa. A computer science student and a software engineer.",
           images: [
             {
               url: `${config.baseUrl}favicon/og-default.jpg`,

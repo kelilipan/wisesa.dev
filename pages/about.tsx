@@ -81,7 +81,7 @@ const about = () => {
         </Box>
       </Flex>
       <Text pt="4">
-        Hello! my name is <b>Anvaqta Tangguh Wisesa</b>, you can call me{" "}
+        Hello, my name is <b>Anvaqta Tangguh Wisesa</b>, you can call me{" "}
         <b>Wisesa</b> or <b>Esa</b> for short. Yes, i changed my nickname haha,
         if you're my school/college friend you maybe know me as <b>Vaq</b> or{" "}
         <b>Anvaq</b> but that's ok, you can call me anything you want as long as
