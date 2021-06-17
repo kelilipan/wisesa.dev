@@ -2,7 +2,6 @@ import { useRef, useState, forwardRef } from "react";
 import Main from "@/components/Main";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Heading, Link, Stack, Text, VStack } from "@chakra-ui/layout";
-import Head from "@/components/Head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { ReactSketchCanvasProps } from "react-sketch-canvas";

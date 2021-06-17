@@ -11,6 +11,7 @@ import {
   Image as ChakraImage,
 } from "@chakra-ui/react";
 import Head from "@/components/Head";
+import NextHead from "next/head";
 import Image from "next/image";
 import socials from "@/data/socials";
 const about = () => {
@@ -44,6 +45,9 @@ const about = () => {
   return (
     <Main maxW="3xl" mb="6">
       <Head title="About" />
+      <NextHead>
+        <link rel="preload" as="image" href="/me-2.jpg" />
+      </NextHead>
       <style global jsx>
         {`
           .me-image {
