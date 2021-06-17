@@ -49,7 +49,22 @@ export default function Index() {
           content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa"
         />
       </NextHead>
-
+      <Canvas
+        ref={canvasRef}
+        /*
+      // @ts-ignore */
+        width="100%"
+        height="100vh"
+        background="transparent"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: 5,
+        }}
+        strokeWidth={strokeWidth}
+        strokeColor={color}
+      />
       <CanvasControl
         clearCanvas={clearHandler}
         color={color}
