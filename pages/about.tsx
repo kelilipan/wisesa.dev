@@ -12,6 +12,7 @@ import {
 import Head from "@/components/Head";
 import Image from "next/image";
 import socials from "@/data/socials";
+import Doodle1 from "@/components/doodle/Doodle1";
 const about = () => {
   const languages = ["C++", "JavaScript", "PHP", "Python", "SQL"];
   const tools = [
@@ -70,14 +71,7 @@ const about = () => {
           right={0}
           mx="auto"
         >
-          <Image
-            className="noselect"
-            alt="doodle"
-            src="/doodle7.svg"
-            width="300"
-            height="200"
-            priority
-          />
+          <Doodle1 />
         </Box>
       </Flex>
       <Text pt="4">

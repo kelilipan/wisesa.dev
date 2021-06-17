@@ -8,6 +8,8 @@ import { ReactSketchCanvasProps } from "react-sketch-canvas";
 import { RouteLink } from "@/components/RouteLink";
 import CanvasControl from "@/components/CanvasControl";
 import NextHead from "next/head";
+import Doodle1 from "@/components/doodle/Doodle1";
+import Doodle2 from "@/components/doodle/Doodle2";
 //todo: fix type definition
 const ReactSketchCanvas = dynamic<ReactSketchCanvasProps>(
   () => import("react-sketch-canvas").then((c) => c.ReactSketchCanvas),
@@ -47,22 +49,7 @@ export default function Index() {
           content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa"
         />
       </NextHead>
-      <Canvas
-        ref={canvasRef}
-        /*
-      // @ts-ignore */
-        width="100%"
-        height="100vh"
-        background="transparent"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: 5,
-        }}
-        strokeWidth={strokeWidth}
-        strokeColor={color}
-      />
+
       <CanvasControl
         clearCanvas={clearHandler}
         color={color}
@@ -90,13 +77,7 @@ export default function Index() {
               top="-10px"
               right="20px"
             >
-              <Image
-                priority
-                alt="doodle"
-                src="/doodle4.svg"
-                width="200px"
-                height="100px"
-              />
+              <Doodle2 />
             </Box>
             <Text
               textAlign={["center", "left"]}
@@ -161,13 +142,14 @@ export default function Index() {
             bottom={["-80px", "-70px"]}
             left={["10px", "55px"]}
           >
-            <Image
+            {/* <Image
               priority
               alt="doodle"
               src="/doodle7.svg"
               width="300px"
               height="200px"
-            />
+            /> */}
+            <Doodle1 />
           </Box>
         </Box>
       </Stack>
