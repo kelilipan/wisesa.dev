@@ -8,10 +8,8 @@ import {
   SimpleGrid,
   UnorderedList,
   ListItem,
-  Image as ChakraImage,
 } from "@chakra-ui/react";
 import Head from "@/components/Head";
-import NextHead from "next/head";
 import Image from "next/image";
 import socials from "@/data/socials";
 const about = () => {
@@ -45,9 +43,6 @@ const about = () => {
   return (
     <Main maxW="3xl" mb="6">
       <Head title="About" />
-      <NextHead>
-        <link rel="preload" as="image" href="/me-2.jpg" />
-      </NextHead>
       <style global jsx>
         {`
           .me-image {
@@ -57,11 +52,12 @@ const about = () => {
         `}
       </style>
       <Flex justifyContent="center" mt={[4, 6]} pos="relative">
-        <ChakraImage
+        <Image
           src="/me-2.jpg"
-          width="280px"
-          height="280px"
+          width="280"
+          height="280"
           alt="me"
+          priority
           className="me-image noselect"
         />
         <Box
@@ -78,8 +74,8 @@ const about = () => {
             className="noselect"
             alt="doodle"
             src="/doodle7.svg"
-            width="300px"
-            height="200px"
+            width="300"
+            height="200"
             priority
           />
         </Box>

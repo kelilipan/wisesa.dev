@@ -29,6 +29,7 @@ module.exports = withPWA({
       "!favicon/**/*",
       "!preview.png",
       "!me.svg",
+      "!me-2.svg",
     ],
     runtimeCaching: [
       {

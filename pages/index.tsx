@@ -91,6 +91,7 @@ export default function Index() {
               right="20px"
             >
               <Image
+                priority
                 alt="doodle"
                 src="/doodle4.svg"
                 width="200px"
