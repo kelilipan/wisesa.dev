@@ -37,6 +37,7 @@ module.exports = withPWA({
       "!preview.png",
       "!me.svg",
       "!me-2.svg",
+      "!sitemap.xml",
     ],
     runtimeCaching: [
       {
