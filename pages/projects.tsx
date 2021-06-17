@@ -10,7 +10,9 @@ const projects = () => {
   return (
     <Main>
       <Head title="Projects" description="Some collection of my past works." />
-      <Heading mt={[4, 6]}>Projects</Heading>
+      <Heading mt={[4, 6]} fontSize={["4xl", "6xl"]}>
+        Projects
+      </Heading>
       <Text>Some collection of my past works.</Text>
       {filteredProject.length > 0 ? (
         <Stack w="full" spacing={[6, 4]}>

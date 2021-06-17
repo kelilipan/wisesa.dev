@@ -17,7 +17,9 @@ const Blog = ({ posts }: BlogProps) => {
         title="Blog"
         description="Some tech stuff and my random thoughts."
       />
-      <Heading mt={[4, 6]}>Blog</Heading>
+      <Heading mt={[4, 6]} fontSize={["4xl", "6xl"]}>
+        Blog
+      </Heading>
       <Text>Some tech stuff and my random thoughts.</Text>
       {filteredBlogPosts.length > 0 ? (
         <SimpleGrid columns={[1, 2]} gap="4">

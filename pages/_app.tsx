@@ -12,13 +12,14 @@ import NProgress from "nprogress";
 import Router from "next/router";
 import { DefaultSeo } from "next-seo";
 import config from "site.config";
-
+import { AnimatePresence } from "framer-motion";
+import MotionBox from "@/components/MotionBox";
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     // enable analytics on production
     process.env.NODE_ENV === "production" &&
@@ -51,7 +52,26 @@ function MyApp({ Component, pageProps }: AppProps) {
       <PrismTheme>
         <Flex minH="100vh" direction="column">
           <Navbar />
-          <Component {...pageProps} />
+          <AnimatePresence exitBeforeEnter>
+            <MotionBox
+              key={router.route}
+              display="flex"
+              flexDirection="column"
+              animate="enter"
+              as="main"
+              exit="exit"
+              h="full"
+              flexGrow={1}
+              initial="initial"
+              variants={{
+                initial: { opacity: 0, y: 5 },
+                enter: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+                exit: { opacity: 0, transition: { duration: 0.1 } },
+              }}
+            >
+              <Component {...pageProps} />
+            </MotionBox>
+          </AnimatePresence>
           <Footer />
         </Flex>
       </PrismTheme>
