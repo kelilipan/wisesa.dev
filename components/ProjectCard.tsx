@@ -43,11 +43,17 @@ const ProjectCard = ({
     <Stack direction={["column", "row"]} w="full">
       <AspectRatio ratio={16 / 9} w={[null, "512px"]}>
         <Box>
-          <Image width="512" height="288" src={image} alt={title} />
+          <Image
+            width="512"
+            height="288"
+            src={image}
+            alt={title}
+            placeholder="blur"
+          />
         </Box>
       </AspectRatio>
       <Flex pl={[0, 4]} direction="column" w={["100%", "50%"]}>
-        {url !== undefined && source !== undefined ? (
+        {url !== undefined || source !== undefined ? (
           <Link isExternal href={url ? url : source}>
             <Heading>{title}</Heading>
           </Link>

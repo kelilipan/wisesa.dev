@@ -54,7 +54,8 @@ const about = () => {
       </style>
       <Flex justifyContent="center" mt={[4, 6]} pos="relative">
         <Image
-          src="/me-2.jpg"
+          src={require("public/me-2.jpg")}
+          placeholder="blur"
           width="280"
           height="280"
           alt="me"
