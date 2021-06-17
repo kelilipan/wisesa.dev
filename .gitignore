@@ -36,3 +36,5 @@ yarn-error.log*
 **/public/workbox-*.js
 **/public/sw.js
 **/public/fallback-*.js
+
+**/public/sitemap.xml

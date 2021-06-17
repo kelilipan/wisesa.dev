@@ -17,6 +17,13 @@ module.exports = withPWA({
       },
     ];
   },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require("./scripts/generate-sitemap");
+    }
+
+    return config;
+  },
   pwa: {
     disable: process.env.NODE_ENV === "development",
     sourcemap: false,
