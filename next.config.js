@@ -69,6 +69,17 @@ module.exports = withPWA({
         },
       },
       {
+        urlPattern: /\.(?:woff|woff2|ttf|otf)$/i,
+        handler: "CacheFirst",
+        options: {
+          cacheName: "custom-fonts",
+          expiration: {
+            maxEntries: 4,
+            maxAgeSeconds: 365 * 24 * 60 * 60, // 365 days
+          },
+        },
+      },
+      {
         urlPattern: /\.(?:js)$/i,
         handler: "StaleWhileRevalidate",
         options: {

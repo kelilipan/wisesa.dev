@@ -1,3 +1,4 @@
+import "@/styles/global.css";
 import { useEffect } from "react";
 import splitbee from "@splitbee/web";
 import type { AppProps } from "next/app";
