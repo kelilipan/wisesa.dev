@@ -38,3 +38,4 @@ yarn-error.log*
 **/public/fallback-*.js
 
 **/public/sitemap.xml
+.env

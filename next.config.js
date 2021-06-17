@@ -39,6 +39,7 @@ module.exports = withPWA({
       "!me-2.svg",
       "!sitemap.xml",
     ],
+    buildExcludes: [/static\/image\/.*$/],
     runtimeCaching: [
       {
         // MUST be the same as "start_url" in manifest.json
