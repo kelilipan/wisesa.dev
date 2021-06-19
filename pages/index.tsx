@@ -157,13 +157,6 @@ export default function Index() {
             bottom={["-80px", "-70px"]}
             left={["10px", "55px"]}
           >
-            {/* <Image
-              priority
-              alt="doodle"
-              src="/doodle7.svg"
-              width="300px"
-              height="200px"
-            /> */}
             <Doodle1 />
           </Box>
         </Box>
