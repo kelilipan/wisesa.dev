@@ -87,7 +87,7 @@ const project: ProjectType[] = [
     image: require("public/projects/ketringan-old.jpg"),
     description:
       "Ketringan is a startup based on Telkom University, focussed on how to make catering service easier and cheaper. This is the first time I become a software engineer in a startup company. In this company, I'm not only developing web apps but also helping to develop chatbot and other applications.",
-    createdAt: "05-02-2019",
+    createdAt: "11-12-2019",
     technology: [js, react, { name: "bootstrap" }, { name: "laravel" }],
     url: "https://ketringan.com",
   },
