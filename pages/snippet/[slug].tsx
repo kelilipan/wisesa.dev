@@ -20,7 +20,10 @@ import Image from "next/image";
 const Snippet = ({ source, meta }: MDXSnippet) => {
   return (
     <Main maxW="3xl" mb="6">
-      <Head title={meta.title} description={meta.description} />
+      <Head
+        title={meta.title + " · Code Snippets"}
+        description={meta.description}
+      />
       <Flex justifyContent="space-between" alignItems="center" mt={[4, 6]}>
         <Flex direction="column">
           <RouteLink href={`/snippet/${meta.slug}`}>
