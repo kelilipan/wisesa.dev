@@ -39,7 +39,7 @@ const links = [
 ];
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const hoverBg = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
-  const bgColor = useColorModeValue("whiteAlpha.900", "blackAlpha.900");
+  const bgColor = useColorModeValue("white", "rgba(25, 25, 25, 1)");
   const color = useColorModeValue("black", "white");
   const buttonStyle: ButtonProps = {
     as: "a",
