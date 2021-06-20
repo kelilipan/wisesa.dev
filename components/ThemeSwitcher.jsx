@@ -9,11 +9,11 @@ const ThemeSwitcher = (props) => {
   return (
     <Box {...props}>
       <input
-        defaultChecked={isDark}
+        checked={isDark}
         type="checkbox"
         className={style.checkbox}
         id="theme-switcher"
-        onClick={toggleColorMode}
+        onChange={toggleColorMode}
         aria-label="theme switcher"
       />
       <label

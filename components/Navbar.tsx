@@ -1,8 +1,17 @@
 import { Button, ButtonProps } from "@chakra-ui/button";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Flex, HStack } from "@chakra-ui/layout";
+import { IconButton, useDisclosure } from "@chakra-ui/react";
 import Link from "next/link";
+import { FaBars } from "react-icons/fa";
 import ThemeSwitcher from "./ThemeSwitcher";
+
+import dynamic from "next/dynamic";
+
+const MobileDrawer = dynamic(() => import("./MobileMenu"), {
+  ssr: false,
+});
+
 const Navbar = () => {
   const color = useColorModeValue("black", "white");
   const bgColor = useColorModeValue("whiteAlpha.50", "blackAlpha.50");
@@ -11,6 +20,7 @@ const Navbar = () => {
     "blackAlpha.50",
     "whiteAlpha.200"
   );
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const hoverBg = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
   const buttonStyle: ButtonProps = {
     as: "a",
@@ -70,16 +80,34 @@ const Navbar = () => {
             Wisesa.dev
           </Button>
         </Link>
-        <HStack spacing={0}>
-          {links.map((data, idx) => (
-            <Link href={data.url} key={idx} passHref>
-              <Button {...buttonStyle} fontSize="sm">
-                {data.text}
-              </Button>
-            </Link>
-          ))}
-        </HStack>
-        <ThemeSwitcher ml="auto" mr="2" alignSelf="center" />
+        {/* normal nav */}
+        <Flex d={["none", "flex"]} justifyContent="space-between" flex="1">
+          <HStack spacing={0}>
+            {links.map((data, idx) => (
+              <Link href={data.url} key={idx} passHref>
+                <Button {...buttonStyle} fontSize="sm">
+                  {data.text}
+                </Button>
+              </Link>
+            ))}
+          </HStack>
+          <ThemeSwitcher ml="auto" mr="2" alignSelf="center" />
+        </Flex>
+        <Flex
+          d={["flex", "none"]}
+          justifyContent="flex-end"
+          alignItems="center"
+          flex="1"
+        >
+          <IconButton
+            {...buttonStyle}
+            onClick={onOpen}
+            variant="ghost"
+            aria-label="Open navigation menu"
+            icon={<FaBars />}
+          />
+        </Flex>
+        <MobileDrawer isOpen={isOpen} onClose={onClose} />
       </Flex>
     </Box>
   );
