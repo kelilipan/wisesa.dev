@@ -56,11 +56,11 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     <Modal isOpen={isOpen} onClose={onClose} isCentered size="xs">
       <ModalOverlay
         sx={{
-          "@supports (backdrop-filter: blur(8px))": {
-            backdropFilter: "blur(8px)",
+          "@supports (backdrop-filter: blur(4px))": {
+            backdropFilter: "blur(4px)",
           },
-          "@supports (-webkit-backdrop-filter: blur(8px))": {
-            WebkitBackdropFilter: "blur(8px)",
+          "@supports (-webkit-backdrop-filter: blur(4px))": {
+            WebkitBackdropFilter: "blur(4px)",
           },
         }}
       />
