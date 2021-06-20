@@ -18,3 +18,16 @@ export type MDXPost = {
   source: MDXRemoteSerializeResult;
   meta: PostType;
 };
+
+export type SnippetType = {
+  slug: string | string[] | undefined;
+  title: string;
+  description: string;
+  logo: string;
+  tags?: string[];
+};
+
+export type MDXSnippet = {
+  source: MDXRemoteSerializeResult;
+  meta: SnippetType;
+};

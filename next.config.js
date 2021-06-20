@@ -33,6 +33,7 @@ module.exports = withPWA({
     publicExcludes: [
       "!blog/**/*",
       "!projects/**/*",
+      "!logos/**/*",
       "!favicon/**/*",
       "!preview.png",
       "!me.svg",

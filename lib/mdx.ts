@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import mdxPrism from "mdx-prism";
-import { MDXPost, PostType } from "@/types/post";
+import { MDXPost, MDXSnippet, PostType, SnippetType } from "@/types/post";
 import readingTime from "reading-time";
 
 const root = process.cwd();
@@ -15,7 +15,7 @@ export async function getFiles(type: string) {
 export async function getFileBySlug(
   type: string,
   slug: string | string[] | undefined
-): Promise<MDXPost> {
+): Promise<MDXPost | MDXSnippet> {
   const fileSource = slug
     ? fs.readFileSync(path.join(root, "data", type, `${slug}.mdx`), "utf8")
     : fs.readFileSync(path.join(root, "data", `${type}.mdx`), "utf8");
@@ -28,6 +28,18 @@ export async function getFileBySlug(
       rehypePlugins: [mdxPrism],
     },
   });
+  if (type === "snippet") {
+    return {
+      source,
+      meta: {
+        slug,
+        title: data.title,
+        description: data.description,
+        logo: data.logo,
+        tags: data.tags,
+      },
+    };
+  }
   return {
     source,
     meta: {
@@ -44,7 +56,7 @@ export async function getFileBySlug(
 //todo:types
 export const getAllFilesFrontMatter = async (
   type: string
-): Promise<PostType[]> => {
+): Promise<PostType[] | SnippetType[]> => {
   const files: any[] = fs.readdirSync(path.join(root, "data", type));
 
   return files.reduce(async (allPosts, postSlug) => {
@@ -56,7 +68,7 @@ export const getAllFilesFrontMatter = async (
     return [
       {
         ...data,
-        readTime: readingTime(content),
+        readTime: type === "blog" ? readingTime(content) : null,
         slug: postSlug.replace(".mdx", ""),
       },
       ...allPosts,

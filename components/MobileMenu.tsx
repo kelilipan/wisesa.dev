@@ -29,6 +29,10 @@ const links = [
     url: "/projects",
   },
   {
+    text: "Snippets",
+    url: "/snippet",
+  },
+  {
     text: "About",
     url: "/about",
   },
