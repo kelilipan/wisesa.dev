@@ -101,6 +101,7 @@ const Navbar = () => {
         >
           <IconButton
             {...buttonStyle}
+            as="button"
             onClick={onOpen}
             variant="ghost"
             aria-label="Open navigation menu"
