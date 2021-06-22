@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import { theme } from "@chakra-ui/react";
 const prismBaseTheme = css`
   code {
-    white-space: pre-wrap;
+    white-space: pre;
   }
   code[class*="language-"],
   pre[class*="language-"] {
