@@ -84,7 +84,9 @@ export default function Index() {
           justifyContent="center"
         >
           <Box pos="relative">
-            <Heading mb="0">Hi, I'm Wisesa. 🐱</Heading>
+            <Heading fontFamily="doodle" fontWeight="black">
+              Hi, I'm Wisesa. 🐱
+            </Heading>
             <Box
               position="absolute"
               display={["none", "none", "block"]}
@@ -94,23 +96,13 @@ export default function Index() {
             >
               <Doodle2 />
             </Box>
-            <Text
-              textAlign={["center", "left"]}
-              mt={["-10px", "-5px"]}
-              fontSize="sm"
-              fontStyle="italic"
-              zIndex={6}
-              pos="absolute"
-              left={[0, "unset"]}
-              right={[0, "unset"]}
-            >
-              aka.{" "}
-              <Link href="https://github.com/svspicious" isExternal>
-                svspicious
-              </Link>
-            </Text>
           </Box>
-          <Text fontSize="lg" textAlign={["center", "left"]} maxW="550px">
+          <Text
+            fontSize="lg"
+            fontWeight="medium"
+            textAlign={["center", "left"]}
+            maxW="550px"
+          >
             A student and a software <i>edgy</i>neer. I love exploring tech
             related stuff and now fall in love with react.js and javascript.
           </Text>

@@ -10,6 +10,7 @@ export default extendTheme({
   fonts: {
     body: `'Inter',${defaultTheme.fonts.body}`,
     heading: `'Inter',${defaultTheme.fonts.heading}`,
+    doodle: `"Virgil"`,
   },
   styles: {
     global: (props) => ({

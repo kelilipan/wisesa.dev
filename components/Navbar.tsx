@@ -1,7 +1,11 @@
 import { Button, ButtonProps } from "@chakra-ui/button";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Flex, HStack } from "@chakra-ui/layout";
-import { IconButton, useDisclosure } from "@chakra-ui/react";
+import {
+  IconButton,
+  useDisclosure,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -21,6 +25,7 @@ const Navbar = () => {
     "whiteAlpha.200"
   );
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const fontSize = useBreakpointValue(["lg", "xl"]);
   const hoverBg = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
   const buttonStyle: ButtonProps = {
     as: "a",
@@ -80,7 +85,12 @@ const Navbar = () => {
     >
       <Flex mx="auto" w="full" maxW="5xl">
         <Link href="/" passHref>
-          <Button {...buttonStyle} fontWeight="bold" fontSize="lg">
+          <Button
+            {...buttonStyle}
+            fontFamily="doodle"
+            fontWeight="black"
+            fontSize={fontSize}
+          >
             Wisesa.dev
           </Button>
         </Link>
