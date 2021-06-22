@@ -11,6 +11,6 @@
 
 @font-face {
   font-family: "Virgil";
-  font-display: auto;
+  font-display: swap;
   src: url(/fonts/Virgil.woff2) format("woff2");
 }
