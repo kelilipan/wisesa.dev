@@ -57,9 +57,11 @@ export async function getFileBySlug(
 export const getAllFilesFrontMatter = async (
   type: string
 ): Promise<PostType[] | SnippetType[]> => {
-  const files: any[] = fs.readdirSync(path.join(root, "data", type));
+  const files: string[] = fs.readdirSync(path.join(root, "data", type));
 
-  return files.reduce(async (allPosts, postSlug) => {
+  return files.reduce((allPosts: any[], postSlug: string) => {
+    console.log(allPosts);
+    console.log(typeof allPosts);
     const source = fs.readFileSync(
       path.join(root, "data", type, postSlug),
       "utf8"

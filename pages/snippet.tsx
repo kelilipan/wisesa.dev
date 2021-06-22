@@ -2,13 +2,15 @@ import Head from "@/components/Head";
 import Main from "@/components/Main";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { SnippetType } from "@/types/post";
-import { Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Heading, Text, VStack } from "@chakra-ui/react";
 import SnippetCard from "@/components/SnippetCard";
 interface SnippetProps {
   snippets: SnippetType[] | [];
 }
 const Snippet = ({ snippets }: SnippetProps) => {
-  const filteredSnippet = snippets;
+  const filteredSnippet = snippets.sort((a, b) => {
+    return a.title.localeCompare(b.title, "en", { sensitivity: "base" });
+  });
   return (
     <Main>
       <Head
