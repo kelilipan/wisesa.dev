@@ -10,7 +10,7 @@ export default extendTheme({
   fonts: {
     body: `'Inter',${defaultTheme.fonts.body}`,
     heading: `'Inter',${defaultTheme.fonts.heading}`,
-    doodle: `"Virgil",-apple-system,BlinkMacSystemFont,"Segoe UI","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif`,
+    doodle: `"Virgil",'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif`,
   },
   styles: {
     global: (props) => ({

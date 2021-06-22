@@ -85,12 +85,7 @@ const Navbar = () => {
     >
       <Flex mx="auto" w="full" maxW="5xl">
         <Link href="/" passHref>
-          <Button
-            {...buttonStyle}
-            fontFamily="doodle"
-            fontWeight="black"
-            fontSize={fontSize}
-          >
+          <Button {...buttonStyle} fontFamily="doodle" fontSize={fontSize}>
             Wisesa.dev
           </Button>
         </Link>

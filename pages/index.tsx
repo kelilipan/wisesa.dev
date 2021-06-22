@@ -84,9 +84,7 @@ export default function Index() {
           justifyContent="center"
         >
           <Box pos="relative">
-            <Heading fontFamily="doodle" fontWeight="black">
-              Hi, I'm Wisesa. 🐱
-            </Heading>
+            <Heading fontFamily="doodle">Hi, I'm Wisesa. 🐱</Heading>
             <Box
               position="absolute"
               display={["none", "none", "block"]}
