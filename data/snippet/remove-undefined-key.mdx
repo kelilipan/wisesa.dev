@@ -1,0 +1,11 @@
+---
+title: 'Remove undefined key.js'
+description: 'Explicitly remove undefined key of given object in javascript.'
+logo: '/logos/js.png'
+tags:
+  - javascript
+---
+
+```js
+Object.keys(obj).forEach(key => obj[key] === undefined && delete obj[key])
+```
