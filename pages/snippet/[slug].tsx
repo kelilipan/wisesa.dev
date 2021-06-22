@@ -35,6 +35,8 @@ const Snippet = ({ source, meta }: MDXSnippet) => {
           d={["none", "flex"]}
           bg="whiteAlpha.600"
           boxSize="50px"
+          minW="50px"
+          minH="50px"
           borderRadius="full"
         >
           {meta.logo !== undefined && (
