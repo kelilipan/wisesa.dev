@@ -83,7 +83,7 @@ const about = () => {
           <b>Vaq</b> or <b>Anvaq</b> but that's ok, you can call me anything you
           want as long as it's my name and not someone else <i>wkw</i>.
         </Text>
-        <Text>
+        <Text mt='2'>
           I grew up in a small village located in{" "}
           <Link
             textDecoration="underline"
@@ -111,7 +111,7 @@ const about = () => {
           </Link>
           .
         </Text>
-        <Text>
+        <Text mt='2'>
           I love exploring tech related stuff. When i was in college i join many
           community and laboratory to expand my knowledge, I'm member of{" "}
           <Link
