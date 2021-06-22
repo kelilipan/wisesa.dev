@@ -25,7 +25,7 @@ const Canvas = forwardRef((props, ref) => (
 export default function Index() {
   const invertColor = useColorModeValue("none", "invert(10%) brightness(120%)");
   const [color, setColor] = useState("rgba(255, 0, 0, 0.5)");
-  const [strokeWidth, setWidth] = useState(4);
+  const [strokeWidth, setWidth] = useState(5);
   const canvasRef = useRef(null);
   const cursor = useColorModeValue(
     "url('/pencil.png') 0 24, auto",
