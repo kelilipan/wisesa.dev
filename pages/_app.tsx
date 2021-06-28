@@ -10,7 +10,7 @@ import PrismTheme from "@/components/PrismTheme";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import Router from "next/router";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
 import config from "site.config";
 import { AnimatePresence } from "framer-motion";
 import MotionBox from "@/components/MotionBox";
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             "Personal website of Anvaqta Tangguh Wisesa. A computer science student and a software engineer.",
           images: [
             {
-              url: `${config.baseUrl}favicon/og-default.jpg`,
+              url: `${config.baseUrl}/favicon/og-default.jpg`,
             },
           ],
         }}
@@ -48,6 +48,17 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           handle: "@svspcs",
           cardType: "summary_large_image",
         }}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Anvaqta Tangguh Wisesa"
+        url={config.baseUrl}
+        sameAs={[
+          "http://www.linkedin.com/in/anvaqta",
+          "https://github.com/svspicious",
+          "https://svspicious.medium.com/",
+          "https://instagram.com/anvaqta",
+        ]}
       />
       <PrismTheme>
         <Flex minH="100vh" direction="column">

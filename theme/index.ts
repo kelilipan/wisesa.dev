@@ -27,6 +27,7 @@ export default extendTheme({
         bg: mode("blackAlpha.300", "whiteAlpha.600")(props),
       },
       ".noselect": {
+        pointerEvents: "none",
         userSelect: "none",
         webkitUserDrag: "none!important",
         webkitUserSelect: "none",
