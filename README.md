@@ -24,7 +24,7 @@ Tools i'm using to build this project
 - [MDX](https://github.com/mdx-js/mdx)
 - [Chakra-ui](https://chakra-ui.com/)
 - [next-pwa](https://github.com/shadowwalker/next-pwa)
-- [Splitbee](https://splitbee.io/)
+- [PanelBear](https://panelbear.com/)
 - [Hosted on Vercel](https://vercel.com)
 
 

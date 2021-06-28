@@ -1736,6 +1736,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@panelbear/panelbear-js@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@panelbear/panelbear-js/-/panelbear-js-1.2.0.tgz#1037598fd2d310fcdc88d4447cfbc0d2833d2c25"
+  integrity sha512-wCet7ChsO313S0YpOXLAi5R3vIk38ckoDF5yHQ3wU6OV73tY4PijBex3Y+Nf4/EPakAAGoJjW8WSBtCXcxJchg==
+
 "@popperjs/core@2.4.4":
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.4.tgz#11d5db19bd178936ec89cd84519c4de439574398"
@@ -1804,11 +1809,6 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
-
-"@splitbee/web@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@splitbee/web/-/web-0.2.4.tgz#173ffab42a9c4d22874d82cd580d2c114480b93f"
-  integrity sha512-LMXnN5X/jen4ssBZ8ULXckQgJVvv8Ox2brcK7g2aLrok8ISzO76+DC0b6Cierk8oIXcx/+aflbVuBaKKFqyBCg==
 
 "@surma/rollup-plugin-off-main-thread@^1.4.1":
   version "1.4.2"

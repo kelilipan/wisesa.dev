@@ -1,6 +1,5 @@
 import "@/styles/global.css";
 import { useEffect } from "react";
-import splitbee from "@splitbee/web";
 import type { AppProps } from "next/app";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
@@ -14,20 +13,14 @@ import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
 import config from "site.config";
 import { AnimatePresence } from "framer-motion";
 import MotionBox from "@/components/MotionBox";
+import { usePanelbear } from "@/lib/usePanelBear";
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  useEffect(() => {
-    // enable analytics on production
-    process.env.NODE_ENV === "production" &&
-      splitbee.init({
-        scriptUrl: "/bee.js",
-        apiUrl: "/_hive",
-      });
-  }, []);
+  usePanelbear("EJLfW3GUjWc");
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo

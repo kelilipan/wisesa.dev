@@ -4,17 +4,17 @@ module.exports = withPWA({
   images: {
     domains: ["pbs.twimg.com"],
   },
-  // https://splitbee.io/docs/nextjs-proxy
+  // https://panelbear.com/docs/integration-nextjs/
   async rewrites() {
     return [
       {
-        source: "/bee.js",
-        destination: "https://cdn.splitbee.io/sb.js",
+        source: "/bear.js",
+        destination: "https://cdn.panelbear.com/analytics.js",
       },
-      {
-        source: "/_hive/:slug",
-        destination: "https://hive.splitbee.io/:slug",
-      },
+      // {
+      //   source: "/_panelbear/:path*",
+      //   destination: "https://api.panelbear.com/:path*",
+      // },
     ];
   },
   webpack: (config, { isServer }) => {
