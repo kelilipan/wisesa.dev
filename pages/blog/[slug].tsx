@@ -33,7 +33,7 @@ const Post = ({ source, meta }: MDXPost) => {
         image={meta.image}
       />
       <BlogJsonLd
-        url={config.baseUrl + meta.slug}
+        url={config.baseUrl + "/" + meta.slug}
         title={meta.title}
         authorName={"Wisesa"}
         datePublished={new Date(meta.publishedAt).toISOString()}
