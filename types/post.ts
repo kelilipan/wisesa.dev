@@ -5,7 +5,7 @@ export type PostType = {
   title: string;
   description: string;
   publishedAt: string;
-  image?: string;
+  image: string;
   readTime?: {
     text: string;
     time: number;

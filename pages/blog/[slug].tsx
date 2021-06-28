@@ -3,7 +3,9 @@ import Main from "@/components/Main";
 import MDXComponents from "@/components/MDXComponents";
 import { RouteLink } from "@/components/RouteLink";
 import { getFileBySlug, getFiles } from "@/lib/mdx";
+import config from "@/site.config";
 import { MDXPost } from "@/types/post";
+
 import {
   Avatar,
   Box,
@@ -15,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
+import { BlogJsonLd } from "next-seo";
 
 const Post = ({ source, meta }: MDXPost) => {
   const date = new Date(meta.publishedAt).toLocaleDateString("en-US", {
@@ -28,6 +31,15 @@ const Post = ({ source, meta }: MDXPost) => {
         title={meta.title}
         description={meta.description}
         image={meta.image}
+      />
+      <BlogJsonLd
+        url={config.baseUrl + "/" + meta.slug}
+        title={meta.title}
+        authorName={"Wisesa"}
+        datePublished={new Date(meta.publishedAt).toISOString()}
+        dateModified={new Date(meta.publishedAt).toISOString()}
+        description={meta.description}
+        images={[meta.image]}
       />
       <Flex direction="column">
         <RouteLink href={`/blog/${meta.slug}`}>
