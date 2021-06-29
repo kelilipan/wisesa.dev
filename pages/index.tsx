@@ -73,7 +73,6 @@ export default function Index() {
         setWidth={setWidth}
       />
       <Stack
-        className="noselect"
         direction={["column-reverse", "row"]}
         justifyContent={["center", "space-between"]}
         alignItems={"center"}
@@ -84,7 +83,9 @@ export default function Index() {
           justifyContent="center"
         >
           <Box pos="relative">
-            <Heading fontFamily="doodle">Hi, I'm Wisesa. 🐱</Heading>
+            <Heading className="noselect" fontFamily="doodle">
+              Hi, I'm Wisesa. 🐱
+            </Heading>
             <Box
               position="absolute"
               display={["none", "none", "block"]}
@@ -96,6 +97,7 @@ export default function Index() {
             </Box>
           </Box>
           <Text
+            className="noselect"
             fontSize="lg"
             fontWeight="medium"
             textAlign={["center", "left"]}
