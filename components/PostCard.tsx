@@ -18,6 +18,7 @@ const PostCard = ({
     month: "long",
     year: "numeric",
   });
+  console.log(date, publishedAt);
   const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
   return (
     <RouteLink href={`/blog/${slug}`} textDecor="none!important">

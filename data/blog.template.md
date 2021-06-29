@@ -1,6 +1,6 @@
 ---
 title: "Hello world"
-publishedAt: "06-20-2021"
+publishedAt: "2020-10-15"
 image: "/favicon/og-default.jpg"
 description: "lorem ipsum"
 ---
