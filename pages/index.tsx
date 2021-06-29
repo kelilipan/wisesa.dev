@@ -46,7 +46,7 @@ export default function Index() {
       <NextHead>
         <meta
           name="keywords"
-          content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa"
+          content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa,anvaqta tangguh wisesa"
         />
       </NextHead>
       <Canvas
