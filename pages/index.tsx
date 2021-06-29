@@ -23,7 +23,7 @@ const Canvas = forwardRef((props, ref) => (
 ));
 
 export default function Index() {
-  const invertColor = useColorModeValue("none", "invert(10%) brightness(120%)");
+  const invertColor = useColorModeValue("none", "invert(15%) brightness(120%)");
   const [color, setColor] = useState("rgba(255, 0, 0, 0.5)");
   const [strokeWidth, setWidth] = useState(5);
   const canvasRef = useRef(null);
@@ -142,6 +142,7 @@ export default function Index() {
             height="400px"
           />
           <Box
+            filter="initial"
             position="absolute"
             zIndex={2}
             bottom={["-80px", "-70px"]}

@@ -19,8 +19,8 @@ export default extendTheme({
         overflowY: "scroll",
       },
       body: {
-        color: mode("black", "whiteAlpha.900")(props),
-        bg: mode("white", "black")(props),
+        color: mode("#202020", "whiteAlpha.900")(props),
+        bg: mode("white", "#1d1d1d")(props),
       },
       "::selection": {
         color: mode("black", "black")(props),
