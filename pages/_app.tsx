@@ -21,6 +21,21 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   usePanelbear("EJLfW3GUjWc");
+  useEffect(() => {
+    //CAT
+    console.log(
+      `%c
+           /\\_____/\\ \r
+          /  o   o  \\ \r
+         ( ==  ^  == ) \r
+          )         ( \r
+         (           ) \r
+        ( (  )   (  ) ) \r
+       (__(__)___(__)__)
+    `,
+      "font-weight:bold; font-size:15px;color:#ff4747"
+    );
+  }, []);
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo
