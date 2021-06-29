@@ -19,7 +19,10 @@ const MobileDrawer = dynamic(() => import("./MobileMenu"), {
 const Navbar = () => {
   const color = useColorModeValue("black", "white");
   const bgColor = useColorModeValue("whiteAlpha.50", "blackAlpha.50");
-  const bgColorFallback = useColorModeValue("whiteAlpha.900", "blackAlpha.900");
+  const bgColorFallback = useColorModeValue(
+    "whiteAlpha.900",
+    "rgba(29, 29, 29, 0.9)"
+  );
   const borderBottomColor = useColorModeValue(
     "blackAlpha.50",
     "whiteAlpha.200"
