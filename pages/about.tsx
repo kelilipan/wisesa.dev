@@ -213,11 +213,7 @@ const about = () => {
           </UnorderedList>
           <Text mt="2">
             Also, you can{" "}
-            <Link
-              textDecoration="underline"
-              href="http://gg.gg/wisesa-cv"
-              isExternal
-            >
+            <Link textDecoration="underline" href="/cv" isExternal>
               read my cv here
             </Link>
             . Anyway, thanks for visiting my profile :)

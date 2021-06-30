@@ -20,6 +20,16 @@ const nextConfig = {
       // },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/cv",
+        destination:
+          "https://drive.google.com/file/d/1LEKZAy6uLi71iP24A4u5GYTiPGU0bSPW/view?usp=sharing",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = withPlugins([[withPWA, { pwa: pwaConfig }]], nextConfig);
