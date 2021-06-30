@@ -9,12 +9,10 @@ export const usePanelbear = (
   const router = useRouter();
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      Panelbear.load(site, { scriptSrc: "/bear.js", ...config });
+    Panelbear.load(site, { scriptSrc: "/bear.js", ...config });
 
-      // Trigger initial page view
-      Panelbear.trackPageview();
-    }
+    // Trigger initial page view
+    Panelbear.trackPageview();
 
     // Add on route change handler for client-side navigation
     const handleRouteChange = () => Panelbear.trackPageview();
