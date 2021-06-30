@@ -149,9 +149,16 @@ const about = () => {
           .
         </Text>
         <Text mt="2">
-          Outside of software developing thingy, I love listening and playing
-          music. I can (barely) play some music instruments like guitar,
-          ukulele, and drum. Also, I love cycling (almost) every weekend.
+          Outside of software developing thingy, I love playing and{" "}
+          <Link
+            isExternal
+            textDecoration="underline"
+            href="https://open.spotify.com/user/21xnhzh4qf74t5t4lp2fammai"
+          >
+            listening music
+          </Link>
+          . I can (barely) play some music instruments like guitar, ukulele, and
+          drum. Also, I love cycling (almost) every weekend.
         </Text>
 
         <Text mt="2">
