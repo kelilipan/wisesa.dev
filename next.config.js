@@ -22,4 +22,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([withPWA, { pwa: pwaConfig }], nextConfig);
+module.exports = withPlugins([[withPWA, { pwa: pwaConfig }]], nextConfig);
