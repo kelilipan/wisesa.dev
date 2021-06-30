@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 type MobileMenuProps = Omit<ModalProps, "children">;
 
@@ -31,6 +32,10 @@ const links = [
   {
     text: "Snippets",
     url: "/snippet",
+  },
+  {
+    text: "Timeline",
+    url: "https://timeline.wisesa.dev",
   },
   {
     text: "About",
@@ -73,7 +78,19 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           <Stack w="full" spacing={0}>
             {links.map((data, idx) => (
               <Link href={data.url} passHref key={idx}>
-                <Button {...buttonStyle} w="full" siez="sm" onClick={onClose}>
+                <Button
+                  {...buttonStyle}
+                  w="full"
+                  siez="sm"
+                  onClick={onClose}
+                  rel={data.text === "Timeline" && "noopener noreferrer"}
+                  target={data.text === "Timeline" && "_blank"}
+                  rightIcon={
+                    data.text === "Timeline" ? (
+                      <FaExternalLinkAlt size="10px" />
+                    ) : undefined
+                  }
+                >
                   {data.text}
                 </Button>
               </Link>

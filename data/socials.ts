@@ -20,6 +20,10 @@ export default [
     url: "https://svspicious.medium.com/",
   },
   {
+    name: "Polywork",
+    url: "https://timeline.wisesa.dev/",
+  },
+  {
     name: "Spotify",
     url: "https://open.spotify.com/user/21xnhzh4qf74t5t4lp2fammai",
   },

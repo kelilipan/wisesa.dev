@@ -37,7 +37,7 @@ const about = () => {
     "Docker",
     "Emotion css",
     "GraphQL",
-    "Microservice",
+    "SEO",
     "SCRUM",
     <b>TypeScript</b>,
   ];
@@ -83,7 +83,7 @@ const about = () => {
           <b>Vaq</b> or <b>Anvaq</b> but that's ok, you can call me anything you
           want as long as it's my name and not someone else <i>wkw</i>.
         </Text>
-        <Text mt='2'>
+        <Text mt="2">
           I grew up in a small village located in{" "}
           <Link
             textDecoration="underline"
@@ -111,7 +111,7 @@ const about = () => {
           </Link>
           .
         </Text>
-        <Text mt='2'>
+        <Text mt="2">
           I love exploring tech related stuff. When i was in college i join many
           community and laboratory to expand my knowledge, I'm member of{" "}
           <Link
@@ -140,12 +140,18 @@ const about = () => {
           . Also, I joined many competition such as Competitive programming,
           UI/UX Design, and{" "}
           <Link
+            isExternal
             textDecoration="underline"
             href="https://youngster.id/news/ketringan-com-juara-di-brixgoogle-cloud-hackathon/"
           >
             Hackathon
           </Link>
           .
+        </Text>
+        <Text mt="2">
+          Outside of software developing thingy, I love listening and playing
+          music. I can (barely) play some music instruments like guitar,
+          ukulele, and drum. Also, I love cycling (almost) every weekend.
         </Text>
 
         <Text mt="2">
@@ -195,7 +201,7 @@ const about = () => {
             </Link>{" "}
             with me by following my social media bellow:
           </Text>
-          <UnorderedList>
+          <UnorderedList mt="2">
             {socials.map((data, idx) => (
               <ListItem key={idx}>
                 {data.name} -{" "}

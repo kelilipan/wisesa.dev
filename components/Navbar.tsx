@@ -7,7 +7,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaExternalLinkAlt } from "react-icons/fa";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 import dynamic from "next/dynamic";
@@ -58,6 +58,10 @@ const Navbar = () => {
       url: "/snippet",
     },
     {
+      text: "Timeline",
+      url: "https://timeline.wisesa.dev",
+    },
+    {
       text: "About",
       url: "/about",
     },
@@ -97,7 +101,17 @@ const Navbar = () => {
           <HStack spacing={0}>
             {links.map((data, idx) => (
               <Link href={data.url} key={idx} passHref>
-                <Button {...buttonStyle} fontSize="sm">
+                <Button
+                  {...buttonStyle}
+                  fontSize="sm"
+                  rel={data.text === "Timeline" && "noopener noreferrer"}
+                  target={data.text === "Timeline" && "_blank"}
+                  rightIcon={
+                    data.text === "Timeline" ? (
+                      <FaExternalLinkAlt size="10px" />
+                    ) : undefined
+                  }
+                >
                   {data.text}
                 </Button>
               </Link>
