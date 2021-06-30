@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   baseUrl:
     process.env.NEXT_PUBLIC_BASE_URL ||
     (process.env.NEXT_PUBLIC_VERCEL_URL &&
@@ -7,4 +7,3 @@ const config = {
   description:
     "Personal website of Anvaqta Tangguh Wisesa. A computer science student and a software engineer focused on the web platforms.",
 };
-export default config;
