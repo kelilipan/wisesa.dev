@@ -17,6 +17,7 @@
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.3",
     "next": "^11.0.0",
+    "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^3.0.2",
     "next-pwa": "^5.2.21",
     "next-seo": "^4.25.1",
