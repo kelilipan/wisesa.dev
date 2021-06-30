@@ -83,8 +83,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   w="full"
                   siez="sm"
                   onClick={onClose}
-                  rel={data.text === "Timeline" && "noopener noreferrer"}
-                  target={data.text === "Timeline" && "_blank"}
+                  rel={
+                    data.text === "Timeline" ? "noopener noreferrer" : undefined
+                  }
+                  target={data.text === "Timeline" ? "_blank" : undefined}
                   rightIcon={
                     data.text === "Timeline" ? (
                       <FaExternalLinkAlt size="10px" />

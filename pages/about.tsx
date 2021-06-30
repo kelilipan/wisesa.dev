@@ -213,8 +213,8 @@ const about = () => {
           </UnorderedList>
           <Text mt="2">
             Also, you can{" "}
-            <Link textDecoration="underline" href="/cv" isExternal>
-              read my cv here
+            <Link textDecoration="underline" href="/resume" isExternal>
+              read my resume here
             </Link>
             . Anyway, thanks for visiting my profile :)
           </Text>
