@@ -17,7 +17,7 @@ const MobileDrawer = dynamic(() => import("./MobileMenu"), {
 });
 
 const Navbar = () => {
-  const color = useColorModeValue("black", "white");
+  const color = useColorModeValue("#202020", "white");
   const bgColor = useColorModeValue("whiteAlpha.50", "blackAlpha.50");
   const bgColorFallback = useColorModeValue(
     "whiteAlpha.900",
@@ -30,6 +30,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const fontSize = useBreakpointValue(["lg", "xl"]);
   const hoverBg = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
+  const skipColor = useColorModeValue("white", "#202020");
   const buttonStyle: ButtonProps = {
     as: "a",
     borderRadius: "none",
@@ -42,7 +43,11 @@ const Navbar = () => {
     _hover: {
       bgColor: hoverBg,
     },
-    _focus: { boxShadow: "none" },
+    _focus: {
+      boxShadow: "none",
+      textDecor: "underline",
+      textDecorationStyle: "dotted",
+    },
   };
   const links = [
     {
@@ -90,7 +95,27 @@ const Navbar = () => {
       pos="sticky"
       top={0}
     >
-      <Flex mx="auto" w="full" maxW="5xl">
+      <Flex mx="auto" w="full" maxW="5xl" pos="relative">
+        <Button
+          w="full"
+          as="a"
+          href="#main-content"
+          {...buttonStyle}
+          opacity="0"
+          pos="absolute"
+          zIndex="skipLink"
+          color={skipColor}
+          bgColor={color}
+          pointerEvents="none"
+          _hover={{}}
+          _focus={{
+            ...buttonStyle._focus,
+            opacity: 1,
+            pointerEvents: "auto",
+          }}
+        >
+          Skip to main content
+        </Button>
         <Link href="/" passHref>
           <Button {...buttonStyle} fontFamily="doodle" fontSize={fontSize}>
             Wisesa.dev

@@ -65,13 +65,7 @@ export default function Index() {
         strokeWidth={strokeWidth}
         strokeColor={color}
       />
-      <CanvasControl
-        clearCanvas={clearHandler}
-        color={color}
-        setColor={setColor}
-        strokeWidth={strokeWidth}
-        setWidth={setWidth}
-      />
+
       <Stack
         direction={["column-reverse", "row"]}
         justifyContent={["center", "space-between"]}
@@ -153,6 +147,13 @@ export default function Index() {
             <Doodle1 />
           </Box>
         </Box>
+        <CanvasControl
+          clearCanvas={clearHandler}
+          color={color}
+          setColor={setColor}
+          strokeWidth={strokeWidth}
+          setWidth={setWidth}
+        />
       </Stack>
     </Main>
   );
