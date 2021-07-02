@@ -67,9 +67,9 @@ const Post = ({ source, meta }: MDXPost) => {
               }. Reading time is calculated using 200WPM Reading speed.`}
               aria-label="Reading time"
             >
-              <Text d="inline">
+              <span>
                 {meta.readTime?.text} • {meta.lang === "id" ? <ID /> : <EN />}
-              </Text>
+              </span>
             </Tooltip>
           </Text>
         </Flex>

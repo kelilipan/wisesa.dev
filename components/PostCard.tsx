@@ -20,7 +20,6 @@ const PostCard = ({
     month: "long",
     year: "numeric",
   });
-  console.log(lang);
   const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
   return (
     <RouteLink href={`/blog/${slug}`} locale={lang} textDecor="none!important">
