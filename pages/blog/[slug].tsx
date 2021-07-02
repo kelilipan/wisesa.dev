@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Head from "@/components/Head";
 import Main from "@/components/Main";
 import MDXComponents from "@/components/MDXComponents";
@@ -21,6 +22,9 @@ import { BlogJsonLd } from "next-seo";
 import { ID, EN } from "@/components/flags";
 
 const Post = ({ source, meta }: MDXPost) => {
+  useEffect(() => {
+    document.documentElement.lang = meta.lang;
+  });
   const date = new Date(meta.publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
@@ -87,12 +91,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: posts.map((p) => {
       const slug = p.replace(/\.mdx/, "");
-      const locale = getLang("blog", p);
       return {
         params: {
           slug,
         },
-        locale,
       };
     }),
     fallback: false,
