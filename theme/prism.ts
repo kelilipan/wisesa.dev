@@ -223,7 +223,7 @@ export const prismDarkTheme = css`
   }
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: ${theme.colors.gray[800]};
+    background: #1d1f21;
     border: 1px solid ${theme.colors.gray[700]};
   }
   .mdx-marker {
