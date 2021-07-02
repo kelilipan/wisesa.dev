@@ -93,7 +93,7 @@ export default function Index() {
           <Text
             className="noselect"
             fontSize="lg"
-            fontWeight="medium"
+            // fontWeight="medium"
             textAlign={["center", "left"]}
             maxW="550px"
           >

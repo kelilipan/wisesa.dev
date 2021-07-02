@@ -36,6 +36,15 @@ const Post = ({ source, meta }: MDXPost) => {
         title={meta.title}
         description={meta.description}
         image={meta.image}
+        openGraph={{
+          type: "article",
+          article: {
+            publishedTime: new Date(meta.publishedAt).toISOString(),
+            modifiedTime: new Date(meta.publishedAt).toISOString(),
+            authors: ["Wisesa"],
+            section: "Blog",
+          },
+        }}
       />
       <BlogJsonLd
         url={config.baseUrl + "/" + meta.slug}

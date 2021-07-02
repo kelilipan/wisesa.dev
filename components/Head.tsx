@@ -6,7 +6,14 @@ interface HeadProps extends NextSeoProps {
   images?: any;
   image?: string;
 }
-const Head = ({ title, description, images, image, ...props }: HeadProps) => {
+const Head = ({
+  title,
+  description,
+  images,
+  image,
+  openGraph,
+  ...props
+}: HeadProps) => {
   const router = useRouter();
   return (
     <NextSeo
@@ -26,6 +33,7 @@ const Head = ({ title, description, images, image, ...props }: HeadProps) => {
               },
             ]
           : undefined,
+        ...openGraph,
       }}
       {...props}
     />
