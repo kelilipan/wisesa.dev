@@ -224,14 +224,14 @@ export const prismDarkTheme = css`
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     background: #1d1f21;
-    border: 1px solid ${theme.colors.gray[700]};
+    border: 1px solid #2d2d2d;
   }
   .mdx-marker {
-    background-color: ${theme.colors.gray[700]};
+    background-color: #2d2d2d;
   }
   .remark-code-title {
-    background: ${theme.colors.gray[700]};
+    background: #2d2d2d;
     color: ${theme.colors.gray[100]};
-    border: 1px solid ${theme.colors.gray[700]};
+    border: 1px solid #2d2d2d;
   }
 `;
