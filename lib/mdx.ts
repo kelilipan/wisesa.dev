@@ -37,7 +37,7 @@ export async function getFileBySlug(
         description: data.description,
         logo: data.logo,
         tags: data.tags,
-        lang: data.lang,
+        lang: data.lang || null,
       },
     };
   }
@@ -50,7 +50,7 @@ export async function getFileBySlug(
       description: data.description,
       publishedAt: data.publishedAt,
       image: data.image,
-      lang: data.lang,
+      lang: data.lang || null,
     },
   };
 }
