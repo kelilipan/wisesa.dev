@@ -1,5 +1,5 @@
 import { Icon, IconProps } from "@chakra-ui/react";
-const en = (props: IconProps) => {
+const EN = (props: IconProps) => {
   return (
     <Icon viewBox="0 0 60 30" {...props}>
       <clipPath id="s">
@@ -24,4 +24,4 @@ const en = (props: IconProps) => {
   );
 };
 
-export default en;
+export default EN;

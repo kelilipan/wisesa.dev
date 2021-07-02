@@ -2,7 +2,7 @@ import Head from "@/components/Head";
 import Main from "@/components/Main";
 import MDXComponents from "@/components/MDXComponents";
 import { RouteLink } from "@/components/RouteLink";
-import { getFileBySlug, getFiles } from "@/lib/mdx";
+import { getFileBySlug, getFiles, getLang } from "@/lib/mdx";
 import config from "@/site.config";
 import { MDXPost } from "@/types/post";
 
@@ -18,6 +18,7 @@ import {
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { BlogJsonLd } from "next-seo";
+import { ID, EN } from "@/components/flags";
 
 const Post = ({ source, meta }: MDXPost) => {
   const date = new Date(meta.publishedAt).toLocaleDateString("en-US", {
@@ -59,10 +60,16 @@ const Post = ({ source, meta }: MDXPost) => {
           </Text>
           <Text ml="auto">
             <Tooltip
-              label={`This post has ${meta.readTime?.words} words. Reading time is calculated using 200WPM Reading speed.`}
+              label={`This post has ${
+                meta.readTime?.words
+              } words and written in ${
+                meta.lang === "id" ? "Bahasa Indonesia" : "English"
+              }. Reading time is calculated using 200WPM Reading speed.`}
               aria-label="Reading time"
             >
-              {meta.readTime?.text}
+              <Text d="inline">
+                {meta.readTime?.text} • {meta.lang === "id" ? <ID /> : <EN />}
+              </Text>
             </Tooltip>
           </Text>
         </Flex>
@@ -78,11 +85,16 @@ const Post = ({ source, meta }: MDXPost) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getFiles("blog");
   return {
-    paths: posts.map((p) => ({
-      params: {
-        slug: p.replace(/\.mdx/, ""),
-      },
-    })),
+    paths: posts.map((p) => {
+      const slug = p.replace(/\.mdx/, "");
+      const locale = getLang("blog", p);
+      return {
+        params: {
+          slug,
+        },
+        locale,
+      };
+    }),
     fallback: false,
   };
 };

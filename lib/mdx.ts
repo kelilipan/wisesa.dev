@@ -37,6 +37,7 @@ export async function getFileBySlug(
         description: data.description,
         logo: data.logo,
         tags: data.tags,
+        lang: data.lang,
       },
     };
   }
@@ -49,6 +50,7 @@ export async function getFileBySlug(
       description: data.description,
       publishedAt: data.publishedAt,
       image: data.image,
+      lang: data.lang,
     },
   };
 }
@@ -74,4 +76,9 @@ export const getAllFilesFrontMatter = async (
       ...allPosts,
     ];
   }, []);
+};
+export const getLang = (type: string, slug: string): string => {
+  const source = fs.readFileSync(path.join(root, "data", type, slug), "utf8");
+  const { data } = matter(source);
+  return data.lang as string;
 };
