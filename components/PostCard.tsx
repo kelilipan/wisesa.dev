@@ -3,9 +3,11 @@ import { useColorModeValue } from "@chakra-ui/color-mode";
 import { AspectRatio, Box, Heading, Text, Tooltip } from "@chakra-ui/react";
 import Image from "next/image";
 import { RouteLink } from "./RouteLink";
+import { ID, EN } from "./flags";
 
 const PostCard = ({
   title,
+  lang,
   slug,
   description,
   image,
@@ -52,10 +54,14 @@ const PostCard = ({
           <Box fontSize="sm" mt="2" opacity="0.8">
             {date} •{" "}
             <Tooltip
-              label={`This post has ${readTime?.words} words. Reading time is calculated using 200WPM Reading speed.`}
+              label={`This post has ${readTime?.words} words and written in ${
+                lang === "id" ? "Bahasa Indonesia" : "English"
+              }. Reading time is calculated using 200WPM Reading speed.`}
               aria-label="Reading time"
             >
-              {readTime?.text}
+              <Text d="inline">
+                {readTime?.text} • {lang === "id" ? <ID /> : <EN />}
+              </Text>
             </Tooltip>
           </Box>
         </Box>

@@ -19,11 +19,13 @@ export const RouteLink = ({
   shallow,
   prefetch,
   children,
+  locale,
   ...chakraProps
 }: NextChakraLinkProps) => {
   return (
     <NextLink
       passHref={true}
+      locale={locale}
       href={href}
       as={as}
       replace={replace}
