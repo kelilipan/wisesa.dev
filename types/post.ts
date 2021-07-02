@@ -6,7 +6,7 @@ export type PostType = {
   description: string;
   publishedAt: string;
   image: string;
-  lang: "id" | "en";
+  lang: "id" | "en-US";
   readTime?: {
     text: string;
     time: number;

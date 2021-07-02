@@ -116,7 +116,7 @@ const Navbar = () => {
         >
           Skip to main content
         </Button>
-        <Link href="/" passHref>
+        <Link href="/" locale={false} passHref>
           <Button {...buttonStyle} fontFamily="doodle" fontSize={fontSize}>
             Wisesa.dev
           </Button>
@@ -125,7 +125,7 @@ const Navbar = () => {
         <Flex d={["none", "flex"]} justifyContent="space-between" flex="1">
           <HStack spacing={0}>
             {links.map((data, idx) => (
-              <Link href={data.url} key={idx} passHref>
+              <Link href={data.url} key={idx} locale={false} passHref>
                 <Button
                   {...buttonStyle}
                   fontSize="sm"
