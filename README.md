@@ -21,6 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Tools i'm using to build this project
 - [Next.js](https://nextjs.org/)
+- [Preact.js](https://preactjs.com/)
 - [MDX](https://github.com/mdx-js/mdx)
 - [Chakra-ui](https://chakra-ui.com/)
 - [next-pwa](https://github.com/shadowwalker/next-pwa)
