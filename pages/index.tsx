@@ -97,8 +97,9 @@ export default function Index() {
             textAlign={["center", "left"]}
             maxW="550px"
           >
-            A student and a software <i>edgy</i>neer. I love exploring tech
-            related stuff and now fall in love with react.js and javascript.
+            A student and a software <i>edgy</i>neer mainly focused on web
+            technologies. I love exploring tech related stuff and now fall in
+            love with react.js and javascript.
           </Text>
           <Text textAlign={["center", "left"]} maxW="550px">
             Checkout my{" "}
