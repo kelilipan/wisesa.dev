@@ -1,8 +1,29 @@
 {
+  "headers": [
+    {
+      "source": "/fonts/inter-var-latin.woff2",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+    {
+      "source": "/fonts/Virgil.woff2",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/resume",
       "destination": "https://drive.google.com/file/d/1LEKZAy6uLi71iP24A4u5GYTiPGU0bSPW/view?usp=sharing"
     }
   ]
+  
 }
