@@ -29,16 +29,6 @@ const nextConfig = {
       // },
     ];
   },
-  async redirects() {
-    return [
-      {
-        source: "/resume",
-        destination:
-          "https://drive.google.com/file/d/1LEKZAy6uLi71iP24A4u5GYTiPGU0bSPW/view?usp=sharing",
-        permanent: false,
-      },
-    ];
-  },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
