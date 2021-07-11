@@ -24,6 +24,9 @@ import { ID, EN } from "@/components/flags";
 const Post = ({ source, meta }: MDXPost) => {
   useEffect(() => {
     document.documentElement.lang = meta.lang;
+    return () => {
+      document.documentElement.lang = "en";
+    };
   }, []);
   const date = new Date(meta.publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
