@@ -1,11 +1,9 @@
 import Main from "@/components/Main";
 import {
   Text,
-  Heading,
   Flex,
   Box,
   Link,
-  SimpleGrid,
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
@@ -13,34 +11,8 @@ import Head from "@/components/Head";
 import Image from "next/image";
 import socials from "@/data/socials";
 import Doodle1 from "@/components/doodle/Doodle1";
+import Knowledgebase from "@/components/about/Knowledgebase";
 const about = () => {
-  const languages = ["C++", "JavaScript", "PHP", "Python", "SQL"];
-  const tools = [
-    "Docker",
-    "Firebase",
-    "Figma",
-    "Git",
-    "Notion",
-    "Trello",
-    "vscode",
-  ];
-  const frameworks = [
-    "Bootstrap",
-    "Chakra-UI",
-    "Laravel",
-    "Lumen",
-    "Next.js",
-    "Tailwind CSS",
-  ];
-  const learnings = [
-    "Artificial Intelligence",
-    "Docker",
-    "Emotion css",
-    "GraphQL",
-    "SEO",
-    "SCRUM",
-    <b>TypeScript</b>,
-  ];
   return (
     <Main maxW="3xl" mb="6">
       <Head title="About" />
@@ -161,44 +133,7 @@ const about = () => {
           drum. Also, I love cycling (almost) every weekend.
         </Text>
 
-        <Text mt="2">
-          Here are several tools that I used (and currently learning how to use
-          it):
-        </Text>
-        <SimpleGrid columns={[2, 4]} pt="2">
-          <Box>
-            <Heading as="h5" fontSize="xl">
-              Languages
-            </Heading>
-            {languages.map((lang, idx) => (
-              <Text key={idx}>{lang}</Text>
-            ))}
-          </Box>
-          <Box>
-            <Heading as="h5" fontSize="xl">
-              Tools
-            </Heading>
-            {tools.map((tool, idx) => (
-              <Text key={idx}>{tool}</Text>
-            ))}
-          </Box>
-          <Box>
-            <Heading as="h5" fontSize="xl">
-              Frameworks
-            </Heading>
-            {frameworks.map((framework, idx) => (
-              <Text key={idx}>{framework}</Text>
-            ))}
-          </Box>
-          <Box>
-            <Heading as="h5" fontSize="xl">
-              Currently Learning
-            </Heading>
-            {learnings.map((learning, idx) => (
-              <Text key={idx}>{learning}</Text>
-            ))}
-          </Box>
-        </SimpleGrid>
+        <Knowledgebase />
         <Box pt="4">
           <Text>
             I’m always excited to connect with everyone so please don’t hesitate
