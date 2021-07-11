@@ -7,6 +7,8 @@ import { FaBars, FaExternalLinkAlt } from "react-icons/fa";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import Doodle2 from "./doodle/Doodle2";
 
 const MobileDrawer = dynamic(() => import("./MobileMenu"), {
   ssr: false,
@@ -67,6 +69,8 @@ const Navbar = () => {
       url: "/about",
     },
   ];
+  const router = useRouter();
+  const path = router.pathname;
   return (
     <Box
       as="nav"
@@ -124,6 +128,7 @@ const Navbar = () => {
               <Link href={data.url} key={idx} passHref>
                 <Button
                   {...buttonStyle}
+                  textDecor={path === data.url ? "underline" : "none"}
                   fontSize="sm"
                   rel={
                     data.text === "Timeline" ? "noopener noreferrer" : undefined
