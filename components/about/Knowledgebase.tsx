@@ -8,6 +8,7 @@ import {
   Box,
   Text,
   Divider,
+  Link,
 } from "@chakra-ui/react";
 import {
   SiAdobephotoshop,
@@ -155,9 +156,11 @@ const Knowledgebase = () => {
   return (
     <Box mt="3">
       <Divider mt="4" w="50%" mx="auto" />
-      <Heading as="h4" fontSize="3xl">
-        Knowledgebase
-      </Heading>
+      <Link href="#knowledge-base">
+        <Heading id="knowledge-base" as="h4" fontSize="3xl">
+          Knowledgebase
+        </Heading>
+      </Link>
       <Text>
         Several tools that I used (and currently learning how to use it)
       </Text>
