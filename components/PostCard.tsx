@@ -24,6 +24,7 @@ const PostCard = ({
   return (
     <RouteLink href={`/blog/${slug}`} textDecor="none!important">
       <Box
+        height="full"
         borderRadius="5px"
         borderColor={borderColor}
         borderWidth="1px"
