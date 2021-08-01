@@ -26,6 +26,7 @@
     },
     {
       "source": "/ayo-vaksin-gan",
+      "permanent": false,
       "destination": "https://airtable.com/shrjy0wrNa2XdxuWP/tblYbbdsiJefdWFU3/viwtVMYtnCVdBjw4i?blocks=hide"
     }
   ]
