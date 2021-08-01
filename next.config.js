@@ -21,6 +21,16 @@ const nextConfig = {
       // },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/ayo-vaksin-gan",
+        destination:
+          "https://airtable.com/shrjy0wrNa2XdxuWP/tblYbbdsiJefdWFU3/viwtVMYtnCVdBjw4i?blocks=hide",
+        permanent: false,
+      },
+    ];
+  },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
