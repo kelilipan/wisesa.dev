@@ -6,6 +6,12 @@ import { useRouter } from "next/router";
 
 const NotFound = () => {
   const { asPath } = useRouter();
+  if (asPath === "/ayo-vaksin-gan") {
+    typeof window !== "undefined" &&
+      window.location.replace(
+        "https://airtable.com/shrjy0wrNa2XdxuWP/tblYbbdsiJefdWFU3/viwtVMYtnCVdBjw4i?blocks=hide"
+      );
+  }
   return (
     <Main textAlign="center">
       <Head
