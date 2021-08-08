@@ -14,6 +14,7 @@
     "@emotion/styled": "11",
     "@mdx-js/loader": "^1.6.22",
     "@panelbear/panelbear-js": "^1.2.0",
+    "@types/mdx-js__react": "^1.5.4",
     "framer-motion": "4",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.3",

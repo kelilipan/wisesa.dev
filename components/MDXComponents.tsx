@@ -8,6 +8,7 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
+import { MDXProviderComponents } from "@mdx-js/react";
 import Image, { ImageProps } from "next/image";
 //TODO: type definition for each record
 const CustomImage = (props: ImageProps) => {
@@ -42,9 +43,9 @@ const CustomHeading = ({
     </Link>
   );
 };
-const MDXComponents = {
+const MDXComponents: MDXProviderComponents = {
   Img: CustomImage,
-  a: ({ href, children, ...props }: any) => {
+  a: ({ href, children, ...props }) => {
     const isExternal = !(href?.startsWith("/") || href?.startsWith("#"));
     return (
       <Link
@@ -57,42 +58,42 @@ const MDXComponents = {
       </Link>
     );
   },
-  h1: ({ id, ...props }: any) => {
+  h1: ({ id, ...props }) => {
     return <CustomHeading size="2xl" id={id} {...props} />;
   },
-  h2: ({ id, ...props }: any) => {
+  h2: ({ id, ...props }) => {
     return <CustomHeading size="xl" id={id} {...props} />;
   },
-  h3: ({ id, ...props }: any) => {
+  h3: ({ id, ...props }) => {
     return <CustomHeading size="lg" id={id} {...props} />;
   },
-  h4: ({ id, ...props }: any) => {
+  h4: ({ id, ...props }) => {
     return <CustomHeading size="md" id={id} {...props} />;
   },
-  h5: ({ id, ...props }: any) => {
+  h5: ({ id, ...props }) => {
     return <CustomHeading size="sm" id={id} {...props} />;
   },
-  h6: ({ id, ...props }: any) => {
+  h6: ({ id, ...props }) => {
     return <CustomHeading size="xs" id={id} {...props} />;
   },
   p: Text,
-  ul: (props: any) => {
+  ul: (props) => {
     return <UnorderedList pl={4} {...props} />;
   },
-  ol: (props: any) => {
+  ol: (props) => {
     return <OrderedList pl={4} {...props} />;
   },
-  li: (props: any) => {
+  li: (props) => {
     return <ListItem {...props} />;
   },
-  hr: (props: any) => {
+  hr: (props) => {
     return (
       <Box py={2}>
         <Divider mx="auto" {...props} />
       </Box>
     );
   },
-  blockquote: (props: any) => (
+  blockquote: (props) => (
     <Box
       borderLeftColor="gray.400"
       borderLeftWidth={2}
