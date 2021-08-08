@@ -5,7 +5,6 @@ import { serialize } from "next-mdx-remote/serialize";
 import mdxPrism from "mdx-prism";
 import { MDXPost, MDXSnippet, PostType, SnippetType } from "@/types/post";
 import readingTime from "reading-time";
-
 const root = process.cwd();
 
 export async function getFiles(type: string) {
@@ -24,7 +23,11 @@ export async function getFileBySlug(
 
   const source = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [require("remark-slug"), require("remark-code-titles")],
+      remarkPlugins: [
+        require("remark-slug"),
+        require("remark-code-titles"),
+        require("remark-breaks"),
+      ],
       rehypePlugins: [mdxPrism],
     },
   });

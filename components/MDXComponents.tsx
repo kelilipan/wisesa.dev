@@ -38,6 +38,7 @@ const CustomHeading = ({
         size={size}
         {...props}
         mt={[4, 6]}
+        mb={2}
         sx={{ scrollMarginTop: ["54px", "70px"] }}
       />
     </Link>
@@ -76,7 +77,7 @@ const MDXComponents: MDXProviderComponents = {
   h6: ({ id, ...props }) => {
     return <CustomHeading size="xs" id={id} {...props} />;
   },
-  p: Text,
+  p: (props) => <Text mb={4} {...props} />,
   ul: (props) => {
     return <UnorderedList pl={4} {...props} />;
   },
@@ -95,10 +96,12 @@ const MDXComponents: MDXProviderComponents = {
   },
   blockquote: (props) => (
     <Box
+      my="4"
       borderLeftColor="gray.400"
       borderLeftWidth={2}
       pl={6}
       py={4}
+      sx={{ "&>p": { mb: 0 } }} //remove mb text inside
       {...props}
     />
   ),
