@@ -7,7 +7,7 @@ const Footer = () => {
         <Text as="span" fontFamily="body">
           ©
         </Text>
-        2021 Wisesa. All Rights Reserved.
+        2021 Anvaqta Tangguh Wisesa. All Rights Reserved.
       </Text>
     </Box>
   );
