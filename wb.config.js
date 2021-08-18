@@ -87,17 +87,6 @@ module.exports = {
       },
     },
     {
-      urlPattern: /\.(?:json|xml|csv)$/i,
-      handler: "StaleWhileRevalidate",
-      options: {
-        cacheName: "static-data-assets",
-        expiration: {
-          maxEntries: 32,
-          maxAgeSeconds: 24 * 60 * 60, // 24 hours
-        },
-      },
-    },
-    {
       urlPattern: /\/api\/.*$/i,
       handler: "NetworkFirst",
       method: "GET",
