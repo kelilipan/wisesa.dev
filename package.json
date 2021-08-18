@@ -14,7 +14,6 @@
     "@emotion/styled": "11",
     "@mdx-js/loader": "^1.6.22",
     "@panelbear/panelbear-js": "^1.2.0",
-    "@types/mdx-js__react": "^1.5.4",
     "framer-motion": "4",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.3",
@@ -36,6 +35,8 @@
     "remark-slug": "^6.0.0"
   },
   "devDependencies": {
+    "@types/mdx-js__react": "^1.5.4",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "17.0.8",
     "globby": "^11.0.4",
     "prettier": "^2.3.1",
