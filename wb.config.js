@@ -99,28 +99,5 @@ module.exports = {
         networkTimeoutSeconds: 10, // fall back to cache if api does not response within 10 seconds
       },
     },
-    {
-      urlPattern: /\/_next\/image\?url=.*$/i,
-      handler: "StaleWhileRevalidate",
-      options: {
-        cacheName: "next-image",
-        expiration: {
-          maxEntries: 64,
-          maxAgeSeconds: 24 * 60 * 60, // 24 hours
-        },
-      },
-    },
-    {
-      urlPattern: /.*/i,
-      handler: "NetworkFirst",
-      options: {
-        cacheName: "others",
-        expiration: {
-          maxEntries: 32,
-          maxAgeSeconds: 24 * 60 * 60, // 24 hours
-        },
-        networkTimeoutSeconds: 10,
-      },
-    },
   ],
 };
