@@ -11,12 +11,12 @@ import {
 import { MDXProviderComponents } from "@mdx-js/react";
 import Image, { ImageProps } from "next/image";
 //TODO: type definition for each record
-const CustomImage = (props: ImageProps) => {
+const CustomImage = ({ alt, ...props }: ImageProps) => {
   return (
     <Box w="full" textAlign="center" mt="2" mb="4">
-      <Image {...props} />
+      <Image {...props} alt={alt} />
       <Text fontSize="sm" fontStyle="italic">
-        {props.alt}
+        {alt}
       </Text>
     </Box>
   );

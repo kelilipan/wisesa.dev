@@ -28,7 +28,13 @@ const SnippetCard = ({ logo, title, description, tags, slug }: SnippetType) => {
           boxSize={["50px", "60px"]}
           borderRadius="full"
         >
-          <Image src={logo} width="60" height="60" className="rounded" />
+          <Image
+            src={logo}
+            width="60"
+            height="60"
+            className="rounded"
+            alt="logo"
+          />
         </Flex>
         <Flex ml={[null, 4]} direction="column">
           <Heading

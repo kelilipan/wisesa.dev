@@ -40,7 +40,13 @@ const Snippet = ({ source, meta }: MDXSnippet) => {
           borderRadius="full"
         >
           {meta.logo !== undefined && (
-            <Image src={meta.logo} width="50" height="50" className="rounded" />
+            <Image
+              src={meta.logo}
+              width="50"
+              height="50"
+              className="rounded"
+              alt="logo"
+            />
           )}
         </Flex>
       </Flex>

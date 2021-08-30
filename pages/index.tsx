@@ -21,6 +21,7 @@ const Canvas = forwardRef((props, ref) => (
   // @ts-ignore
   <ReactSketchCanvas {...props} ref={ref} />
 ));
+Canvas.displayName = "Canvas";
 
 export default function Index() {
   const invertColor = useColorModeValue("none", "invert(15%) brightness(120%)");
@@ -78,7 +79,7 @@ export default function Index() {
         >
           <Box pos="relative">
             <Heading className="noselect" fontFamily="doodle">
-              Hi, I'm Wisesa. 🐱
+              Hi, I&apos;m Wisesa. 🐱
             </Heading>
             <Box
               position="absolute"

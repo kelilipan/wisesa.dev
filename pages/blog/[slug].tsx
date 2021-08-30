@@ -27,7 +27,7 @@ const Post = ({ source, meta }: MDXPost) => {
     return () => {
       document.documentElement.lang = "en";
     };
-  }, []);
+  }, [meta.lang]);
   const date = new Date(meta.publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",

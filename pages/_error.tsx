@@ -7,7 +7,13 @@ const offline = () => {
   return (
     <Main>
       <Box textAlign="center">
-        <Image width={"280px"} height={"216px"} src="/dino.gif" mx="auto" />
+        <Image
+          width={"280px"}
+          height={"216px"}
+          src="/dino.gif"
+          mx="auto"
+          alt="offline dino"
+        />
         <Text mt="4">Uh... something happens :((</Text>
         <RouteLink href="/">
           <Button variant="outline" size="sm" mt="2" leftIcon={<FaHome />}>

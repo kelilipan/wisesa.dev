@@ -8,7 +8,6 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import Doodle2 from "./doodle/Doodle2";
 
 const MobileDrawer = dynamic(() => import("./MobileMenu"), {
   ssr: false,

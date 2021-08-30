@@ -15,9 +15,9 @@ const AboutMe = () => {
       <Text mt="2">
         Hello, my name is <b>Anvaqta Tangguh Wisesa</b>, you can call me{" "}
         <b>Wisesa</b> or <b>Esa</b> for short. Yes, i changed my nickname haha,
-        if you're my school/college friend you maybe know me as <b>Vaq</b> or{" "}
-        <b>Anvaq</b> but that's ok, you can call me anything you want as long as
-        it's my name and not someone else <i>wkw</i>.
+        if you&apos;re my school/college friend you maybe know me as <b>Vaq</b> or{" "}
+        <b>Anvaq</b> but that&apos;s ok, you can call me anything you want as long as
+        it&apos;s my name and not someone else <i>wkw</i>.
       </Text>
       <Text mt="2">
         I grew up in a small village located in{" "}
@@ -28,7 +28,7 @@ const AboutMe = () => {
         >
           Grobogan, Jawa Tengah
         </Link>
-        . I'm currently pursuing my Bachelor's degree in Informatics (Computer
+        . I&apos;m currently pursuing my Bachelor&apos;s degree in Informatics (Computer
         science) at{" "}
         <Link
           textDecoration="underline"
@@ -49,7 +49,7 @@ const AboutMe = () => {
       </Text>
       <Text mt="2">
         I love exploring tech related stuff. When i was in college i join many
-        community and laboratory to expand my knowledge, I'm member of{" "}
+        community and laboratory to expand my knowledge, I&apos;m member of{" "}
         <Link
           textDecoration="underline"
           href="https://www.instagram.com/cciunitel/?hl=en"
@@ -65,7 +65,7 @@ const AboutMe = () => {
         >
           Pramuka Tel-U
         </Link>
-        , and i'm the (ex) lab.assistant of{" "}
+        , and i&apos;m the (ex) lab.assistant of{" "}
         <Link
           textDecoration="underline"
           href="http://ailabtelkom.github.io/"

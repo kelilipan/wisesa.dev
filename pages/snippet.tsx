@@ -21,7 +21,8 @@ const Snippet = ({ snippets }: SnippetProps) => {
         Code Snippets
       </Heading>
       <Text>
-        These are a collection of code snippets I've used in the past and saved.
+        These are a collection of code snippets I&apos;ve used in the past and
+        saved.
       </Text>
       {filteredSnippet.length > 0 ? (
         <VStack alignItems="self-start" pt="4">
