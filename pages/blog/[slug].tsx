@@ -69,7 +69,8 @@ const Post = ({ source, meta }: MDXPost) => {
           <Avatar
             src="/favicon/android-icon-48x48.png"
             name="Wisesa"
-            boxSize="24px"
+            width="24px"
+            height="24px"
           />
           <Text ml="2">
             <RouteLink href="/about">Wisesa</RouteLink> / {date}
