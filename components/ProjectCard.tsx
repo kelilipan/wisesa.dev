@@ -9,6 +9,7 @@ import {
   Text,
   Button,
   Flex,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { FaArrowRight, FaCode } from "react-icons/fa";
@@ -39,10 +40,17 @@ const ProjectCard = ({
     month: "long",
     year: "numeric",
   });
+  const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
   return (
-    <Stack direction={["column", "row"]} w="full">
+    <Stack
+      direction={["column", "row"]}
+      w="full"
+      border="1px solid"
+      borderColor={borderColor}
+      borderRadius="5px"
+    >
       <AspectRatio ratio={16 / 9} w={[null, "512px"]}>
-        <Box>
+        <Box borderLeftRadius={[0, "5px"]} borderTopRadius={["5px", 0]}>
           <Image
             width="512"
             height="288"
@@ -52,7 +60,7 @@ const ProjectCard = ({
           />
         </Box>
       </AspectRatio>
-      <Flex pl={[0, 4]} direction="column" w={["100%", "50%"]}>
+      <Flex pl={[2, 4]} py={[2, 4]} direction="column" w={["100%", "50%"]}>
         {url !== undefined || source !== undefined ? (
           <Link isExternal href={url ? url : source}>
             <Heading>{title}</Heading>

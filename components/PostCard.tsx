@@ -20,17 +20,20 @@ const PostCard = ({
     month: "long",
     year: "numeric",
   });
-  const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
   return (
-    <RouteLink href={`/blog/${slug}`} textDecor="none!important">
-      <Box
-        height="full"
-        borderRadius="5px"
-        borderColor={borderColor}
-        borderWidth="1px"
-        role="group"
-        _hover={{ bgColor: bgHoverColor, transition: "0.2s ease all" }}
-      >
+    <RouteLink
+      borderRadius="5px"
+      href={`/blog/${slug}`}
+      textDecor="none!important"
+      position="relative"
+      bottom="0px"
+      transition="0.2s ease all"
+      _hover={{
+        transition: "0.2s ease all",
+        bottom: "5px",
+      }}
+    >
+      <Box height="full" borderRadius="5px" shadow="md" role="group">
         <AspectRatio ratio={1.92 / 1}>
           <Box
             borderTopRadius="5px"
@@ -47,12 +50,11 @@ const PostCard = ({
             />
           </Box>
         </AspectRatio>
-        <Box p="2">
-          <Heading as="h4" fontSize="xl">
+        <Box p="2" borderBottomRadius="5px">
+          <Heading as="h4" fontSize="lg">
             {title}
           </Heading>
-          <Text>{description}</Text>
-          <Box fontSize="sm" mt="2" opacity="0.8">
+          <Box fontSize="sm" mb="2" opacity="0.8">
             {date} •{" "}
             <Tooltip
               label={`This post has ${readTime?.words} words and written in ${
@@ -65,6 +67,7 @@ const PostCard = ({
               </Text>
             </Tooltip>
           </Box>
+          <Text>{description}</Text>
         </Box>
       </Box>
     </RouteLink>
