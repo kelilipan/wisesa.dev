@@ -155,13 +155,17 @@ const Knowledgebase = () => {
   ];
   return (
     <Box mt="3">
-      <Divider mt="4" w="50%" mx="auto" />
       <Link href="#knowledge-base">
-        <Heading id="knowledge-base" as="h4" fontSize="3xl">
+        <Heading
+          id="knowledge-base"
+          as="h4"
+          fontSize="3xl"
+          sx={{ scrollMarginTop: ["54px", "70px"] }}
+        >
           Knowledgebase
         </Heading>
       </Link>
-      <Text>
+      <Text mt="2">
         Several tools that I used (and currently learning how to use it)
       </Text>
       <Text fontSize="sm" fontStyle="italic">
@@ -196,7 +200,6 @@ const Knowledgebase = () => {
           </GridItem>
         ))}
       </Grid>
-      <Divider mt="4" mx="auto" width="50%" />
     </Box>
   );
 };
