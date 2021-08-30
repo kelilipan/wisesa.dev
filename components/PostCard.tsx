@@ -15,6 +15,7 @@ const PostCard = ({
   readTime,
 }: PostType) => {
   const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
+  const outerBorderColor = useColorModeValue("transparent", "whiteAlpha.200");
   const date = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
@@ -33,7 +34,14 @@ const PostCard = ({
         bottom: "5px",
       }}
     >
-      <Box height="full" borderRadius="5px" shadow="md" role="group">
+      <Box
+        height="full"
+        borderRadius="5px"
+        shadow="md"
+        role="group"
+        borderColor={outerBorderColor}
+        borderWidth="1px"
+      >
         <AspectRatio ratio={1.92 / 1}>
           <Box
             borderTopRadius="5px"
