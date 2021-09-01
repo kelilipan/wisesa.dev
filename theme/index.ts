@@ -4,9 +4,9 @@ const theme = extendTheme({
   config: {
     initialColorMode: "light",
   },
-  shadows: {
-    outline: "0 0 0 3px rgba(255, 100, 100, 0.5)",
-  },
+  // shadows: {
+  //   outline: "0 0 0 3px rgba(255, 100, 100, 0.5)",
+  // },
   fonts: {
     body: `'Inter',${defaultTheme.fonts.body}`,
     heading: `'Inter',${defaultTheme.fonts.heading}`,
