@@ -13,8 +13,14 @@ const SnippetCard = ({ logo, title, description, tags, slug }: SnippetType) => {
   const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
   const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
   return (
-    <RouteLink href={`/snippet/${slug}`} textDecor="none!important" w="full">
+    <RouteLink
+      borderRadius="5px"
+      href={`/snippet/${slug}`}
+      textDecor="none!important"
+      w="full"
+    >
       <Stack
+        borderRadius="5px"
         alignItems={["flex-start", "center"]}
         direction={["column", "row"]}
         borderColor={borderColor}

@@ -50,7 +50,7 @@ const ProjectCard = ({
       borderRadius="5px"
     >
       <AspectRatio ratio={16 / 9} w={[null, "512px"]}>
-        <Box borderLeftRadius={[0, "5px"]} borderTopRadius={["5px", 0]}>
+        <Box borderRadius={["5px 5px 0 0 ", "5px 0 0 5px"]}>
           <Image
             width="512"
             height="288"

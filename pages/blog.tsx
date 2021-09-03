@@ -22,7 +22,7 @@ const Blog = ({ posts }: BlogProps) => {
       </Heading>
       <Text>Some tech stuff and my random thoughts.</Text>
       {filteredBlogPosts.length > 0 ? (
-        <SimpleGrid columns={[1, 2]} gap="6" py="2">
+        <SimpleGrid columns={[1, 2]} gap="4" py="2">
           {filteredBlogPosts.map((post: PostType, idx: number) => (
             <PostCard {...post} key={idx} />
           ))}

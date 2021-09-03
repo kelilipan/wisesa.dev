@@ -15,32 +15,27 @@ const PostCard = ({
   readTime,
 }: PostType) => {
   const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
-  const outerBorderColor = useColorModeValue("transparent", "whiteAlpha.200");
   const date = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
+  const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
   return (
     <RouteLink
       borderRadius="5px"
       href={`/blog/${slug}`}
       textDecor="none!important"
       position="relative"
-      bottom="0px"
-      transition="0.2s ease all"
-      _hover={{
-        transition: "0.2s ease all",
-        bottom: "5px",
-      }}
     >
       <Box
         height="full"
         borderRadius="5px"
-        shadow="md"
         role="group"
-        borderColor={outerBorderColor}
+        borderColor={borderColor}
         borderWidth="1px"
+        transition="0.2s ease all"
+        _hover={{ bgColor: bgHoverColor, transition: "0.2s ease all" }}
       >
         <AspectRatio ratio={1.92 / 1}>
           <Box
