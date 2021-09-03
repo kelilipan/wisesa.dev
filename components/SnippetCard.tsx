@@ -27,7 +27,11 @@ const SnippetCard = ({ logo, title, description, tags, slug }: SnippetType) => {
         borderWidth="1px"
         role="group"
         p="4"
-        _hover={{ bgColor: bgHoverColor, transition: "0.2s ease all" }}
+        transition="0.2s ease all"
+        _hover={{
+          bgColor: bgHoverColor,
+          transition: "0.2s ease all",
+        }}
       >
         <Flex
           bg="whiteAlpha.600"
