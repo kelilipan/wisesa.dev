@@ -2,20 +2,10 @@ import { useEffect } from "react";
 import Head from "@/components/Head";
 import MDXComponents from "@/components/MDXComponents";
 import Link from "@/components/Link";
-import { getFileBySlug, getFiles, getLang } from "@/lib/mdx";
+import { getFileBySlug, getFiles } from "@/lib/mdx";
 import config from "@/site.config";
 import { MDXPost } from "@/types/post";
 
-import {
-  Avatar,
-  Box,
-  Divider,
-  Flex,
-  Heading,
-  Text,
-  Tooltip,
-} from "@chakra-ui/react";
-import Image from "next/image";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { BlogJsonLd } from "next-seo";

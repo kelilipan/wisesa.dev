@@ -1,9 +1,11 @@
 import Link from "@/components/Link";
 const AboutMe = () => {
   return (
-    <section className="space-y-2">
-      <h2 id="about" className="scroll-margin-nav text-3xl">
-        <Link href="#about">About</Link>
+    <section>
+      <h2 id="about" className="scroll-margin-nav">
+        <Link className="text-3xl" href="#about">
+          About
+        </Link>
       </h2>
       <p>
         Hello, my name is <b>Anvaqta Tangguh Wisesa</b>, you can call me{" "}

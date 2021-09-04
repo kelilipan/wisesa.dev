@@ -1,4 +1,3 @@
-import Main from "@/components/Main";
 import Head from "@/components/Head";
 import Image from "next/image";
 import Doodle1 from "@/components/doodle/Doodle1";
@@ -7,7 +6,10 @@ import Contact from "@/components/about/Contact";
 
 const AboutPage = () => {
   return (
-    <Main className="max-w-3xl mb-6">
+    <div
+      id="main-content"
+      className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto pt-6 px-2 md:pt-11 md:px-0"
+    >
       <Head title="About" />
       <style global jsx>
         {`
@@ -31,11 +33,11 @@ const AboutPage = () => {
           <Doodle1 />
         </div>
       </div>
-      <div className="z-20 space-y-4">
+      <div className="prose max-w-full z-20">
         <AboutMe />
         <Contact />
       </div>
-    </Main>
+    </div>
   );
 };
 

@@ -16,8 +16,10 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            color: "#202020",
             "h1,h2,h3,h4,h5,h6": {
               a: {
+                fontWeight: "bold",
                 textDecoration: "none",
                 "&:hover": {
                   textDecoration: "underline",
