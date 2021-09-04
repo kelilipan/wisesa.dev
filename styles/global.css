@@ -63,6 +63,17 @@ body {
   }
 }
 
+@layer utilities {
+  .scroll-margin-nav {
+    scroll-margin-top: 46px;
+  }
+  @screen md {
+    .scroll-margin-nav {
+      scroll-margin-top: 66px;
+    }
+  }
+}
+
 .container {
   @apply max-w-5xl;
 }

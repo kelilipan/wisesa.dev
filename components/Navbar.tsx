@@ -1,7 +1,3 @@
-import { Button, ButtonProps } from "@chakra-ui/button";
-import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Box, Flex, HStack } from "@chakra-ui/layout";
-import { IconButton, useDisclosure } from "@chakra-ui/react";
 import Link from "@/components/Link";
 import { FaBars, FaExternalLinkAlt } from "react-icons/fa";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -14,38 +10,6 @@ const MobileDrawer = dynamic(() => import("./MobileMenu"), {
 });
 
 const Navbar = () => {
-  const color = useColorModeValue("#202020", "white");
-  const bgColor = useColorModeValue("whiteAlpha.500", "rgba(29, 29, 29, 0.5)");
-  const bgColorFallback = useColorModeValue(
-    "whiteAlpha.900",
-    "rgba(29, 29, 29, 0.9)"
-  );
-  const borderBottomColor = useColorModeValue(
-    "blackAlpha.50",
-    "whiteAlpha.200"
-  );
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  // const fontSize = useBreakpointValue(["lg", "xl"]);
-  const hoverBg = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
-  const skipColor = useColorModeValue("white", "#202020");
-  const buttonStyle: ButtonProps = {
-    as: "a",
-    borderRadius: "none",
-    py: [6, 8],
-    px: 2,
-    minW: ["50px", "60px"],
-    variant: "ghost",
-    colorScheme: "blackAlpha",
-    color,
-    _hover: {
-      bgColor: hoverBg,
-    },
-    _focus: {
-      boxShadow: "none",
-      textDecor: "underline",
-      textDecorationStyle: "dotted",
-    },
-  };
   const links = [
     {
       text: "Blog",
@@ -71,7 +35,7 @@ const Navbar = () => {
   const router = useRouter();
   const path = router.pathname;
   return (
-    <nav className="z-50 border-b-2 border-gray-200 sticky top-0">
+    <nav className="z-50 border-b-2 border-gray-200 sticky top-0 bg-white">
       <div className="flex max-w-5xl mx-auto items-center">
         <Link
           href="/"
