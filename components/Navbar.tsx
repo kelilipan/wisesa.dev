@@ -5,10 +5,6 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 
-const MobileDrawer = dynamic(() => import("./MobileMenu"), {
-  ssr: false,
-});
-
 const Navbar = () => {
   const links = [
     {
@@ -63,7 +59,7 @@ const Navbar = () => {
               );
             })}
           </div>
-          <ThemeSwitcher />
+          {/* <ThemeSwitcher /> */}
         </div>
         <div className="flex ml-auto md:hidden">
           <button className="h-[44px] px-3 hover:bg-gray-300 transition duration-200 ease-in-out">

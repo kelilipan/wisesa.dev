@@ -13,6 +13,20 @@ module.exports = {
       },
       fontSize: false,
       minWidth: width,
+      typography: {
+        DEFAULT: {
+          css: {
+            "h1,h2,h3,h4,h5,h6": {
+              a: {
+                textDecoration: "none",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     cursor: {
       pencil: "url('/pencil.png') 0 24, auto",
@@ -20,7 +34,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: { typography: ["dark"] },
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  plugins: [require("@tailwindcss/typography")],
 };
