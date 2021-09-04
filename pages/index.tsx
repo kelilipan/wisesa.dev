@@ -23,7 +23,6 @@ Canvas.displayName = "Canvas";
 
 export default function Index() {
   const [color, setColor] = useState("rgba(255, 0, 0, 0.5)");
-  const [strokeWidth, setWidth] = useState(5);
   const canvasRef = useRef(null);
   const clearHandler = () => {
     // @ts-ignore
@@ -55,14 +54,16 @@ export default function Index() {
           left: 0,
           zIndex: 5,
         }}
-        strokeWidth={strokeWidth}
+        strokeWidth={5}
         strokeColor={color}
       />
 
-      <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
+      <div className="flex flex-col-reverse md:flex-row justify-end md:justify-between items-center">
         <div className="flex flex-col items-center md:items-start space-y-4 justify-center">
           <div className="relative">
-            <h2 className="noselect font-doodle">Hi, I&apos;m Wisesa. 🐱</h2>
+            <h1 className="noselect font-doodle mt-1 text-3xl md:text-4xl">
+              Hi, I&apos;m Wisesa. 🐱
+            </h1>
             <div className="absolute hidden lg:block z-[2] top-[-10px] right-[20px]">
               <Doodle2 />
             </div>
@@ -106,8 +107,6 @@ export default function Index() {
           clearCanvas={clearHandler}
           color={color}
           setColor={setColor}
-          strokeWidth={strokeWidth}
-          setWidth={setWidth}
         />
       </div>
     </Main>
