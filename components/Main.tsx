@@ -1,21 +1,12 @@
-import { Stack, StackProps } from "@chakra-ui/layout";
-
-const Main = ({ children, ...props }: StackProps) => {
+const Main: React.FC = ({ children, ...props }) => {
   return (
-    <Stack
+    <div
       id="main-content"
-      pt={["24px", "42px"]}
-      px={[2, 0]}
-      flex="1"
-      h="full"
-      w="full"
-      maxW="5xl"
-      mx="auto"
-      sx={{ scrollMarginTop: ["20px", "40px"] }}
+      className="flex flex-1 h-full w-full max-w-5xl mx-auto pt-6 px-2 md:pt-11 md:px-0"
       {...props}
     >
       {children}
-    </Stack>
+    </div>
   );
 };
 

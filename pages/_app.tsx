@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import theme from "@/theme";
+import { ThemeProvider } from "next-themes";
 import PrismTheme from "@/components/PrismTheme";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
@@ -37,7 +37,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     );
   }, []);
   return (
-    <ChakraProvider theme={theme}>
+    // <ChakraProvider theme={theme}>
+    <ThemeProvider attribute="class" enableSystem={false}>
       <DefaultSeo
         description={config.description}
         defaultTitle="Hi i'm Wisesa."
@@ -68,18 +69,15 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         ]}
       />
       <PrismTheme>
-        <Flex minH="100vh" direction="column">
+        <div className="flex flex-col min-h-screen">
           <Navbar />
           <AnimatePresence exitBeforeEnter>
             <MotionBox
               key={router.route}
-              display="flex"
-              flexDirection="column"
+              className="flex flex-col h-full flex-grow"
               animate="enter"
               as="main"
               exit="exit"
-              h="full"
-              flexGrow={1}
               initial="initial"
               variants={{
                 initial: { opacity: 0, y: 5 },
@@ -91,9 +89,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             </MotionBox>
           </AnimatePresence>
           <Footer />
-        </Flex>
+        </div>
       </PrismTheme>
-    </ChakraProvider>
+    </ThemeProvider>
+    // </ChakraProvider>
   );
 }
 export default MyApp;

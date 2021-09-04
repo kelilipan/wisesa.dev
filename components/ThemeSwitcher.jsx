@@ -1,13 +1,14 @@
 import React from "react";
 import style from "./ThemeSwitcher.module.css";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { Box, useColorMode } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/react";
+
 //TODO: to typescript
-const ThemeSwitcher = (props) => {
+const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
   return (
-    <Box {...props}>
+    <div>
       <input
         checked={isDark}
         type="checkbox"
@@ -27,7 +28,7 @@ const ThemeSwitcher = (props) => {
         <FaSun color="#f39c12" />
         <div className={style.ball}></div>
       </label>
-    </Box>
+    </div>
   );
 };
 

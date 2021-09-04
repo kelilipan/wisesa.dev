@@ -50,10 +50,9 @@ export default function Index() {
           content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa,anvaqta tangguh wisesa"
         />
       </NextHead>
-      <Canvas
+      {/* <Canvas
         ref={canvasRef}
-        /*
-      // @ts-ignore */
+        // @ts-ignore
         width="100%"
         height="100vh"
         background="transparent"
@@ -65,7 +64,7 @@ export default function Index() {
         }}
         strokeWidth={strokeWidth}
         strokeColor={color}
-      />
+      /> */}
 
       <Stack
         direction={["column-reverse", "row"]}
