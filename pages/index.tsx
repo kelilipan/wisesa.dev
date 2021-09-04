@@ -58,7 +58,7 @@ export default function Index() {
         strokeColor={color}
       />
 
-      <div className="flex flex-col-reverse md:flex-row justify-end md:justify-between items-center">
+      <div className="w-full flex flex-col-reverse md:flex-row justify-end md:justify-between items-center">
         <div className="flex flex-col items-center md:items-start space-y-4 justify-center">
           <div className="relative">
             <h1 className="noselect font-doodle mt-1 text-3xl md:text-4xl">
