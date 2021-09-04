@@ -22,8 +22,27 @@
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
+}
+body {
   color: #202020;
-  @apply dark:text-white;
+  @apply font-sans dark:text-white;
+}
+
+::selection {
+  color: black;
+  @apply bg-gray-300 dark:bg-gray-400;
+}
+
+.noselect {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none !important;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+#nprogress .bar: {
+  z-index: 99999;
 }
 
 @layer base {

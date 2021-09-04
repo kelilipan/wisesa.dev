@@ -14,6 +14,10 @@ module.exports = {
       fontSize: false,
       minWidth: width,
     },
+    cursor: {
+      pencil: "url('/pencil.png') 0 24, auto",
+      "pencil-dark": "url('/pencil-invert.png') 0 24, auto",
+    },
   },
   variants: {
     extend: {},
