@@ -3,7 +3,6 @@ import Main from "@/components/Main";
 import PostCard from "@/components/PostCard";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { PostType } from "@/types/post";
-import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
 interface BlogProps {
   posts: PostType[] | [];
 }
@@ -17,18 +16,16 @@ const Blog = ({ posts }: BlogProps) => {
         title="Blog"
         description="Some tech stuff and my random thoughts."
       />
-      <Heading mt={[4, 6]} fontSize={["4xl", "6xl"]}>
-        Blog
-      </Heading>
-      <Text>Some tech stuff and my random thoughts.</Text>
+      <h1 className="mt-4 md:mt-6 text-4xl md:text-6xl">Blog</h1>
+      <p className="mt-2">Some tech stuff and my random thoughts.</p>
       {filteredBlogPosts.length > 0 ? (
-        <SimpleGrid columns={[1, 2]} gap="4" py="2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
           {filteredBlogPosts.map((post: PostType, idx: number) => (
             <PostCard {...post} key={idx} />
           ))}
-        </SimpleGrid>
+        </div>
       ) : (
-        <Text pt="4">No blog post.</Text>
+        <p className="pt-4">No blog post.</p>
       )}
     </Main>
   );
