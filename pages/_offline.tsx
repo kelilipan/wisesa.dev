@@ -1,5 +1,5 @@
 import Main from "@/components/Main";
-import { RouteLink } from "@/components/RouteLink";
+import Link from "@/components/Link";
 import Image from "next/image";
 import { FaHome } from "react-icons/fa";
 
@@ -16,9 +16,9 @@ const offline = () => {
         />
         <p className="mt-4">Looks like you&apos;re offline :((</p>
         <p>Click button bellow if you&apos;re already online</p>
-        <RouteLink href="/">
+        <Link href="/">
           <FaHome className="inline" /> Home
-        </RouteLink>
+        </Link>
       </div>
     </Main>
   );
