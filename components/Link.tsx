@@ -1,6 +1,6 @@
 import NextLink, { LinkProps } from "next/link";
 export type CustomLinkProps = {
-  href: string;
+  href?: string;
   children: React.ReactNode;
   isExternal?: boolean;
 } & React.ComponentPropsWithoutRef<"a"> &
@@ -19,7 +19,7 @@ const Link = ({
 
   const isRouteLink = href.startsWith("/");
 
-  if (isRouteLink) {
+  if (isRouteLink && !isExternal) {
     return (
       <NextLink href={href} passHref>
         <a {...props}>{children}</a>
