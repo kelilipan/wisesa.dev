@@ -1,10 +1,9 @@
-import { Icon, IconProps } from "@chakra-ui/react";
-const ID = (props: IconProps) => {
+const ID = () => {
   return (
-    <Icon viewBox="0 0 900 600" {...props}>
+    <svg className="w-auto h-3 max-w-[18px] inline" viewBox="0 0 900 600">
       <path fill="#fff" d="M0 0H900V600H0z" />
       <path fill="red" d="M0 0H900V300H0z" />
-    </Icon>
+    </svg>
   );
 };
 

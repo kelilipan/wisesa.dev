@@ -1,25 +1,17 @@
 import { useEffect } from "react";
 import Head from "@/components/Head";
-import Main from "@/components/Main";
 import MDXComponents from "@/components/MDXComponents";
-import { RouteLink } from "@/components/RouteLink";
-import { getFileBySlug, getFiles, getLang } from "@/lib/mdx";
+import Link from "@/components/Link";
+import { getFileBySlug, getFiles } from "@/lib/mdx";
 import config from "@/site.config";
 import { MDXPost } from "@/types/post";
 
-import {
-  Avatar,
-  Box,
-  Divider,
-  Flex,
-  Heading,
-  Text,
-  Tooltip,
-} from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { BlogJsonLd } from "next-seo";
 import { ID, EN } from "@/components/flags";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const Post = ({ source, meta }: MDXPost) => {
   useEffect(() => {
@@ -34,7 +26,10 @@ const Post = ({ source, meta }: MDXPost) => {
     year: "numeric",
   });
   return (
-    <Main maxW="3xl" mb="6">
+    <section
+      id="main-content"
+      className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto pt-6 px-2 mb-6 md:pt-11 md:px-0"
+    >
       <Head
         title={meta.title}
         description={meta.description}
@@ -58,44 +53,38 @@ const Post = ({ source, meta }: MDXPost) => {
         description={meta.description}
         images={[meta.image]}
       />
-      <Flex direction="column">
-        <RouteLink href={`/blog/${meta.slug}`}>
-          <Heading fontSize={["4xl", "6xl"]} mt={[4, 6]}>
-            {meta.title}
-          </Heading>
-        </RouteLink>
-        <Text>{meta.description}</Text>
-        <Flex mt="5" fontSize="sm" alignItems="center">
-          <Avatar
-            src="/favicon/android-icon-48x48.png"
-            name="Wisesa"
-            width="24px"
-            height="24px"
-          />
-          <Text ml="2">
-            <RouteLink href="/about">Wisesa</RouteLink> / {date}
-          </Text>
-          <Text ml="auto">
-            <Tooltip
-              label={`This post has ${
+      <div className="flex flex-col">
+        <h1 className="text-4xl md:text-6xl mt-4 md:mt-6 hover:underline">
+          <Link href={`/blog/${meta.slug}`}>{meta.title}</Link>
+        </h1>
+        <p className="mt-2">{meta.description}</p>
+        <div className="flex mt-4 text-sm items-center">
+          <p>
+            <Link href="/about" className="font-semibold">
+              Wisesa
+            </Link>{" "}
+            / {date}
+          </p>
+          <p className="ml-auto">
+            <Tippy
+              content={`This post has ${
                 meta.readTime?.words
               } words and written in ${
                 meta.lang === "id" ? "Bahasa Indonesia" : "English"
               }. Reading time is calculated using 200WPM Reading speed.`}
-              aria-label="Reading time"
             >
               <span>
                 {meta.readTime?.text} • {meta.lang === "id" ? <ID /> : <EN />}
               </span>
-            </Tooltip>
-          </Text>
-        </Flex>
-        <Divider mt="4" mb="2" />
-      </Flex>
-      <Box w="full">
+            </Tippy>
+          </p>
+        </div>
+        <hr className="mt-4 mb-2 dark:border-light" />
+      </div>
+      <div className="prose dark:prose-dark max-w-full">
         <MDXRemote {...source} components={MDXComponents} />
-      </Box>
-    </Main>
+      </div>
+    </section>
   );
 };
 

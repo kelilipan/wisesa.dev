@@ -1,15 +1,15 @@
-import Main from "@/components/Main";
-import { Flex, Box, Divider } from "@chakra-ui/react";
 import Head from "@/components/Head";
 import Image from "next/image";
-
 import Doodle1 from "@/components/doodle/Doodle1";
-import Knowledgebase from "@/components/about/Knowledgebase";
 import AboutMe from "@/components/about/AboutMe";
 import Contact from "@/components/about/Contact";
+
 const AboutPage = () => {
   return (
-    <Main maxW="3xl" mb="6">
+    <div
+      id="main-content"
+      className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto pt-6 px-2 md:pt-11 md:px-0"
+    >
       <Head title="About" />
       <style global jsx>
         {`
@@ -19,7 +19,7 @@ const AboutPage = () => {
           }
         `}
       </style>
-      <Flex justifyContent="center" mt={[4, 6]} pos="relative">
+      <div className="flex justify-center mt-4 md:mt-6 relative">
         <Image
           src={require("public/me-2.jpg")}
           placeholder="blur"
@@ -29,27 +29,15 @@ const AboutPage = () => {
           priority
           className="me-image noselect"
         />
-        <Box
-          width="300px"
-          height="200px"
-          position="absolute"
-          zIndex={2}
-          bottom={["-80px", "-90px"]}
-          left={0}
-          right={0}
-          mx="auto"
-        >
+        <div className="w-[300px] h-[200px] absolute z-10 bottom-[-80px] md:bottom-[-90px]">
           <Doodle1 />
-        </Box>
-      </Flex>
-      <Box zIndex="5">
+        </div>
+      </div>
+      <div className="prose dark:prose-dark mt-[-2rem] max-w-full z-20">
         <AboutMe />
-        <Divider my="4" w="50%" mx="auto" />
-        <Knowledgebase />
-        <Divider my="4" w="50%" mx="auto" />
         <Contact />
-      </Box>
-    </Main>
+      </div>
+    </div>
   );
 };
 

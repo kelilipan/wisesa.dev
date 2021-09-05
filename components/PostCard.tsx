@@ -1,9 +1,9 @@
 import { PostType } from "@/types/post";
-import { useColorModeValue } from "@chakra-ui/color-mode";
-import { AspectRatio, Box, Heading, Text, Tooltip } from "@chakra-ui/react";
 import Image from "next/image";
-import { RouteLink } from "./RouteLink";
 import { ID, EN } from "./flags";
+import Link from "./Link";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const PostCard = ({
   title,
@@ -14,66 +14,43 @@ const PostCard = ({
   publishedAt,
   readTime,
 }: PostType) => {
-  const borderColor = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
   const date = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
-  const bgHoverColor = useColorModeValue("blackAlpha.50", "whiteAlpha.200");
+
   return (
-    <RouteLink
-      borderRadius="5px"
-      href={`/blog/${slug}`}
-      textDecor="none!important"
-      position="relative"
-    >
-      <Box
-        height="full"
-        borderRadius="5px"
-        role="group"
-        borderColor={borderColor}
-        borderWidth="1px"
-        transition="0.2s ease all"
-        _hover={{ bgColor: bgHoverColor, transition: "0.2s ease all" }}
-      >
-        <AspectRatio ratio={1.92 / 1}>
-          <Box
-            borderTopRadius="5px"
-            borderBottomColor={borderColor}
-            borderBottomWidth="1px"
-            _groupHover={{ opacity: 0.9 }}
-          >
-            <Image
-              alt={title}
-              width="512"
-              height="267"
-              quality="100"
-              src={image ? image : "/og-post-default.jpg"}
-            />
-          </Box>
-        </AspectRatio>
-        <Box p="2" borderBottomRadius="5px">
-          <Heading as="h4" fontSize="lg">
-            {title}
-          </Heading>
-          <Box fontSize="sm" mb="2" opacity="0.8">
-            {date} •{" "}
-            <Tooltip
-              label={`This post has ${readTime?.words} words and written in ${
+    <Link className="rounded" href={`/blog/${slug}`}>
+      <div className="group h-full rounded-md border-gray-200 dark:border-light border transition duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-light">
+        <div className="flex border-b dark:border-light rounded-t group-hover:opacity-90">
+          <Image
+            className="rounded-t"
+            alt={title}
+            width="512"
+            height="267"
+            quality="100"
+            src={image ? image : "/og-post-default.jpg"}
+          />
+        </div>
+
+        <div className="p-2 rounded-b">
+          <h4>{title}</h4>
+          <div className="text-sm mb-2 text-gray-700 dark:text-gray-300">
+            <Tippy
+              content={`This post has ${readTime?.words} words and written in ${
                 lang === "id" ? "Bahasa Indonesia" : "English"
               }. Reading time is calculated using 200WPM Reading speed.`}
-              aria-label="Reading time"
             >
-              <Text d="inline">
-                {readTime?.text} • {lang === "id" ? <ID /> : <EN />}
-              </Text>
-            </Tooltip>
-          </Box>
-          <Text>{description}</Text>
-        </Box>
-      </Box>
-    </RouteLink>
+              <span>
+                {date} • {readTime?.text} • {lang === "id" ? <ID /> : <EN />}
+              </span>
+            </Tippy>
+          </div>
+          <p>{description}</p>
+        </div>
+      </div>
+    </Link>
   );
 };
 

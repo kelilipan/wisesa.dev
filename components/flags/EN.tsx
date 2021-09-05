@@ -1,7 +1,6 @@
-import { Icon, IconProps } from "@chakra-ui/react";
-const EN = (props: IconProps) => {
+const EN = () => {
   return (
-    <Icon viewBox="0 0 60 30" {...props}>
+    <svg className="w-auto h-3 max-w-[18px] mb-1 inline" viewBox="0 0 60 30">
       <clipPath id="s">
         <path d="M0,0 v30 h60 v-30 z" />
       </clipPath>
@@ -20,7 +19,7 @@ const EN = (props: IconProps) => {
         <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
         <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
       </g>
-    </Icon>
+    </svg>
   );
 };
 

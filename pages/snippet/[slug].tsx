@@ -1,72 +1,56 @@
 import Head from "@/components/Head";
-import Main from "@/components/Main";
 import MDXComponents from "@/components/MDXComponents";
-import { RouteLink } from "@/components/RouteLink";
+import Link from "@/components/Link";
 import { getFileBySlug, getFiles } from "@/lib/mdx";
 import { MDXSnippet } from "@/types/post";
-import {
-  Badge,
-  Box,
-  Divider,
-  Flex,
-  Heading,
-  HStack,
-  Text,
-} from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 
 const Snippet = ({ source, meta }: MDXSnippet) => {
   return (
-    <Main maxW="3xl" mb="6">
+    <section
+      id="main-content"
+      className="flex flex-col flex-1 h-full w-full max-w-3xl mx-auto pt-6 px-2 mb-6 md:pt-11 md:px-0"
+    >
       <Head
         title={meta.title + " · Code Snippets"}
         description={meta.description}
       />
-      <Flex justifyContent="space-between" alignItems="center" mt={[4, 6]}>
-        <Flex direction="column">
-          <RouteLink href={`/snippet/${meta.slug}`}>
-            <Heading fontSize={["4xl", "6xl"]}>{meta.title}</Heading>
-          </RouteLink>
-          <Text>{meta.description}</Text>
-        </Flex>
-        <Flex
-          d={["none", "flex"]}
-          bg="whiteAlpha.600"
-          boxSize="50px"
-          minW="50px"
-          minH="50px"
-          borderRadius="full"
-        >
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-4xl md:text-6xl mt-4 md:mt-6 hover:underline">
+            <Link href={`/snippet/${meta.slug}`}>{meta.title}</Link>
+          </h1>
+          <p>{meta.description}</p>
+        </div>
+        <div className="hidden md:block">
           {meta.logo !== undefined && (
             <Image
               src={meta.logo}
               width="50"
               height="50"
-              className="rounded"
+              className=" bg-gray-50 rounded-full w-14 md:w-16"
               alt="logo"
             />
           )}
-        </Flex>
-      </Flex>
-      <HStack>
+        </div>
+      </div>
+      <div className="flex space-x-2 mt-2">
         {meta?.tags?.map((tag, idx) => (
-          <Badge key={idx}>{tag}</Badge>
+          <div
+            className="rounded-sm text-xs uppercase px-1 font-semibold bg-gray-200 dark:bg-light"
+            key={idx}
+          >
+            {tag}
+          </div>
         ))}
-      </HStack>
-      <Divider pt="4" />
-      <Box w="full" pt="2">
+      </div>
+      <hr className="my-4 dark:border-light" />
+      <div className="prose dark:prose-dark max-w-full">
         <MDXRemote {...source} components={MDXComponents} />
-      </Box>
-      <style global jsx>
-        {`
-          .rounded {
-            border-radius: 100%;
-          }
-        `}
-      </style>
-    </Main>
+      </div>
+    </section>
   );
 };
 

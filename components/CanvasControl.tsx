@@ -1,95 +1,40 @@
-import {
-  Button,
-  Flex,
-  FlexProps,
-  Stack,
-  useColorModeValue,
-} from "@chakra-ui/react";
 import { FaCheckCircle, FaTrashAlt } from "react-icons/fa";
-import {
-  Slider,
-  SliderTrack,
-  SliderFilledTrack,
-  SliderThumb,
-} from "@chakra-ui/react";
-
-interface ControlProps extends FlexProps {
+interface ControlProps {
   clearCanvas: () => void;
   color: string;
   setColor: (color: string) => void;
-  strokeWidth: number;
-  setWidth: (width: number) => void;
 }
 const colorList = [
   "rgba(255, 0, 0, 0.5)",
   "rgba(0, 255, 0, 0.5)",
   "rgba(0, 0, 255, 0.5)",
 ];
-const CanvasControl = ({
-  clearCanvas,
-  color,
-  setColor,
-  strokeWidth,
-  setWidth,
-  ...props
-}: ControlProps) => {
-  const bgColor = useColorModeValue("blackAlpha.50", "whiteAlpha.100");
+const CanvasControl = ({ clearCanvas, color, setColor }: ControlProps) => {
   return (
-    <Flex
-      alignItems="center"
-      p="2"
-      direction="row"
-      zIndex="modal"
-      pos="fixed"
-      bgColor={bgColor}
-      top={["10%", "unset"]}
-      right={1}
-      borderRadius="full"
-      {...props}
-    >
-      <Slider
-        aria-label="brush size"
-        value={strokeWidth}
-        orientation="vertical"
-        min={2}
-        max={12}
-        onChange={setWidth}
-        minH="120px"
-      >
-        <SliderTrack>
-          <SliderFilledTrack />
-        </SliderTrack>
-        <SliderThumb />
-      </Slider>
-      <Stack direction="column">
+    <div className="flex fixed items-center p-2 z-50 top-[10%] md:top-[unset] bg-gray-100 dark:bg-light rounded-full right-1">
+      <div className="flex flex-col space-y-2">
         {colorList.map((data, key) => (
-          <Button
+          <button
             onClick={() => setColor(data)}
-            boxSize="32px"
-            size="sm"
-            rounded="full"
+            className="rounded-full w-8 h-8"
             key={key}
-            bgColor={data}
-            aria-label="brush color"
-            _hover={undefined}
+            style={{ backgroundColor: data }}
+            aria-label="Change brush color"
           >
-            {data === color && <FaCheckCircle />}
-          </Button>
+            {data === color && <FaCheckCircle className="mx-auto" />}
+          </button>
         ))}
-        <Button
+        <button
           onClick={() => {
             clearCanvas();
           }}
-          boxSize="32px"
-          size="sm"
-          rounded="full"
-          aria-label="brush color"
-          _hover={undefined}
+          className="rounded-full w-8 h-8 bg-gray-200 dark:bg-dark"
+          aria-label="Clear doodle"
         >
-          <FaTrashAlt />
-        </Button>
-      </Stack>
-    </Flex>
+          <FaTrashAlt className="mx-auto" />
+        </button>
+      </div>
+    </div>
   );
 };
 
