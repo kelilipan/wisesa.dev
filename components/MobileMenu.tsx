@@ -77,6 +77,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <div className="flex flex-col w-full">
                   {links.map((data, idx) => (
                     <Link
+                      onClick={closeModal}
                       className="w-full text-center font-semibold p-4 hover:bg-gray-100 dark:hover:bg-light"
                       href={data.url}
                       isExternal={data.text === "Timeline"}
