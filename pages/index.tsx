@@ -68,7 +68,7 @@ export default function Index() {
               <Doodle2 />
             </div>
           </div>
-          <p className="noselect text-lg text-center md:text-left max-w-[550px]">
+          <p className="noselect text-md md:text-lg text-center md:text-left max-w-[550px]">
             A student and a software <i>edgy</i>neer mainly focused on web
             technologies. I love exploring tech related stuff and now fall in
             love with react.js and javascript.
