@@ -1,7 +1,8 @@
 import Link from "@/components/Link";
 import { FaBars, FaExternalLinkAlt } from "react-icons/fa";
-import ThemeSwitcher from "./ThemeSwitcher";
+import dynamic from "next/dynamic";
 
+const ThemeSwitcher = dynamic(() => import("./ThemeSwitcher"), { ssr: false });
 const Navbar = () => {
   const links = [
     {
