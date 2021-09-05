@@ -1,15 +1,4 @@
 import { ProjectType } from "@/types/project";
-import {
-  AspectRatio,
-  Box,
-  Stack,
-  Heading,
-  Badge,
-  Text,
-  Button,
-  Flex,
-  useColorModeValue,
-} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "./Link";
 import { FaArrowRight, FaCode } from "react-icons/fa";

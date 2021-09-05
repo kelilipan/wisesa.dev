@@ -1,12 +1,4 @@
 import { SnippetType } from "@/types/post";
-import {
-  Badge,
-  Flex,
-  Heading,
-  Stack,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "@/components/Link";
 const SnippetCard = ({ logo, title, description, tags, slug }: SnippetType) => {
