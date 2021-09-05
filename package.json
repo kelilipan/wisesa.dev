@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^1.6.3",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "@headlessui/react": "^1.4.1",
     "@mdx-js/loader": "^1.6.22",
     "@panelbear/panelbear-js": "^1.2.0",
     "@tailwindcss/aspect-ratio": "^0.2.1",

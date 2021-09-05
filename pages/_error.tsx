@@ -1,26 +1,24 @@
 import Main from "@/components/Main";
 import { RouteLink } from "@/components/RouteLink";
-import { Box, Button, Text, Image } from "@chakra-ui/react";
 import { FaHome } from "react-icons/fa";
+import Image from "next/image";
 
 const offline = () => {
   return (
     <Main>
-      <Box textAlign="center">
+      <div className="text-center">
         <Image
-          width={"280px"}
-          height={"216px"}
+          width={280}
+          height={216}
           src="/dino.gif"
-          mx="auto"
+          className="mx-auto"
           alt="offline dino"
         />
-        <Text mt="4">Uh... something happens :((</Text>
+        <p className="mt-4">Uh... something happens :((</p>
         <RouteLink href="/">
-          <Button variant="outline" size="sm" mt="2" leftIcon={<FaHome />}>
-            Home
-          </Button>
+          <FaHome className="inline" /> Home
         </RouteLink>
-      </Box>
+      </div>
     </Main>
   );
 };

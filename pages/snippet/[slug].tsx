@@ -39,15 +39,15 @@ const Snippet = ({ source, meta }: MDXSnippet) => {
       <div className="flex space-x-2 mt-2">
         {meta?.tags?.map((tag, idx) => (
           <div
-            className="rounded-sm text-sm uppercase px-1 font-semibold bg-gray-200"
+            className="rounded-sm text-xs uppercase px-1 font-semibold bg-gray-200 dark:bg-light"
             key={idx}
           >
             {tag}
           </div>
         ))}
       </div>
-      <hr className="my-4" />
-      <div className="prose max-w-full">
+      <hr className="my-4 dark:border-light" />
+      <div className="prose dark:prose-dark max-w-full">
         <MDXRemote {...source} components={MDXComponents} />
       </div>
     </section>

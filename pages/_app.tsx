@@ -9,8 +9,7 @@ import NProgress from "nprogress";
 import Router from "next/router";
 import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
 import config from "site.config";
-import { AnimatePresence } from "framer-motion";
-import MotionBox from "@/components/MotionBox";
+import { AnimatePresence, motion } from "framer-motion";
 import { usePanelbear } from "@/lib/usePanelBear";
 
 NProgress.configure({ showSpinner: false });
@@ -36,7 +35,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     );
   }, []);
   return (
-    // <ChakraProvider theme={theme}>
     <ThemeProvider attribute="class" enableSystem={false}>
       <DefaultSeo
         description={config.description}
@@ -70,11 +68,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <AnimatePresence exitBeforeEnter>
-          <MotionBox
+          <motion.main
             key={router.route}
             className="flex flex-col h-full flex-grow"
             animate="enter"
-            as="main"
             exit="exit"
             initial="initial"
             variants={{
@@ -84,12 +81,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             }}
           >
             <Component {...pageProps} />
-          </MotionBox>
+          </motion.main>
         </AnimatePresence>
         <Footer />
       </div>
     </ThemeProvider>
-    // </ChakraProvider>
   );
 }
 export default MyApp;

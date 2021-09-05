@@ -79,9 +79,9 @@ const Post = ({ source, meta }: MDXPost) => {
             </Tippy>
           </p>
         </div>
-        <hr className="mt-4 mb-2" />
+        <hr className="mt-4 mb-2 dark:border-light" />
       </div>
-      <div className="prose max-w-full">
+      <div className="prose dark:prose-dark max-w-full">
         <MDXRemote {...source} components={MDXComponents} />
       </div>
     </section>

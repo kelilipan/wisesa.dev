@@ -1,5 +1,4 @@
 import Main from "@/components/Main";
-import { Heading, Stack, Text } from "@chakra-ui/layout";
 import data from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Head from "@/components/Head";

@@ -22,8 +22,8 @@ const PostCard = ({
 
   return (
     <Link className="rounded" href={`/blog/${slug}`}>
-      <div className="group h-full rounded-md border-gray-200 border transition duration-200 ease-in-out hover:bg-gray-200">
-        <div className="flex border-b rounded-t group-hover:opacity-90">
+      <div className="group h-full rounded-md border-gray-200 dark:border-light border transition duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-light">
+        <div className="flex border-b dark:border-light rounded-t group-hover:opacity-90">
           <Image
             className="rounded-t"
             alt={title}
@@ -36,7 +36,7 @@ const PostCard = ({
 
         <div className="p-2 rounded-b">
           <h4>{title}</h4>
-          <div className="text-sm mb-2 text-gray-700">
+          <div className="text-sm mb-2 text-gray-700 dark:text-gray-300">
             <Tippy
               content={`This post has ${readTime?.words} words and written in ${
                 lang === "id" ? "Bahasa Indonesia" : "English"

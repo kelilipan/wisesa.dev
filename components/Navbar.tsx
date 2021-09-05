@@ -2,9 +2,6 @@ import Link from "@/components/Link";
 import { FaBars, FaExternalLinkAlt } from "react-icons/fa";
 import ThemeSwitcher from "./ThemeSwitcher";
 
-import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
-
 const Navbar = () => {
   const links = [
     {
@@ -28,14 +25,13 @@ const Navbar = () => {
       url: "/about",
     },
   ];
-  const router = useRouter();
-  const path = router.pathname;
+
   return (
-    <nav className="z-50 border-b-2 border-gray-200 sticky top-0 bg-white">
+    <nav className="z-50 border-b-2 border-gray-200 dark:border-light sticky top-0 bg-white dark:bg-dark">
       <div className="flex max-w-5xl mx-auto items-center">
         <Link
           href="/"
-          className="font-doodle font-semibold text-center text-xl py-2 md:py-4 px-2 hover:bg-gray-300 transition duration-200 ease-in-out"
+          className="font-doodle font-semibold text-center text-xl py-2 md:py-4 px-2 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
         >
           Wisesa.dev
         </Link>
@@ -46,7 +42,7 @@ const Navbar = () => {
                 <Link
                   href={link.url}
                   key={link.url}
-                  className="font-semibold text-center text-sm min-w-16 py-5 px-2 hover:bg-gray-300 transition duration-200 ease-in-out"
+                  className="font-semibold text-center text-sm min-w-16 py-5 px-2 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
                 >
                   {link.text}
                   {link.text === "Timeline" && (
@@ -59,7 +55,7 @@ const Navbar = () => {
               );
             })}
           </div>
-          {/* <ThemeSwitcher /> */}
+          <ThemeSwitcher />
         </div>
         <div className="flex ml-auto md:hidden">
           <button className="h-[44px] px-3 hover:bg-gray-300 transition duration-200 ease-in-out">

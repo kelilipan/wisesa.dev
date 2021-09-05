@@ -11,7 +11,7 @@ const colorList = [
 ];
 const CanvasControl = ({ clearCanvas, color, setColor }: ControlProps) => {
   return (
-    <div className="flex fixed items-center p-2 z-50 top-[10%] md:top-[unset] bg-gray-100 rounded-full right-1">
+    <div className="flex fixed items-center p-2 z-50 top-[10%] md:top-[unset] bg-gray-100 dark:bg-light rounded-full right-1">
       <div className="flex flex-col space-y-2">
         {colorList.map((data, key) => (
           <button
@@ -28,7 +28,7 @@ const CanvasControl = ({ clearCanvas, color, setColor }: ControlProps) => {
           onClick={() => {
             clearCanvas();
           }}
-          className="rounded-full w-8 h-8 bg-gray-200"
+          className="rounded-full w-8 h-8 bg-gray-200 dark:bg-dark"
           aria-label="Clear doodle"
         >
           <FaTrashAlt className="mx-auto" />

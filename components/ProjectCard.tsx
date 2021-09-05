@@ -31,7 +31,7 @@ const ProjectCard = ({
     year: "numeric",
   });
   return (
-    <div className="flex flex-col md:flex-row w-full border border-gray-200 rounded">
+    <div className="flex flex-col md:flex-row w-full border border-gray-200 dark:border-light rounded">
       <Image
         className="rounded rounded-b-none md:rounded-r-none"
         width="512"
@@ -56,10 +56,10 @@ const ProjectCard = ({
           {technology?.map((tech, idx) => (
             <div
               className={clsx(
-                `rounded-sm text-sm uppercase px-1 font-semibold`,
+                `rounded-sm text-xs uppercase px-1 font-semibold`,
                 colorMap[tech.name.toLowerCase()]
                   ? `bg-${colorMap[tech.name.toLowerCase()]}-300`
-                  : "bg-gray-300"
+                  : "bg-gray-300 dark:bg-light"
               )}
               key={idx}
             >
