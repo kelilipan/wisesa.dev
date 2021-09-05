@@ -45,7 +45,7 @@ body {
   -webkit-touch-callout: none;
 }
 
-#nprogress .bar: {
+#nprogress .bar {
   z-index: 99999;
 }
 
