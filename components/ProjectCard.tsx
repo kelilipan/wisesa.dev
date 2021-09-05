@@ -4,18 +4,18 @@ import Link from "./Link";
 import { FaArrowRight, FaCode } from "react-icons/fa";
 import clsx from "clsx";
 const colorMap: Record<any, string> = {
-  react: "blue",
-  "next.js": "yellow",
-  nextjs: "yellow",
-  javascript: "yellow",
-  typescript: "blue",
-  php: "purple",
-  laravel: "yellow",
-  express: "green",
-  "express.js": "green",
-  expressjs: "green",
-  line: "green",
-  python: "blue",
+  react: "bg-blue-300 dark:bg-blue-300",
+  "next.js": "bg-yellow-300 dark:bg-yellow-300",
+  nextjs: "bg-yellow-300 dark:bg-yellow-300",
+  javascript: "bg-yellow-300 dark:bg-yellow-300",
+  typescript: "bg-blue-300 dark:bg-blue-300",
+  php: "bg-purple-300 dark:bg-purple-300",
+  laravel: "bg-yellow-300 dark:bg-yellow-300",
+  express: "bg-green-300 dark:bg-green-300",
+  "express.js": "bg-green-300 dark:bg-green-300",
+  expressjs: "bg-green-300 dark:bg-green-300",
+  line: "bg-green-300 dark:bg-green-300",
+  python: "bg-blue-300 dark:bg-blue-300",
 };
 const ProjectCard = ({
   title,
@@ -40,7 +40,7 @@ const ProjectCard = ({
         alt={title}
         placeholder="blur"
       />
-      <div className="p-2 md:p-4 flex flex-col w-full md:w-1/2">
+      <div className="p-4 md:p-2  flex flex-col w-full md:w-1/2">
         <h2 className="hover:underline">
           {url !== undefined || source !== undefined ? (
             <Link isExternal href={url ? url : source || "#"}>
@@ -56,9 +56,9 @@ const ProjectCard = ({
           {technology?.map((tech, idx) => (
             <div
               className={clsx(
-                `rounded-sm text-xs uppercase px-1 font-semibold`,
+                `rounded-sm text-xs uppercase px-1 font-bold`,
                 colorMap[tech.name.toLowerCase()]
-                  ? `bg-${colorMap[tech.name.toLowerCase()]}-300`
+                  ? colorMap[tech.name.toLowerCase()]
                   : "bg-gray-300 dark:bg-light"
               )}
               key={idx}
