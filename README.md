@@ -2,7 +2,7 @@
   <img src="https://wisesa.dev/preview.png" alt='preview'>
 </p>
 <p align="center">
-  Source code of my <a href='https://wisesa.dev'>personal website™</a>. Made using next.js and chakra-ui.
+  Source code of my <a href='https://wisesa.dev'>personal website™</a>. Made using next.js and tailwind-css.
 </p>
 
 
@@ -23,7 +23,7 @@ Tools i'm using to build this project
 - [Next.js](https://nextjs.org/)
 - [Preact.js](https://preactjs.com/)
 - [MDX](https://github.com/mdx-js/mdx)
-- [Chakra-ui](https://chakra-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [next-pwa](https://github.com/shadowwalker/next-pwa)
 - [PanelBear](https://panelbear.com/)
 - [Hosted on Vercel](https://vercel.com)
