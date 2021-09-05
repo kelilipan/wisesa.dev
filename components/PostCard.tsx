@@ -22,7 +22,7 @@ const PostCard = ({
 
   return (
     <Link className="rounded" href={`/blog/${slug}`}>
-      <div className="group h-full rounded-md border-gray-300 border transition duration-200 ease-in-out hover:bg-gray-200">
+      <div className="group h-full rounded-md border-gray-200 border transition duration-200 ease-in-out hover:bg-gray-200">
         <div className="flex border-b rounded-t group-hover:opacity-90">
           <Image
             className="rounded-t"

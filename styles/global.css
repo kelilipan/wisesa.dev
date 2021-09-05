@@ -22,7 +22,11 @@
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 body {
   color: #202020;
   @apply font-sans dark:text-white;

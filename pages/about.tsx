@@ -33,7 +33,7 @@ const AboutPage = () => {
           <Doodle1 />
         </div>
       </div>
-      <div className="prose max-w-full z-20">
+      <div className="prose mt-[-2rem] max-w-full z-20">
         <AboutMe />
         <Contact />
       </div>
