@@ -1,6 +1,5 @@
-import { Box, BoxProps } from "@chakra-ui/react";
 import { motion, Variants } from "framer-motion";
-const Doodle2 = (props: BoxProps) => {
+const Doodle2 = () => {
   const icon: Variants = {
     hidden: {
       pathLength: 0,
@@ -10,7 +9,7 @@ const Doodle2 = (props: BoxProps) => {
     },
   };
   return (
-    <Box width="200px" height="100px" {...props}>
+    <div style={{ width: "200px", height: "100px" }}>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 100"
@@ -32,7 +31,7 @@ const Doodle2 = (props: BoxProps) => {
           }}
         />
       </motion.svg>
-    </Box>
+    </div>
   );
 };
 

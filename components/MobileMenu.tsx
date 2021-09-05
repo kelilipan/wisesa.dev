@@ -1,21 +1,12 @@
-import {
-  Button,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalFooter,
-  ModalBody,
-  ModalProps,
-  Stack,
-  ButtonProps,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import ThemeSwitcher from "./ThemeSwitcher";
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+import Link from "@/components/Link";
 import { FaExternalLinkAlt } from "react-icons/fa";
-
-type MobileMenuProps = Omit<ModalProps, "children">;
-
+import ThemeSwitcher from "./ThemeSwitcher";
+interface MobileMenuProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 const links = [
   {
     text: "Home",
@@ -42,72 +33,80 @@ const links = [
     url: "/about",
   },
 ];
-const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  const hoverBg = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
-  const bgColor = useColorModeValue("white", "rgba(25, 25, 25, 1)");
-  const color = useColorModeValue("black", "white");
-  const buttonStyle: ButtonProps = {
-    as: "a",
-    borderRadius: "none",
-    py: 8,
-    px: 2,
-    minW: ["50px", "60px"],
-    variant: "ghost",
-    colorScheme: "blackAlpha",
-    color,
-    _hover: {
-      bgColor: hoverBg,
-    },
-    _focus: { boxShadow: "none" },
-  };
 
+const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+  const closeModal = () => onClose();
   return (
-    <Modal isOpen={isOpen} onClose={onClose} isCentered size="xs">
-      <ModalOverlay
-        sx={{
-          "@supports (backdrop-filter: blur(4px))": {
-            backdropFilter: "blur(4px)",
-          },
-          "@supports (-webkit-backdrop-filter: blur(4px))": {
-            WebkitBackdropFilter: "blur(4px)",
-          },
-        }}
-      />
-      <ModalContent borderRadius="2px" px={0} py={2} bgColor={bgColor}>
-        <ModalBody p="inherit">
-          <Stack w="full" spacing={0}>
-            {links.map((data, idx) => (
-              <Link href={data.url} passHref key={idx}>
-                <Button
-                  {...buttonStyle}
-                  w="full"
-                  siez="sm"
-                  onClick={onClose}
-                  rel={
-                    data.text === "Timeline" ? "noopener noreferrer" : undefined
-                  }
-                  target={data.text === "Timeline" ? "_blank" : undefined}
-                  rightIcon={
-                    data.text === "Timeline" ? (
-                      <FaExternalLinkAlt size="10px" />
-                    ) : undefined
-                  }
+    <Transition appear show={isOpen} as={Fragment}>
+      <Dialog
+        as="div"
+        className="fixed inset-0 z-50 overflow-y-auto"
+        onClose={closeModal}
+      >
+        <div className="min-h-screen px-4 text-center">
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Dialog.Overlay className="fixed inset-0 backdrop-blur" />
+          </Transition.Child>
+
+          {/* This element is to trick the browser into centering the modal contents. */}
+          <span
+            className="inline-block h-screen align-middle"
+            aria-hidden="true"
+          >
+            &#8203;
+          </span>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0 scale-95"
+            enterTo="opacity-100 scale-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          >
+            <div className="inline-block w-full max-w-md overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-dark shadow-xl rounded">
+              <div className="mt-2">
+                <div className="flex flex-col w-full">
+                  {links.map((data, idx) => (
+                    <Link
+                      onClick={closeModal}
+                      className="w-full text-center font-semibold p-4 hover:bg-gray-100 dark:hover:bg-light"
+                      href={data.url}
+                      isExternal={data.text === "Timeline"}
+                      key={idx}
+                    >
+                      {data.text}{" "}
+                      {data.text === "Timeline" && (
+                        <FaExternalLinkAlt className="text-xs inline ml-1 mb-1" />
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center p-4">
+                <ThemeSwitcher />
+                <button
+                  type="button"
+                  className="hover:bg-gray-100 font-semibold dark:hover:bg-light p-4"
+                  onClick={closeModal}
                 >
-                  {data.text}
-                </Button>
-              </Link>
-            ))}
-          </Stack>
-        </ModalBody>
-        <ModalFooter justifyContent="space-between">
-          <ThemeSwitcher ml="2" />
-          <Button variant="ghost" onClick={onClose}>
-            Close
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+                  Close
+                </button>
+              </div>
+            </div>
+          </Transition.Child>
+        </div>
+      </Dialog>
+    </Transition>
   );
 };
-
 export default MobileMenu;

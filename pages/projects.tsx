@@ -1,5 +1,4 @@
 import Main from "@/components/Main";
-import { Heading, Stack, Text } from "@chakra-ui/layout";
 import data from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Head from "@/components/Head";
@@ -10,18 +9,16 @@ const projects = () => {
   return (
     <Main>
       <Head title="Projects" description="Some collection of my past works." />
-      <Heading mt={[4, 6]} fontSize={["4xl", "6xl"]}>
-        Projects
-      </Heading>
-      <Text>Some collection of my past works.</Text>
+      <h1 className="mt-4 md:mt-6 text-4xl md:text-6xl">Projects</h1>
+      <p>Some collection of my past works.</p>
       {filteredProject.length > 0 ? (
-        <Stack w="full" spacing={[6, 4]}>
+        <div className="flex flex-col space-y-2 py-4">
           {filteredProject.map((project, idx) => (
             <ProjectCard {...project} key={idx} />
           ))}
-        </Stack>
+        </div>
       ) : (
-        <Text>No project.</Text>
+        <p>No project.</p>
       )}
     </Main>
   );

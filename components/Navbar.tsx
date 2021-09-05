@@ -1,51 +1,11 @@
-import { Button, ButtonProps } from "@chakra-ui/button";
-import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Box, Flex, HStack } from "@chakra-ui/layout";
-import { IconButton, useDisclosure } from "@chakra-ui/react";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { FaBars, FaExternalLinkAlt } from "react-icons/fa";
-import ThemeSwitcher from "./ThemeSwitcher";
-
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
+import { useState } from "react";
 
-const MobileDrawer = dynamic(() => import("./MobileMenu"), {
-  ssr: false,
-});
-
+const ThemeSwitcher = dynamic(() => import("./ThemeSwitcher"), { ssr: false });
+const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: false });
 const Navbar = () => {
-  const color = useColorModeValue("#202020", "white");
-  const bgColor = useColorModeValue("whiteAlpha.500", "rgba(29, 29, 29, 0.5)");
-  const bgColorFallback = useColorModeValue(
-    "whiteAlpha.900",
-    "rgba(29, 29, 29, 0.9)"
-  );
-  const borderBottomColor = useColorModeValue(
-    "blackAlpha.50",
-    "whiteAlpha.200"
-  );
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  // const fontSize = useBreakpointValue(["lg", "xl"]);
-  const hoverBg = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
-  const skipColor = useColorModeValue("white", "#202020");
-  const buttonStyle: ButtonProps = {
-    as: "a",
-    borderRadius: "none",
-    py: [6, 8],
-    px: 2,
-    minW: ["50px", "60px"],
-    variant: "ghost",
-    colorScheme: "blackAlpha",
-    color,
-    _hover: {
-      bgColor: hoverBg,
-    },
-    _focus: {
-      boxShadow: "none",
-      textDecor: "underline",
-      textDecorationStyle: "dotted",
-    },
-  };
   const links = [
     {
       text: "Blog",
@@ -68,102 +28,54 @@ const Navbar = () => {
       url: "/about",
     },
   ];
-  const router = useRouter();
-  const path = router.pathname;
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <Box
-      as="nav"
-      bgColor="whiteAlpha.50"
-      zIndex="modal"
-      w="full"
-      sx={{
-        "@supports (backdrop-filter: blur(12px))": {
-          backdropFilter: "blur(12px)",
-          bgColor,
-        },
-        "@supports (-webkit-backdrop-filter: blur(12px))": {
-          WebkitBackdropFilter: "blur(12px)",
-          bgColor,
-        },
-        "@supports not (backdrop-filter: blur(12px))": {
-          bgColor: bgColorFallback,
-        },
-      }}
-      borderBottomColor={borderBottomColor}
-      borderBottomWidth="2px"
-      pos="sticky"
-      top={0}
-    >
-      <Flex mx="auto" w="full" maxW="5xl" pos="relative">
-        <Button
-          w="full"
-          as="a"
-          href="#main-content"
-          {...buttonStyle}
-          opacity="0"
-          pos="absolute"
-          zIndex="skipLink"
-          color={skipColor}
-          bgColor={color}
-          pointerEvents="none"
-          _hover={{}}
-          _focus={{
-            ...buttonStyle._focus,
-            opacity: 1,
-            pointerEvents: "auto",
-          }}
-        >
-          Skip to main content
-        </Button>
-        <Link href="/" passHref>
-          <Button {...buttonStyle} fontFamily="doodle" fontSize="xl">
+    <>
+      <nav className="z-50 border-b-2 border-gray-200 dark:border-light sticky top-0 bg-white dark:bg-dark">
+        <div className="flex max-w-5xl mx-auto items-center">
+          <Link
+            href="/"
+            className="font-doodle font-semibold text-center text-xl py-2 md:py-4 px-2 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
+          >
             Wisesa.dev
-          </Button>
-        </Link>
-        {/* normal nav */}
-        <Flex d={["none", "flex"]} justifyContent="space-between" flex="1">
-          <HStack spacing={0}>
-            {links.map((data, idx) => (
-              <Link href={data.url} key={idx} passHref>
-                <Button
-                  {...buttonStyle}
-                  textDecor={path === data.url ? "underline" : "none"}
-                  fontSize="sm"
-                  rel={
-                    data.text === "Timeline" ? "noopener noreferrer" : undefined
-                  }
-                  target={data.text === "Timeline" ? "_blank" : undefined}
-                  rightIcon={
-                    data.text === "Timeline" ? (
-                      <FaExternalLinkAlt size="10px" />
-                    ) : undefined
-                  }
-                >
-                  {data.text}
-                </Button>
-              </Link>
-            ))}
-          </HStack>
-          <ThemeSwitcher ml="auto" mr="2" alignSelf="center" />
-        </Flex>
-        <Flex
-          d={["flex", "none"]}
-          justifyContent="flex-end"
-          alignItems="center"
-          flex="1"
-        >
-          <IconButton
-            {...buttonStyle}
-            as="button"
-            onClick={onOpen}
-            variant="ghost"
-            aria-label="Open navigation menu"
-            icon={<FaBars />}
-          />
-        </Flex>
-        <MobileDrawer isOpen={isOpen} onClose={onClose} />
-      </Flex>
-    </Box>
+          </Link>
+          <div className="hidden md:flex w-full justify-between items-center ">
+            <div className="flex">
+              {links.map((link) => {
+                return (
+                  <Link
+                    href={link.url}
+                    key={link.url}
+                    className="font-semibold text-center text-sm min-w-16 py-5 px-2 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
+                  >
+                    {link.text}
+                    {link.text === "Timeline" && (
+                      <FaExternalLinkAlt
+                        className="ml-2 inline"
+                        style={{ fontSize: "10px" }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+            <ThemeSwitcher />
+          </div>
+          <div className="flex ml-auto md:hidden">
+            <button
+              onClick={() => setShowMenu(true)}
+              aria-label="open navigation menu"
+              className="h-[44px] px-3 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
+            >
+              <FaBars />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <MobileMenu isOpen={showMenu} onClose={() => setShowMenu(false)} />
+    </>
   );
 };
 

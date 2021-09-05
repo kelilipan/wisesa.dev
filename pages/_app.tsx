@@ -1,19 +1,17 @@
 import "@/styles/global.css";
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
-import { ChakraProvider, Flex } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import theme from "@/theme";
-import PrismTheme from "@/components/PrismTheme";
+import { ThemeProvider } from "next-themes";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import Router from "next/router";
 import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
 import config from "site.config";
-import { AnimatePresence } from "framer-motion";
-import MotionBox from "@/components/MotionBox";
+import { AnimatePresence, motion } from "framer-motion";
 import { usePanelbear } from "@/lib/usePanelBear";
+
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -37,7 +35,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     );
   }, []);
   return (
-    <ChakraProvider theme={theme}>
+    <ThemeProvider attribute="class" enableSystem={false}>
       <DefaultSeo
         description={config.description}
         defaultTitle="Hi i'm Wisesa."
@@ -67,33 +65,27 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           "https://instagram.com/anvaqta",
         ]}
       />
-      <PrismTheme>
-        <Flex minH="100vh" direction="column">
-          <Navbar />
-          <AnimatePresence exitBeforeEnter>
-            <MotionBox
-              key={router.route}
-              display="flex"
-              flexDirection="column"
-              animate="enter"
-              as="main"
-              exit="exit"
-              h="full"
-              flexGrow={1}
-              initial="initial"
-              variants={{
-                initial: { opacity: 0, y: 5 },
-                enter: { opacity: 1, y: 0, transition: { duration: 0.2 } },
-                exit: { opacity: 0, transition: { duration: 0.1 } },
-              }}
-            >
-              <Component {...pageProps} />
-            </MotionBox>
-          </AnimatePresence>
-          <Footer />
-        </Flex>
-      </PrismTheme>
-    </ChakraProvider>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <AnimatePresence exitBeforeEnter>
+          <motion.main
+            key={router.route}
+            className="flex flex-col h-full flex-grow"
+            animate="enter"
+            exit="exit"
+            initial="initial"
+            variants={{
+              initial: { opacity: 0, y: 5 },
+              enter: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+              exit: { opacity: 0, transition: { duration: 0.1 } },
+            }}
+          >
+            <Component {...pageProps} />
+          </motion.main>
+        </AnimatePresence>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 export default MyApp;
