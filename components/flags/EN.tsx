@@ -1,6 +1,6 @@
 const EN = () => {
   return (
-    <svg viewBox="0 0 60 30">
+    <svg className="w-auto h-3 max-w-[18px] mb-1 inline" viewBox="0 0 60 30">
       <clipPath id="s">
         <path d="M0,0 v30 h60 v-30 z" />
       </clipPath>
