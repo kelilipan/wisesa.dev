@@ -65,7 +65,7 @@ const Navbar = () => {
           <div className="flex ml-auto md:hidden">
             <button
               onClick={() => setShowMenu(true)}
-              aria-labelledby="open navigation menu"
+              aria-label="open navigation menu"
               className="h-[44px] px-3 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
             >
               <FaBars />
