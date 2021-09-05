@@ -64,7 +64,7 @@ export default function Index() {
             <h1 className="noselect font-doodle mt-1 text-3xl md:text-4xl">
               Hi, I&apos;m Wisesa. 🐱
             </h1>
-            <div className="absolute hidden lg:block z-[2] top-[-10px] right-[20px]">
+            <div className="absolute hidden lg:block z-[2] top-[-8px] right-6">
               <Doodle2 />
             </div>
           </div>
