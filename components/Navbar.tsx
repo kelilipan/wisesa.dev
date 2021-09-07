@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-50 border-b-2 border-gray-200 dark:border-light sticky top-0 bg-white dark:bg-dark">
+      <nav className="z-50 border-b-2 border-gray-200 dark:border-light fixed top-0 bg-white dark:bg-dark">
         <div className="flex max-w-5xl mx-auto items-center">
           <Link
             href="/"
