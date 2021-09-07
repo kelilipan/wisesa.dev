@@ -47,6 +47,7 @@ const Navbar = () => {
                   <Link
                     href={link.url}
                     key={link.url}
+                    isExternal={link.text === "Timeline"}
                     className="font-semibold text-center text-sm min-w-16 py-5 px-2 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
                   >
                     {link.text}
