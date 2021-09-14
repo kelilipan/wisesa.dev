@@ -9,9 +9,9 @@ const AboutMe = () => {
       </h2>
       <p>
         Hello, my name is <b>Anvaqta Tangguh Wisesa</b>, you can call me{" "}
-        <b>Wisesa</b> or <b>Esa</b> for short. Yes, i changed my nickname haha,
-        if you&apos;re my school/college friend you maybe know me as <b>Vaq</b>{" "}
-        or <b>Anvaq</b> but that&apos;s ok, you can call me anything you want as
+        <b>Wisesa</b> or <b>Esa</b> for short. Yes, i changed my nickname :), if
+        you&apos;re my school/college friend you maybe know me as <b>Vaq</b> or{" "}
+        <b>Anvaq</b> but that&apos;s ok, you can call me anything you want as
         long as it&apos;s my name and not someone else <i>wkw</i>.
       </p>
       <p>
