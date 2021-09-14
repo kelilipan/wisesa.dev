@@ -72,7 +72,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="inline-block w-full max-w-md overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-dark shadow-xl rounded">
+            <div className="inline-block w-full max-w-md overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-dark shadow-xl rounded-xl border-2 border-dashed border-gray-200 dark:border-light">
               <div className="mt-2">
                 <div className="flex flex-col w-full">
                   {links.map((data, idx) => (
