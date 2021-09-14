@@ -5437,6 +5437,11 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+simplex-noise@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/simplex-noise/-/simplex-noise-3.0.0.tgz#0bbb8bbb3b13483d53b282a9ab59d6c9b978ac7a"
+  integrity sha512-sZP1EvUpRW/f3wjeSWUs94Xp4+S46oLGNiqkaROM92m3FvFm5ymJFMg67LcHpqikI8isXJlN/sE1Cfpe86xp0w==
+
 slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"

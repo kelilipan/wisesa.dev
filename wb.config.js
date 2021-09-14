@@ -11,7 +11,6 @@ module.exports = {
     "!favicon/**/*",
     "!preview.png",
     "!me.svg",
-    "!me-2.svg",
     "!sitemap.xml",
   ],
 };
