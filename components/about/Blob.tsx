@@ -12,7 +12,7 @@ const Blob = () => {
   function createPoints() {
     const points = [];
     // how many points do we need
-    const numPoints = 8;
+    const numPoints = 6;
     // used to equally space each point around the circle
     const angleStep = (Math.PI * 2) / numPoints;
     // the radius of the circle
