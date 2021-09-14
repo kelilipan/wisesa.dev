@@ -1,12 +1,11 @@
 import { spline } from "@/utils/spline";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import SimplexNoise from "simplex-noise";
 //https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/
 
 const Blob = () => {
   const animation = useRef<any>();
-  const [noiseStep, setNoiseStep] = useState(0.005);
-
+  const noiseStep = 0.005;
   const simplex = new SimplexNoise();
 
   const points = createPoints();
@@ -89,6 +88,7 @@ const Blob = () => {
     animation.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animation.current);
   }, []);
+
   return (
     <svg viewBox="0 0 200 200" className="w-[400px] h-[400px]">
       <defs>
