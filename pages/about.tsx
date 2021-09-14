@@ -11,7 +11,7 @@ const AboutPage = () => {
       className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto px-2 md:px-0"
     >
       <Head title="About" />
-      <div className="flex justify-center relative">
+      <div className="flex justify-center relative min-h-[280px] md:min-h-[400px]">
         <Blob />
       </div>
       <div className="prose dark:prose-dark mt-[-4rem] max-w-full z-20">
