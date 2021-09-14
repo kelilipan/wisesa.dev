@@ -113,6 +113,7 @@ const Blob = () => {
         width="400"
         height="400"
         placeholder="blur"
+        quality={100}
       />
 
       <svg width="0" height="0">
