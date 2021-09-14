@@ -4,7 +4,6 @@ import SimplexNoise from "simplex-noise";
 //https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/
 
 const Blob = () => {
-  const [path, setPath] = useState("");
   const animation = useRef<any>();
   const [noiseStep, setNoiseStep] = useState(0.005);
 
@@ -59,7 +58,11 @@ const Blob = () => {
   }
 
   const animate = () => {
-    setPath(spline(points, 1, true));
+    //render path
+    document
+      .getElementById("mask-blob")
+      ?.setAttribute("d", spline(points, 1, true));
+
     // for every point...
     for (let i = 0; i < points.length; i++) {
       const point = points[i];
@@ -93,7 +96,7 @@ const Blob = () => {
           <image href="/me-2.jpg" width="200" height="200" x="0" y="0" />
         </pattern>
       </defs>
-      <path d={path} fill="url('#me')"></path>
+      <path d="" id="mask-blob" fill="url('#me')"></path>
     </svg>
   );
 };
