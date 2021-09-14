@@ -1,8 +1,9 @@
 import Head from "@/components/Head";
-import Blob from "@/components/about/Blob";
+import dynamic from "next/dynamic";
 import AboutMe from "@/components/about/AboutMe";
 import Contact from "@/components/about/Contact";
 
+const Blob = dynamic(() => import("@/components/about/Blob"), { ssr: false });
 const AboutPage = () => {
   return (
     <div
