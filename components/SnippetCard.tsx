@@ -4,7 +4,7 @@ import Link from "@/components/Link";
 const SnippetCard = ({ logo, title, description, tags, slug }: SnippetType) => {
   return (
     <Link className="w-full" href={`/snippet/${slug}`}>
-      <div className="flex rounded-md items-start md:items-center flex-col md:flex-row border-gray-200 dark:border-light border group p-4  transition duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-light">
+      <div className="flex rounded-md items-start md:items-center flex-col md:flex-row border-gray-200 dark:border-light border-2 border-dashed group p-4  transition duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-light">
         <Image
           className="bg-gray-50 dark:bg-light rounded-full w-14 md:w-16"
           src={logo}

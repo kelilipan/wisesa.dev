@@ -31,7 +31,7 @@ const ProjectCard = ({
     year: "numeric",
   });
   return (
-    <div className="flex flex-col md:flex-row w-full border border-gray-200 dark:border-light rounded">
+    <div className="flex flex-col md:flex-row w-full border-2 border-dashed border-gray-200 dark:border-light rounded">
       <Image
         className="rounded rounded-b-none md:rounded-r-none"
         width="512"
@@ -40,7 +40,7 @@ const ProjectCard = ({
         alt={title}
         placeholder="blur"
       />
-      <div className="p-4  flex flex-col w-full md:w-1/2">
+      <div className="p-4 flex flex-col w-full md:w-1/2">
         <h2 className="hover:underline">
           {url !== undefined || source !== undefined ? (
             <Link isExternal href={url ? url : source || "#"}>
