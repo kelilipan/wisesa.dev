@@ -1,4 +1,4 @@
-import animate from "@/utils/animateBlob";
+import { animate } from "@/utils/animateBlob";
 import { useEffect } from "react";
 
 //https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/

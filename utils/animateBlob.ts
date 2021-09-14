@@ -1,23 +1,6 @@
 import { spline } from "./spline";
 import SimplexNoise from "simplex-noise";
 
-const noiseStep = 0.005;
-const simplex = new SimplexNoise();
-
-function map(
-  n: number,
-  start1: number,
-  end1: number,
-  start2: number,
-  end2: number
-): number {
-  return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
-}
-
-function noise(x: number, y: number) {
-  return simplex.noise2D(x, y);
-}
-
 function createPoints() {
   const points = [];
   // how many points do we need
@@ -39,7 +22,7 @@ function createPoints() {
       x: x,
       y: y,
       /* we need to keep a reference to the point's original {x, y} coordinates 
-        for when we modulate the values later */
+      for when we modulate the values later */
       originX: x,
       originY: y,
       // more on this in a moment!
@@ -51,9 +34,26 @@ function createPoints() {
   return points;
 }
 
+let noiseStep = 0.005;
+const simplex = new SimplexNoise();
+
+function map(
+  n: number,
+  start1: number,
+  end1: number,
+  start2: number,
+  end2: number
+) {
+  return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
+}
+
+function noise(x: number, y: number) {
+  return simplex.noise2D(x, y);
+}
+
 const points = createPoints();
 
-const animateBlob = () => {
+export const animate = () => {
   document
     .getElementById("mask-blob")
     ?.setAttribute("d", spline(points, 1, true));
@@ -81,7 +81,5 @@ const animateBlob = () => {
   document.documentElement.style.setProperty("--startColor", `#0369A1`);
   document.documentElement.style.setProperty("--stopColor", `#10B981`);
 
-  requestAnimationFrame(animateBlob);
+  requestAnimationFrame(animate);
 };
-
-export default animateBlob;
