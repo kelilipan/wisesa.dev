@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <div
       id="main-content"
-      className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto  px-2 md:px-0"
+      className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto px-2 md:px-0"
     >
       <Head title="About" />
       <div className="flex justify-center relative">

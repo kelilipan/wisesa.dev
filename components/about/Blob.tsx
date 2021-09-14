@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { spline } from "@/utils/spline";
 import SimplexNoise from "simplex-noise";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import Image from "next/image";
 //https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/
 
 const Blob = () => {
+  const animation = useRef<any>();
   const noiseStep = 0.005;
   const simplex = new SimplexNoise();
   function createPoints() {
@@ -69,12 +70,18 @@ const Blob = () => {
       const nX = noise(point.noiseOffsetX, point.noiseOffsetX);
       const nY = noise(point.noiseOffsetY, point.noiseOffsetY);
       // map this noise value to a new value, somewhere between it's original location -20 and it's original location + 20
-      const x = map(nX, -1, 1, point.originX - 10, point.originX + 10);
+      const x = map(
+        nX,
+        -1,
+        1,
+        point.originX - 10 / point.originX,
+        point.originX + 10 / point.originX
+      );
       const y = map(nY, -1, 1, point.originY - 10, point.originY + 10);
 
       // update the point's current coordinates
-      point.x = x;
-      point.y = y;
+      point.x = x / 200;
+      point.y = y / 200;
 
       // progress the point's x, y values through "time"
       point.noiseOffsetX += noiseStep;
@@ -84,11 +91,11 @@ const Blob = () => {
     document.documentElement.style.setProperty("--startColor", `#0369A1`);
     document.documentElement.style.setProperty("--stopColor", `#10B981`);
 
-    requestAnimationFrame(animate);
+    animation.current = requestAnimationFrame(animate);
   };
-
   useEffect(() => {
-    animate();
+    animation.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animation.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -108,12 +115,10 @@ const Blob = () => {
         placeholder="blur"
       />
 
-      <svg width="0" height="0" viewBox="0 0 400 400">
-        <defs>
-          <clipPath id="blob">
-            <path d="" transform="scale(2.2)" id="mask-blob" />
-          </clipPath>
-        </defs>
+      <svg width="0" height="0">
+        <clipPath id="blob" clipPathUnits="objectBoundingBox">
+          <path d="" className="w-full" id="mask-blob" />
+        </clipPath>
       </svg>
     </>
   );
