@@ -1,27 +1,43 @@
 import { animate } from "@/utils/animateBlob";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import Image from "next/image";
 //https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/
 
 const Blob = () => {
+  const [noiseStep, setNoiseStep] = useState(0.005);
   useEffect(() => {
-    animate();
+    animate(noiseStep);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <svg viewBox="0 0 200 200" className="w-[400px] h-[400px]">
-      <defs>
-        <pattern
-          id="me-picture"
-          patternUnits="userSpaceOnUse"
-          width="300"
-          height="300"
-        >
-          <image href="/me-2.jpg" width="200" height="200" x="0" y="0" />
-        </pattern>
-      </defs>
-      <path d="" id="mask-blob" fill="url('#me-picture')"></path>
-    </svg>
+    <>
+      <style global jsx>{`
+        .me-picture {
+          clip-path: url(#blob);
+        }
+      `}</style>
+
+      <Image
+        onMouseEnter={() => {
+          console.log("123");
+          setNoiseStep(0.01);
+        }}
+        alt="me"
+        className="me-picture"
+        src={require("public/me-2.jpg")}
+        width="400"
+        height="400"
+        placeholder="blur"
+      />
+
+      <svg width="0" height="0" viewBox="0 0 400 400">
+        <defs>
+          <clipPath id="blob">
+            <path d="" transform="scale(2.2)" id="mask-blob" />
+          </clipPath>
+        </defs>
+      </svg>
+    </>
   );
 };
 

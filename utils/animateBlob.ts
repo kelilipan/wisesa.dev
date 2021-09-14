@@ -53,7 +53,7 @@ function noise(x: number, y: number) {
 
 const points = createPoints();
 
-export const animate = () => {
+export const animate = (noiseStep: number) => {
   document
     .getElementById("mask-blob")
     ?.setAttribute("d", spline(points, 1, true));
@@ -81,5 +81,5 @@ export const animate = () => {
   document.documentElement.style.setProperty("--startColor", `#0369A1`);
   document.documentElement.style.setProperty("--stopColor", `#10B981`);
 
-  requestAnimationFrame(animate);
+  requestAnimationFrame(() => animate(noiseStep));
 };
