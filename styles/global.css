@@ -29,7 +29,7 @@ html {
 
 body {
   color: #202020;
-  @apply font-sans dark:text-white dark:bg-dark;
+  @apply font-sans dark:text-white dark:bg-dark transition-colors;
 }
 
 ::selection {
