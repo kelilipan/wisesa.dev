@@ -101,13 +101,11 @@ const Blob = ({ id }: BlobProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <>
-      <svg width="0" height="0">
-        <clipPath id={id} clipPathUnits="objectBoundingBox">
-          <path d="" className="w-full" id="mask-blob" />
-        </clipPath>
-      </svg>
-    </>
+    <svg width="0" height="0">
+      <clipPath id={id} clipPathUnits="objectBoundingBox">
+        <path d="" className="w-full" id="mask-blob" />
+      </clipPath>
+    </svg>
   );
 };
 
