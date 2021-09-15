@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { spline } from "@/utils/spline";
 import SimplexNoise from "simplex-noise";
-import Image from "next/image";
 
 //https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/
+interface BlobProps {
+  id: string;
+}
 
-const Blob = () => {
+const Blob = ({ id }: BlobProps) => {
   const animation = useRef<any>();
   const noiseStep = 0.005;
   const simplex = new SimplexNoise();
@@ -100,24 +102,8 @@ const Blob = () => {
   }, []);
   return (
     <>
-      <style global jsx>{`
-        .me-picture {
-          clip-path: url(#blob);
-        }
-      `}</style>
-
-      <Image
-        alt="me"
-        className="me-picture"
-        src={require("public/me-2.jpg")}
-        width="400"
-        height="400"
-        placeholder="blur"
-        quality={100}
-      />
-
       <svg width="0" height="0">
-        <clipPath id="blob" clipPathUnits="objectBoundingBox">
+        <clipPath id={id} clipPathUnits="objectBoundingBox">
           <path d="" className="w-full" id="mask-blob" />
         </clipPath>
       </svg>
