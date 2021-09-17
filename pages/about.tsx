@@ -20,7 +20,7 @@ const AboutPage = () => {
         `}</style>
         <Image
           alt="me"
-          className="me-picture"
+          className="me-picture noselect"
           src={require("public/me-2.jpg")}
           width="400"
           height="400"
