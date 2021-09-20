@@ -1,0 +1,85 @@
+---
+title: "Switching to Tailwind CSS"
+publishedAt: "2021-09-20"
+image: "/blog/switching-to-tailwindcss/og.jpg"
+description: "Switching my personal website UI Framework from Chakra UI to Tailwind CSS"
+lang: "en"
+---
+
+<Img
+  src="/blog/switching-to-tailwindcss/birb.jpg"
+  width={1200 / 1.2}
+  height={1192 / 1.2}
+  alt="This birb is basically me."
+/>
+
+
+This blog was initaly using Chakra UI. But, i found some issues about FODT(Flashing of the Dark Theme) and they have not solved this [issues](https://chakra-ui.com/docs/features/color-mode#color-mode-flash-issue) yet.
+
+After reading this [tweet from mas odi](https://twitter.com/mathdroid/status/1425753266596368390) i decided to migrate this blog to Tailwind CSS and it was **WORTH IT**... it also reduce my bundlesize by almost half 🤯🤯 they was not lie about the way they [optimizing for production](https://tailwindcss.com/docs/optimizing-for-production).
+
+> Snapshot of my blog using chakra-ui 
+> https://wisesa-dev-git-v2-anvaqta.vercel.app/
+
+<Img
+  src="/blog/switching-to-tailwindcss/bundle.gif"
+  width={942 / 1.1}
+  height={489 / 1.1}
+  alt="They wasn't lie about this."
+/>
+
+## I was CSS Framework user
+
+Yes, I was tailwind v1 user but somehow i prefer to use bootstrap instead, because at that time bootstrap is more popular and i don't like the way you write ultility class, it's too long and i need to remember all ultility classes. 
+
+For example, To create button you just write `btn btn-primary` compared to tailwind you need to write something like this `bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`. That time i have no idea what is UI Framework versus Ultility framework, so i think UI framework is more practical so i go with bootstrap.
+
+But now everything has changed since I mostly develop website using React.js where you separate elements into component and i usually writing styles using `css-in-js` and i just realized that ultility css is super helpfull. Also I don't need to remember all ultility class because they have [official VSCode Plugin](https://github.com/tailwindlabs/tailwindcss-intellisense), this is very helpful because i don't need to open the [docs](https://tailwindcss.com/docs) anymore.
+
+<Img
+  src="/blog/switching-to-tailwindcss/autocomplete.png"
+  width={2080 / 2}
+  height={1170 / 2}
+  alt="VSCode tailwind autocomplete is 🔥."
+/>
+
+## Migration process
+
+First thing first is doing some research how people use and configure tailwindcss. Some project that i contribute is using tailwindcss so i can use that as reference e.g. [WargaBantuWarga](https://github.com/kawalcovid19/wargabantuwarga.com).
+
+After (at least) know how to setup with Next.js i begin the migration proccess and it was easy because Chakra UI have similiar concept with Tailwind and the [documentation](https://tailwindcss.com/docs) is realy good. So it was easy...
+
+> See (some of) my migration proccess  here https://github.com/svspicious/wisesa.dev/pull/27
+
+## Result
+
+The look is pretty much same but without flashing issue 🔥🤯
+<video width="640" height="360" controls>
+  <source src="/blog/switching-to-tailwindcss/result.mp4" type="video/mp4" />
+</video>
+
+and the lighthouse score is much better 🚀. It was **Worth it**
+
+<Img
+  src="/blog/switching-to-tailwindcss/score.png"
+  width={1920 / 2}
+  height={1080 / 2}
+  alt="🚀🚀🚀"
+/>
+
+
+<Img
+  src="/blog/switching-to-tailwindcss/bundle.jpg"
+  width={1920 / 1.2}
+  height={1052 / 1.2}
+  alt="Overall bundle size."
+/>
+
+> Learn more about Core web Vitals [here](https://www.instagram.com/p/CT3rDYnvhkP/). 
+
+
+## Conclusion
+
+Chakra UI has the best DX(Developer Experience) so far, it has some issues as i mention earlier and i think the bundle size kinda bloated. Chakra is still good but i can't life with FODT issue, so i migrate to Tailwind css now and i am happy with the result.
+
+Lastly, I just still learning Tailwind until this day and I still keep improving this blog. You can see my blog [source code here](https://github.com/svspicious/wisesa.dev), I am always open for sugestion and discussion so don't hesitate to [contact with me](/about#contact).
