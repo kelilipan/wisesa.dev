@@ -18,15 +18,21 @@ This blog was initaly using Chakra UI. But, i found some issues about FODT(Flash
 
 After reading this [tweet from mas odi](https://twitter.com/mathdroid/status/1425753266596368390) i decided to migrate this blog to Tailwind CSS and it was **WORTH IT**... it also reduce my bundlesize by almost half 🤯🤯 they was not lie about the way they [optimizing for production](https://tailwindcss.com/docs/optimizing-for-production).
 
-> Snapshot of my blog using chakra-ui 
-> https://wisesa-dev-git-v2-anvaqta.vercel.app/
-
 <Img
   src="/blog/switching-to-tailwindcss/bundle.gif"
   width={942 / 1.1}
   height={489 / 1.1}
   alt="They wasn't lie about this."
 />
+
+> Snapshot of my blog using chakra-ui 
+> https://wisesa-dev-git-v2-anvaqta.vercel.app/
+
+## What is Tailwind CSS anyway?
+
+Tailwind is a *Ultility*-first CSS framework. Ultility-first meaning that they only give you ultility classes like `flex` or `text-center` so you need to build component by yourself. Compared to Component CSS/UI Framework like bootstrap where you have prebuilt component classes e.g `btn btn-primary`.
+
+But in that way, tailwind can [purge](https://tailwindcss.com/docs/optimizing-for-production) unused class where UI Framework still include **unused** class/code for production that makes your production build is bloated.
 
 ## I was CSS Framework user
 
