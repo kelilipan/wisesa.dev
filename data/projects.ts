@@ -15,6 +15,14 @@ const chakra = {
 };
 const project: ProjectType[] = [
   {
+    title: "New Ketringan.com",
+    image: require("public/projects/new-ketringan.png"),
+    description: "Next version ketringan.com build with Next.js & chakra-UI.",
+    createdAt: "2021-01-01",
+    technology: [js, react, nextjs, chakra],
+    url: "https://ketringan.com/",
+  },
+  {
     title: "Artificial Intelligence Lab. Landing Page",
     image: require("public/projects/ailabtelkom-next.jpg"),
     description:
