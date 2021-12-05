@@ -45,10 +45,11 @@ export default function Index() {
       <Canvas
         ref={canvasRef}
         // @ts-ignore
+        canvasColor="transparent"
         width="100%"
         height="100vh"
-        background="transparent"
         style={{
+          background: "transparent",
           position: "absolute",
           top: 0,
           left: 0,
@@ -69,9 +70,9 @@ export default function Index() {
             </div>
           </div>
           <p className="noselect text-md md:text-lg text-center md:text-left max-w-[550px]">
-            A software <i>edgy</i>neer mainly focused on web
-            technologies. I love exploring tech related stuff and now fall in
-            love with react.js and javascript.
+            A software <i>edgy</i>neer mainly focused on web technologies. I
+            love exploring tech related stuff and now fall in love with react.js
+            and javascript.
           </p>
           <p className="text-center md:text-left max-w-[550px]">
             Checkout my{" "}

@@ -3394,11 +3394,6 @@ image-size@1.0.0:
   dependencies:
     queue "6.0.2"
 
-immer@^9.0.3:
-  version "9.0.7"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.7.tgz#b6156bd7db55db7abc73fd2fdadf4e579a701075"
-  integrity sha512-KGllzpbamZDvOIxnmJ0jI840g7Oikx58lBPWV0hUh7dtAyZpFqqrBZdKka5GlTwMTZ1Tjc/bKKW4VSFAt6BqMA==
-
 import-cwd@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-3.0.0.tgz#20845547718015126ea9b3676b7592fb8bd4cf92"
@@ -4859,12 +4854,10 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-sketch-canvas@^5.3.3:
-  version "5.3.5"
-  resolved "https://registry.yarnpkg.com/react-sketch-canvas/-/react-sketch-canvas-5.3.5.tgz#0b2555d5027924abadfa1c09c1e3ac59987b42b8"
-  integrity sha512-L1BuNeD2tvB26zA3WlDAwnG+MDHKc1jznvICozvqYc7yj3aMcMOhj+E8F7A/SKkeYXyVX77r7llLmDJHORatOg==
-  dependencies:
-    immer "^9.0.3"
+react-sketch-canvas@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/react-sketch-canvas/-/react-sketch-canvas-6.1.0.tgz#49b51e413f6850ca5fbf24f12c143f73bc8dafad"
+  integrity sha512-xEClrq9x6hLbw7JmThpLrZSqSz2GqVOSkLgcitSCHXDLjdsoJULjt0u4lpJfx7ivnPg+yH66td7Sv/QP7OCZ4w==
 
 react@^17.0.2:
   version "17.0.2"
