@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://wisesa.dev/preview.png" alt='preview'>
+  <img src="/public/preview.png" alt='preview'>
 </p>
 <p align="center">
   Source code of my <a href='https://wisesa.dev'>personal website™</a>. Made using next.js and tailwind-css.
@@ -30,7 +30,7 @@ Tools i'm using to build this project
 
 
 <p align="center">
-  <img src="https://wisesa.dev/blog/well.jpg" alt='yes'>
+  <img src="/public/blog/well.jpg" alt='yes'>
 </p>
 
 
