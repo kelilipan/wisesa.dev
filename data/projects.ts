@@ -15,6 +15,16 @@ const chakra = {
 };
 const project: ProjectType[] = [
   {
+    title: "PkDx",
+    image: require("public/projects/pkdx.png"),
+    description:
+      "A simple pokedex opensource web apps built with react.js & typescript.",
+    createdAt: "2021-12-02",
+    technology: [js, react, { name: "graphql" }, { name: "emotion-css" }],
+    url: "https://pkdx.wisesa.dev/",
+    source: "https://github.com/svspicious/pkdx",
+  },
+  {
     title: "New Ketringan.com",
     image: require("public/projects/new-ketringan.png"),
     description: "Next version ketringan.com build with Next.js & chakra-UI.",
