@@ -5,7 +5,7 @@ const pwaConfig = require("./wb.config");
 const nextConfig = {
   // https://nextjs.org/docs/basic-features/image-optimization#domains
   images: {
-    domains: ["pbs.twimg.com"],
+    domains: ["i.scdn.co"],
   },
   // https://nextjs.org/docs/advanced-features/i18n-routing
   // https://panelbear.com/docs/integration-nextjs/

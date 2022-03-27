@@ -90,8 +90,7 @@ const AboutMe = () => {
         >
           listening music
         </Link>
-        . I can (barely) play some music instruments like guitar, ukulele, and
-        drum. Also, I love cycling (almost) every weekend.
+        .
       </p>
     </section>
   );

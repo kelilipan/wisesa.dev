@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import AboutMe from "@/components/about/AboutMe";
 import Contact from "@/components/about/Contact";
 import Image from "next/image";
+import Spotify from "@/components/about/spotify";
 
 const Blob = dynamic(() => import("@/components/about/Blob"), { ssr: false });
 const AboutPage = () => {
@@ -31,6 +32,7 @@ const AboutPage = () => {
       </div>
       <div className="prose dark:prose-dark mt-[-4rem] max-w-full z-20">
         <AboutMe />
+        <Spotify />
         <Contact />
       </div>
     </div>
