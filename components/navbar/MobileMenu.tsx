@@ -1,8 +1,9 @@
-import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import Link from "@/components/Link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import ThemeSwitcher from "./ThemeSwitcher";
+
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;

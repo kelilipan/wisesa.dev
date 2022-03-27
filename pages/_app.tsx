@@ -1,7 +1,7 @@
 import "@/styles/global.css";
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "next-themes";
 import "nprogress/nprogress.css";

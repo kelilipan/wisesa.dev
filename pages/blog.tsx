@@ -1,5 +1,5 @@
 import Head from "@/components/Head";
-import Main from "@/components/Main";
+import Main from "@/components/layouts/Main";
 import PostCard from "@/components/PostCard";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { PostType } from "@/types/post";

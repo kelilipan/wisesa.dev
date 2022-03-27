@@ -1,5 +1,5 @@
 import Head from "@/components/Head";
-import Main from "@/components/Main";
+import Main from "@/components/layouts/Main";
 import Link from "@/components/Link";
 import { useRouter } from "next/router";
 

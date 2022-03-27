@@ -1,4 +1,4 @@
-import Main from "@/components/Main";
+import Main from "@/components/layouts/Main";
 import Link from "@/components/Link";
 import { FaHome } from "react-icons/fa";
 import Image from "next/image";

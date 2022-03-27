@@ -1,7 +1,7 @@
+import { useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "@/components/Link";
 import { FaBars, FaExternalLinkAlt } from "react-icons/fa";
-import dynamic from "next/dynamic";
-import { useState } from "react";
 
 const ThemeSwitcher = dynamic(() => import("./ThemeSwitcher"), { ssr: false });
 const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: false });

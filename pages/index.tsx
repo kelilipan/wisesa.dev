@@ -1,5 +1,5 @@
 import { useRef, useState, forwardRef } from "react";
-import Main from "@/components/Main";
+import Main from "@/components/layouts/Main";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { ReactSketchCanvasProps } from "react-sketch-canvas";

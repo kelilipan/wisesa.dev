@@ -1,5 +1,5 @@
 import Head from "@/components/Head";
-import Main from "@/components/Main";
+import Main from "@/components/layouts/Main";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { SnippetType } from "@/types/post";
 import SnippetCard from "@/components/SnippetCard";

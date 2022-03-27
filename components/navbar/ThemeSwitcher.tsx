@@ -1,8 +1,8 @@
 import { Switch } from "@headlessui/react";
 import clsx from "clsx";
-
 import { useTheme } from "next-themes";
 import { FaMoon, FaSun } from "react-icons/fa";
+
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
   const isDark = theme === "dark";
