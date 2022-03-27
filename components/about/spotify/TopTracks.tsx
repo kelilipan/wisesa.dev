@@ -18,6 +18,7 @@ const TopTracks = ({ tracks }: TopTracksProps) => {
     <div className="flex flex-col gap-2">
       {tracks.map(({ songUrl, cover, title, artist }, idx) => (
         <Link
+          key={"tracks-" + idx}
           isExternal
           href={songUrl || "#"}
           style={{ textDecoration: "none" }}
