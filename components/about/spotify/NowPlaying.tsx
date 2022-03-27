@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import Link from "@/components/Link";
+import React, { Fragment } from "react";
+import Link, { CustomLinkProps } from "@/components/Link";
 import Image from "next/image";
 
 const NO_COVER = "/no-cover.png";
@@ -12,6 +12,15 @@ export type NowPlayingProps = {
   songUrl?: string;
   title?: string;
 };
+
+const LinkWrapper: React.FC<CustomLinkProps> = ({ children, href }) => {
+  return (
+    <Link href={href} isExternal style={{ textDecoration: "none" }}>
+      {children}
+    </Link>
+  );
+};
+
 const NowPlaying = ({
   albumImageUrl,
   artist,
@@ -19,13 +28,9 @@ const NowPlaying = ({
   songUrl,
   title,
 }: NowPlayingProps) => {
-  const Wrapper = isPlaying ? Link : Fragment;
+  const Wrapper = isPlaying ? LinkWrapper : Fragment;
   return (
-    <Wrapper
-      isExternal
-      href={songUrl || "#"}
-      style={{ textDecoration: "none" }}
-    >
+    <Wrapper href={songUrl || "#"}>
       <div className="group rounded-md border-gray-200 dark:border-light border-2 border-dashed transition duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-light flex p-2 gap-2">
         <Image
           className="rounded-md"
