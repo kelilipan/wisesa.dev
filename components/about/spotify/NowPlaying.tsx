@@ -1,7 +1,6 @@
+import { Fragment } from "react";
 import Link from "@/components/Link";
 import Image from "next/image";
-import React from "react";
-import { FiHeadphones } from "react-icons/fi";
 
 const NO_COVER = "/no-cover.png";
 
@@ -20,8 +19,13 @@ const NowPlaying = ({
   songUrl,
   title,
 }: NowPlayingProps) => {
+  const Wrapper = isPlaying ? Link : Fragment;
   return (
-    <Link isExternal href={songUrl || "#"} style={{ textDecoration: "none" }}>
+    <Wrapper
+      isExternal
+      href={songUrl || "#"}
+      style={{ textDecoration: "none" }}
+    >
       <div className="group rounded-md border-gray-200 dark:border-light border-2 border-dashed transition duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-light flex p-2 gap-2">
         <Image
           className="rounded-md"
@@ -47,7 +51,7 @@ const NowPlaying = ({
           </div>
         )}
       </div>
-    </Link>
+    </Wrapper>
   );
 };
 
