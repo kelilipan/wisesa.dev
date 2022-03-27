@@ -33,7 +33,7 @@ const AboutMe = () => {
         </Link>{" "}
         with a Bachelor&apos;s degree in Informatics (Computer science). And
         currently working as a <i>Software Engineer - Web Platform</i> (you
-        maybe more familiar with "Front-end engineer") at{" "}
+        maybe more familiar with &quot;Front-end engineer&quot;) at{" "}
         <Link className="underline" href="https://www.tokopedia.com" isExternal>
           Tokopedia
         </Link>
