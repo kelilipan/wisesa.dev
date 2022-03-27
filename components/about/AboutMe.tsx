@@ -12,7 +12,7 @@ const AboutMe = () => {
         <b>Wisesa</b> or <b>Esa</b> for short. Yes, i changed my nickname :), if
         you&apos;re my school/college friend you maybe know me as <b>Vaq</b> or{" "}
         <b>Anvaq</b> but that&apos;s ok, you can call me anything you want as
-        long as it&apos;s my name and not someone else <i>wkw</i>.
+        long as it&apos;s my name and not someone else.
       </p>
       <p>
         I grew up in a small village located in{" "}
@@ -23,8 +23,7 @@ const AboutMe = () => {
         >
           Grobogan, Jawa Tengah
         </Link>
-        . I&apos;m currently pursuing my Bachelor&apos;s degree in Informatics
-        (Computer science) at{" "}
+        . Graduated from{" "}
         <Link
           className="underline"
           isExternal
@@ -32,7 +31,14 @@ const AboutMe = () => {
         >
           Telkom University
         </Link>{" "}
-        also working as a Software engineer at a start-up called{" "}
+        with a Bachelor&apos;s degree in Informatics (Computer science). And
+        currently working as a <i>Software Engineer - Web Platform</i> (you
+        maybe more familiar with "Front-end engineer") at{" "}
+        <Link className="underline" href="https://www.tokopedia.com" isExternal>
+          Tokopedia
+        </Link>
+        {", "}
+        I&apos;m previously working as a Software engineer at a start-up called{" "}
         <Link className="underline" href="https://ketringan.com" isExternal>
           Ketringan Indonesia
         </Link>
@@ -40,7 +46,7 @@ const AboutMe = () => {
       </p>
       <p>
         I love exploring tech related stuff. When i was in college i join many
-        community and laboratory to expand my knowledge, I&apos;m member of{" "}
+        community and orgs to expand my knowledge, I&apos;m member of{" "}
         <Link
           className="underline"
           href="https://www.instagram.com/cciunitel/?hl=en"
