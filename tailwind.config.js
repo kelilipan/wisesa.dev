@@ -1,9 +1,9 @@
 const { fontFamily, width } = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
-  mode: "jit",
-  purge: ["./pages/**/*.{jsx,tsx}", "./components/**/*.{jsx,tsx}"],
+  content: ["./pages/**/*.{jsx,tsx}", "./components/**/*.{jsx,tsx}"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
@@ -14,6 +14,10 @@ module.exports = {
       colors: {
         dark: "#1d1d1d",
         light: "#2f2f2f",
+        gray: colors.neutral,
+        green: colors.emerald,
+        yellow: colors.amber,
+        purple: colors.violet,
       },
       fontSize: false,
       minWidth: width,
@@ -74,9 +78,6 @@ module.exports = {
       pencil: "url('/pencil.png') 0 24, auto",
       "pencil-dark": "url('/pencil-invert.png') 0 24, auto",
     },
-  },
-  variants: {
-    extend: { typography: ["dark"] },
   },
   plugins: [require("@tailwindcss/typography")],
 };
