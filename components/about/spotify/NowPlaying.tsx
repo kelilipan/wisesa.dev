@@ -31,7 +31,7 @@ const NowPlaying = ({
   const Wrapper = isPlaying ? LinkWrapper : Fragment;
   return (
     <Wrapper href={songUrl || "#"}>
-      <div className="group rounded-md border-gray-200 dark:border-light border-2 border-dashed transition duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-light flex p-2 gap-2">
+      <div className="group rounded-md border-gray-200 dark:border-light border-2 border-dashed transition duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-light flex p-2 gap-2 relative">
         <Image
           className="rounded-md"
           src={(isPlaying && albumImageUrl) || NO_COVER}
@@ -39,7 +39,7 @@ const NowPlaying = ({
           height={80}
           width={80}
         />
-        <div className="flex flex-col h-[80px] justify-around">
+        <div className="flex flex-col h-[80px] justify-around z-10">
           {!isPlaying ? (
             "Not listening to anything"
           ) : (
@@ -50,7 +50,7 @@ const NowPlaying = ({
           )}
         </div>
         {isPlaying && (
-          <div className="ml-auto lds-ripple">
+          <div className="ml-auto lds-ripple right-1">
             <div />
             <div />
           </div>
