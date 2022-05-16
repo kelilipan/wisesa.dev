@@ -15,7 +15,7 @@ type TopTracksProps = {
 
 const TopTracks = ({ tracks }: TopTracksProps) => {
   return tracks.length ? (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 min-h-[532px]">
       {tracks.map(({ songUrl, cover, title, artist }, idx) => (
         <Link
           key={"tracks-" + idx}
@@ -33,8 +33,8 @@ const TopTracks = ({ tracks }: TopTracksProps) => {
               width={80}
             />
             <div className="flex flex-col h-[80px] justify-around">
-              <strong>{title}</strong>
-              <p className="m-0 no-underline">{artist}</p>
+              <strong className="line-clamp-1">{title}</strong>
+              <p className="m-0 no-underline line-clamp-1">{artist}</p>
             </div>
           </div>
         </Link>

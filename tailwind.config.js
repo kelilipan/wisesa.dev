@@ -79,5 +79,8 @@ module.exports = {
       "pencil-dark": "url('/pencil-invert.png') 0 24, auto",
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+  ],
 };

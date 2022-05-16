@@ -44,13 +44,13 @@ const NowPlaying = ({
             "Not listening to anything"
           ) : (
             <>
-              <strong>{title}</strong>
-              <p className="m-0 no-underline">{artist}</p>
+              <strong className="line-clamp-1">{title}</strong>
+              <p className="m-0 no-underline line-clamp-1">{artist}</p>
             </>
           )}
         </div>
         {isPlaying && (
-          <div className="ml-auto lds-ripple right-1">
+          <div className="ml-auto lds-ripple right-1 top-2">
             <div />
             <div />
           </div>
