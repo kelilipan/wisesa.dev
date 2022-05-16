@@ -1,4 +1,3 @@
-import React, { Fragment } from "react";
 import Link, { CustomLinkProps } from "@/components/Link";
 import Image from "next/image";
 
@@ -9,13 +8,17 @@ export type NowPlayingProps = {
   albumImageUrl?: string;
   artist?: string;
   isPlaying: boolean;
-  songUrl?: string;
+  songUrl: string;
   title?: string;
 };
 
 const LinkWrapper: React.FC<CustomLinkProps> = ({ children, href }) => {
   return (
-    <Link href={href} isExternal style={{ textDecoration: "none" }}>
+    <Link
+      href={href}
+      isExternal={href !== "#"}
+      style={{ textDecoration: "none" }}
+    >
       {children}
     </Link>
   );
@@ -28,9 +31,8 @@ const NowPlaying = ({
   songUrl,
   title,
 }: NowPlayingProps) => {
-  const Wrapper = isPlaying ? LinkWrapper : Fragment;
   return (
-    <Wrapper href={songUrl || "#"}>
+    <LinkWrapper href={isPlaying ? songUrl : "#"}>
       <div className="group rounded-md border-gray-200 dark:border-light border-2 border-dashed transition duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-light flex p-2 gap-2 relative">
         <Image
           className="rounded-md"
@@ -56,7 +58,7 @@ const NowPlaying = ({
           </div>
         )}
       </div>
-    </Wrapper>
+    </LinkWrapper>
   );
 };
 
