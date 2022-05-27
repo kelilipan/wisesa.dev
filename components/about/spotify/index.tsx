@@ -28,7 +28,7 @@ const Spotify = () => {
       </h2>
       <p> See what I&apos;m currently listening on spotify</p>
       <NowPlaying {...nowPlaying} />
-      <p>Top 5 Songs I&apos;m currently listening to over the past 4 weeks</p>
+      <p>Top 5 Songs I&apos;m currently listening to over the past month</p>
       <TopTracks tracks={topTracks.tracks} />
     </section>
   );

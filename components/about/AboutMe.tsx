@@ -9,10 +9,8 @@ const AboutMe = () => {
       </h2>
       <p>
         Hello, my name is <b>Anvaqta Tangguh Wisesa</b>, you can call me{" "}
-        <b>Wisesa</b> or <b>Esa</b> for short. Yes, i changed my nickname :), if
-        you&apos;re my school/college friend you maybe know me as <b>Vaq</b> or{" "}
-        <b>Anvaq</b> but that&apos;s ok, you can call me anything you want as
-        long as it&apos;s my name and not someone else.
+        <b>Wisesa</b> or <b>Esa</b> for short. If you&apos;re my school/college
+        friend you maybe know me as <b>Vaq</b> or <b>Anvaq</b>.
       </p>
       <p>
         I grew up in a small village located in{" "}
@@ -31,22 +29,22 @@ const AboutMe = () => {
         >
           Telkom University
         </Link>{" "}
-        with a Bachelor&apos;s degree in Informatics (Computer science). And
+        with a Bachelor&apos;s degree in Informatics (Computer science) and
         currently working as a <i>Software Engineer - Web Platform</i> (you
         maybe more familiar with &quot;Front-end engineer&quot;) at{" "}
         <Link className="underline" href="https://www.tokopedia.com" isExternal>
           Tokopedia
         </Link>
-        {", "}
-        I&apos;m previously working as a Software engineer at a start-up called{" "}
+        . I was previously working as a Software engineer at a start-up called{" "}
         <Link className="underline" href="https://ketringan.com" isExternal>
           Ketringan Indonesia
         </Link>
         .
       </p>
       <p>
-        I love exploring tech related stuff. When i was in college i join many
-        community and orgs to expand my knowledge, I&apos;m member of{" "}
+        I love exploring everything related to technology. When i was in college
+        i join many community and orgs to expand my knowledge, I&apos;m member
+        of{" "}
         <Link
           className="underline"
           href="https://www.instagram.com/cciunitel/?hl=en"
