@@ -99,7 +99,11 @@ body {
 }
 
 .prose code {
-  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-light rounded-md bg-gray-100 dark:bg-[#1D1F21];
+  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5  border-gray-100 rounded-md bg-gray-100 dark:bg-[#1D1F21];
+}
+
+code {
+  @apply border dark:border-light;
 }
 
 .token.comment,
