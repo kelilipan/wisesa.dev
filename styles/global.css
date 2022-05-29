@@ -78,6 +78,15 @@ body {
   }
 }
 
+@layer components {
+  .bottom-nav {
+    @apply flex shadow-2xl fixed bottom-3 z-50 rounded-lg bg-white dark:bg-light dark:shadow-light border-gray-200 dark:border-gray-600 border-2 border-dashed;
+    width: calc(100% - 24px);
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(16px);
+  }
+}
+
 .container {
   @apply max-w-5xl;
 }

@@ -7,7 +7,7 @@ const Main: React.FC<MainProps> = ({ children, className, ...props }) => {
     <div
       id="main-content"
       className={cx(
-        "flex flex-col flex-1 h-full w-full max-w-5xl mx-auto pt-6 px-2 md:pt-11 md:px-0",
+        "flex flex-col flex-1 h-full w-full max-w-5xl mx-auto pt-0 px-2 md:pt-11 md:px-0",
         className
       )}
       {...props}

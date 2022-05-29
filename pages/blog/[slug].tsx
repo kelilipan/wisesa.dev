@@ -28,7 +28,7 @@ const Post = ({ source, meta }: MDXPost) => {
   return (
     <section
       id="main-content"
-      className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto pt-6 px-2 mb-6 md:pt-11 md:px-0"
+      className=" flex flex-col flex-1 h-full w-full max-w-3xl mx-auto pt-2 px-2 mb-6 md:pt-11 md:px-0"
     >
       <Head
         title={meta.title}

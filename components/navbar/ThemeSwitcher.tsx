@@ -11,7 +11,7 @@ const ThemeSwitcher = () => {
       checked={isDark}
       onChange={() => setTheme(isDark ? "light" : "dark")}
       className={`${
-        isDark ? "bg-light" : "bg-gray-200"
+        isDark ? "bg-dark" : "bg-gray-200"
       } relative inline-flex items-center h-6 rounded-full w-11`}
     >
       <span className="sr-only">Enable dark mode</span>
