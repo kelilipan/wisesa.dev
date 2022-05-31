@@ -39,7 +39,7 @@ export default function Index() {
       <NextHead>
         <meta
           name="keywords"
-          content="anvaqta,anvaqta tangguh,tangguh wisesa,wisesa,anvaqta tangguh wisesa"
+          content="Rian Firnanda Irsyadani"
         />
       </NextHead>
       <Canvas
