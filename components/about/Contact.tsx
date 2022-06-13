@@ -3,7 +3,7 @@ import socials from "@/data/socials";
 
 const Contact = () => {
   return (
-    <section>
+    <section className="relative">
       <h2 id="contact" className="scroll-margin-nav">
         <Link className="text-3xl" href="#contact">
           Contact
@@ -16,13 +16,15 @@ const Contact = () => {
         </Link>{" "}
         with me by following my social media bellow:
       </p>
-      <ul className="break-words">
+      <ul>
         {socials.map((data, idx) => (
           <li key={idx}>
-            {data.name} -{" "}
-            <Link className="underline" href={data.url} isExternal>
-              {data.url.replace("mailto:", "")}
-            </Link>
+            <p className="truncate my-2">
+              {data.name} -{" "}
+              <Link className="underline" href={data.url} isExternal>
+                {data.url.replace("mailto:", "")}
+              </Link>
+            </p>
           </li>
         ))}
       </ul>

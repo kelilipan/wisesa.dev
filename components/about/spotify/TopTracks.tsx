@@ -24,14 +24,17 @@ const TopTracks = ({ tracks }: TopTracksProps) => {
           style={{ textDecoration: "none" }}
         >
           <div className="group rounded-md border-gray-200 dark:border-light border-2 border-dashed transition duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-light flex p-2 gap-2 items-center">
-            <strong>{idx + 1} .</strong>
-            <Image
-              className="rounded-md"
-              src={cover || NO_COVER}
-              alt={title}
-              height={80}
-              width={80}
-            />
+            <strong className="whitespace-nowrap">{idx + 1} .</strong>
+            <div>
+              <Image
+                className="rounded-md"
+                src={cover || NO_COVER}
+                alt={title}
+                height={80}
+                width={80}
+                layout="fixed"
+              />
+            </div>
             <div className="flex flex-col h-[80px] justify-around">
               <strong className="line-clamp-1">{title}</strong>
               <p className="m-0 no-underline line-clamp-1">{artist}</p>
