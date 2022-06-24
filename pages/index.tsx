@@ -70,9 +70,7 @@ export default function Index() {
             </div>
           </div>
           <p className="noselect text-md md:text-lg text-center md:text-left max-w-[550px]">
-            A software <i>edgy</i>neer mainly focused on web technologies. I
-            love exploring tech related stuff and now fall in love with react.js
-            and javascript.
+            A software <i>edgy</i>neer who love cats. Love to explore anything about technology, but focused more on web technologies.
           </p>
           <p className="text-center md:text-left max-w-[550px]">
             Checkout my{" "}
