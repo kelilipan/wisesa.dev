@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         url={config.baseUrl}
         sameAs={[
           "http://www.linkedin.com/in/anvaqta",
-          "https://github.com/svspicious",
+          "https://github.com/kelilipan",
           "https://svspicious.medium.com/",
           "https://instagram.com/anvaqta",
         ]}

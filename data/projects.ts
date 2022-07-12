@@ -22,7 +22,7 @@ const project: ProjectType[] = [
     createdAt: "2021-12-02",
     technology: [js, react, { name: "graphql" }, { name: "emotion-css" }],
     url: "https://pkdx.wisesa.dev/",
-    source: "https://github.com/svspicious/pkdx",
+    source: "https://github.com/kelilipan/pkdx",
   },
   {
     title: "New Ketringan.com",
@@ -69,7 +69,7 @@ const project: ProjectType[] = [
     createdAt: "2020-04-14",
     technology: [{ name: "python" }, { name: "line" }],
     url: "https://line.me/R/ti/p/%40537amjdd",
-    source: "https://github.com/svspicious/eliza-line-chatbot",
+    source: "https://github.com/kelilipan/eliza-line-chatbot",
   },
   {
     title: "Useful iGracias Script",
@@ -117,7 +117,7 @@ const project: ProjectType[] = [
     createdAt: "2019-07-11",
     technology: [js, react, { name: "firebase" }, { name: "bootstrap" }],
     url: "https://interfest-client.vercel.app/",
-    source: "https://github.com/svspicious/interfest-client",
+    source: "https://github.com/kelilipan/interfest-client",
   },
 ];
 

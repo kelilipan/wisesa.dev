@@ -9,7 +9,7 @@
 ## Running locally
 
 ```bash
-git clone https://github.com/svspicious/wisesa.dev.git
+git clone https://github.com/kelilipan/wisesa.dev.git
 cd wisesa.dev
 yarn install
 yarn dev

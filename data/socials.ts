@@ -5,7 +5,7 @@ export default [
   },
   {
     name: "Github",
-    url: "https://github.com/svspicious",
+    url: "https://github.com/kelilipan",
   },
   {
     name: "Instagram",
