@@ -70,7 +70,8 @@ export default function Index() {
             </div>
           </div>
           <p className="noselect text-md md:text-lg text-center md:text-left max-w-[550px]">
-            A software <i>edgy</i>neer who love cats. Love to explore anything about technology, but focused more on web technologies.
+            A software <i>edgy</i>neer who love cats. Love to explore anything
+            about technology, but focused more on web technologies.
           </p>
           <p className="text-center md:text-left max-w-[550px]">
             Checkout my{" "}
@@ -90,15 +91,9 @@ export default function Index() {
             .
           </p>
         </div>
-        <div className="relative w-[300px] md:w-[400px] noselect">
-          <Image
-            alt="doodle"
-            src="/me.svg"
-            priority
-            width="400px"
-            height="400px"
-          />
-          <div className="absolute z-10 bottom-[-80px] md:bottom-[-70px] left-[10px] md:left-[50px]">
+        <div className="relative w-[300px] md:w-[400px] noselect text-center">
+          <Image alt="doodle" src="/me.svg" priority width={300} height={400} />
+          <div className="absolute z-10 bottom-[-60px] md:bottom-[-50px] left-[10px] md:left-[50px]">
             <Doodle1 />
           </div>
         </div>
