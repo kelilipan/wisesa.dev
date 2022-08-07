@@ -6,8 +6,7 @@ import { ReactSketchCanvasProps } from "react-sketch-canvas";
 import Link from "@/components/Link";
 import CanvasControl from "@/components/CanvasControl";
 import NextHead from "next/head";
-import Doodle1 from "@/components/doodle/Doodle1";
-import Doodle2 from "@/components/doodle/Doodle2";
+
 //todo: fix type definition
 const ReactSketchCanvas = dynamic<ReactSketchCanvasProps>(
   () => import("react-sketch-canvas").then((c) => c.ReactSketchCanvas),
@@ -15,6 +14,15 @@ const ReactSketchCanvas = dynamic<ReactSketchCanvasProps>(
     ssr: false,
   }
 );
+
+const Doodle1 = dynamic(() => import("@/components/doodle/Doodle1"), {
+  ssr: false,
+});
+
+const Doodle2 = dynamic(() => import("@/components/doodle/Doodle2"), {
+  ssr: false,
+});
+
 const Canvas = forwardRef((props, ref) => (
   // @ts-ignore
   <ReactSketchCanvas {...props} ref={ref} />
