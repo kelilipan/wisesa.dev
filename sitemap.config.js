@@ -1,6 +1,5 @@
-const config = require("./site.config");
 module.exports = {
-  siteUrl: config.baseUrl,
+  siteUrl: process.env.NEXT_PUBLIC_BASE_URL,
   generateRobotsTxt: true,
   sitemapSize: 1000,
 };
