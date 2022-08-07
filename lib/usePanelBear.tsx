@@ -3,24 +3,26 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export const usePanelbear = (
-  site: string,
+  site?: string,
   config?: Panelbear.PanelbearConfig
 ) => {
   const router = useRouter();
 
   useEffect(() => {
-    Panelbear.load(site, { scriptSrc: "/bear.js", ...config });
+    if (site) {
+      Panelbear.load(site, { scriptSrc: "/bear.js", ...config });
 
-    // Trigger initial page view
-    Panelbear.trackPageview();
+      // Trigger initial page view
+      Panelbear.trackPageview();
 
-    // Add on route change handler for client-side navigation
-    const handleRouteChange = () => Panelbear.trackPageview();
-    router.events.on("routeChangeComplete", handleRouteChange);
+      // Add on route change handler for client-side navigation
+      const handleRouteChange = () => Panelbear.trackPageview();
+      router.events.on("routeChangeComplete", handleRouteChange);
 
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
+      return () => {
+        router.events.off("routeChangeComplete", handleRouteChange);
+      };
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };

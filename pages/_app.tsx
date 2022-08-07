@@ -18,7 +18,7 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  usePanelbear("EJLfW3GUjWc");
+  usePanelbear(config.panelbear);
   useEffect(() => {
     //CAT
     console.log(
