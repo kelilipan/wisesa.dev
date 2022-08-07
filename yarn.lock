@@ -4110,10 +4110,10 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-sketch-canvas@^6.1.0:
-  version "6.1.5"
-  resolved "https://registry.yarnpkg.com/react-sketch-canvas/-/react-sketch-canvas-6.1.5.tgz#61eb3f15e3c2d315bfb5bf3e0efc15a5b50cad3e"
-  integrity sha512-ZxrEmPY9984SvFPkEl/c/FKKkiPa56SITjNFHh9cNN25q+meAyQ6wT0rPCkf7yLjc4dXgYEppW87dP/dmuN15g==
+react-sketch-canvas@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-sketch-canvas/-/react-sketch-canvas-6.2.0.tgz#4aa1f0b85012f37b8b2ae746a412ab9424badfa9"
+  integrity sha512-Z56RQN0viV9W3Y+DpZfQMi2lf3pO+UB4l+cMwnx7j7pQ9WHkQwN+qZKVFGANgpjXQMyY42NODF/DXjuKPCMf1w==
 
 react@^17.0.2:
   version "17.0.2"
