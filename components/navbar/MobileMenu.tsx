@@ -13,10 +13,10 @@ const links = [
     text: "Home",
     url: "/",
   },
-  {
-    text: "Blog",
-    url: "/blog",
-  },
+  // {
+  //   text: "Blog",
+  //   url: "/blog",
+  // },
   {
     text: "Projects",
     url: "/projects",
