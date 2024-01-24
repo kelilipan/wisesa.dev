@@ -10,7 +10,6 @@ import Router from "next/router";
 import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
 import config from "site.config";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePanelbear } from "@/lib/usePanelBear";
 
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -18,7 +17,6 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  usePanelbear(config.panelbear);
   useEffect(() => {
     //CAT
     console.log(

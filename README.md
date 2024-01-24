@@ -25,7 +25,6 @@ Tools i'm using to build this project
 - [MDX](https://github.com/mdx-js/mdx)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [next-pwa](https://github.com/shadowwalker/next-pwa)
-- [PanelBear](https://panelbear.com/)
 - [Hosted on Vercel](https://vercel.com)
 
 

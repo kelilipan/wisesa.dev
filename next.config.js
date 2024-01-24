@@ -7,20 +7,7 @@ const nextConfig = {
   images: {
     domains: ["i.scdn.co"],
   },
-  // https://nextjs.org/docs/advanced-features/i18n-routing
-  // https://panelbear.com/docs/integration-nextjs/
-  async rewrites() {
-    return [
-      {
-        source: "/bear.js",
-        destination: "https://cdn.panelbear.com/analytics.js",
-      },
-      // {
-      //   source: "/_panelbear/:path*",
-      //   destination: "https://api.panelbear.com/:path*",
-      // },
-    ];
-  },
+
   async redirects() {
     return [
       {
