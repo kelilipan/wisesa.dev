@@ -12,10 +12,10 @@ export const links: NavLink[] = [
     text: "Projects",
     url: "/projects",
   },
-  {
-    text: "Snippets",
-    url: "/snippet",
-  },
+  // {
+  //   text: "Snippets",
+  //   url: "/snippet",
+  // },
   {
     text: "Timeline",
     url: "https://timeline.wisesa.dev",
