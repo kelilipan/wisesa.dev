@@ -79,17 +79,6 @@ const AboutMe = () => {
         </Link>
         .
       </p>
-      <p>
-        Outside of software developing thingy, I love playing and{" "}
-        <Link
-          isExternal
-          className="underline"
-          href="https://open.spotify.com/user/21xnhzh4qf74t5t4lp2fammai"
-        >
-          listening music
-        </Link>
-        .
-      </p>
     </section>
   );
 };
